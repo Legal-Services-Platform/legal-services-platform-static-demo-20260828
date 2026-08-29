@@ -20,6 +20,15 @@ import { copy } from "./i18n.js";
 
 const app = document.querySelector("#app");
 const staticDemo = document.documentElement.dataset.staticDemo === "true";
+const thoughtLeadershipEvidence = {
+  publications: [
+    "https://www.omicsonline.org/open-access/when-confidentiality-in-international-commercial-arbitration-ica-is-not-salutary-african-perspectives-on-transparency-2169-0170-1000313.php",
+    "https://www.omicsonline.org/open-access/reinforcing-the-definition-of-ecocide-proposed-by-the-independent-expert-panel-iep-in-light-of-the-niger-delta-case-opportunities-and-challenges-2169-0170-1000312.php"
+  ],
+  engagements: [
+    "https://viennaarbitrationdays.com/2022/"
+  ]
+};
 const STORAGE = {
   locale: "lsp-locale",
   gates: "lsp-gates"
@@ -551,11 +560,21 @@ function aboutView() {
           <div class="thought-leadership-grid">
             <article>
               <h3>${escapeHtml(c.publicationsTitle)}</h3>
-              <ul>${c.publications.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+              <ul>${c.publications
+                .map(
+                  (item, index) =>
+                    `<li>${escapeHtml(item)}${thoughtLeadershipEvidence.publications[index] ? ` <a href="${thoughtLeadershipEvidence.publications[index]}" target="_blank" rel="noopener noreferrer">${escapeHtml(c.evidenceLinkLabel || "Evidence link")}</a>` : ""}</li>`
+                )
+                .join("")}</ul>
             </article>
             <article>
               <h3>${escapeHtml(c.engagementTitle)}</h3>
-              <ul>${c.engagements.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+              <ul>${c.engagements
+                .map(
+                  (item, index) =>
+                    `<li>${escapeHtml(item)}${thoughtLeadershipEvidence.engagements[index] ? ` <a href="${thoughtLeadershipEvidence.engagements[index]}" target="_blank" rel="noopener noreferrer">${escapeHtml(c.evidenceLinkLabel || "Evidence link")}</a>` : ""}</li>`
+                )
+                .join("")}</ul>
             </article>
             <article>
               <h3>${escapeHtml(c.developmentTitle)}</h3>

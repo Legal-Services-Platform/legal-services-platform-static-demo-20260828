@@ -120,6 +120,7 @@ export const copy = {
       credentialsTitle: "Thought Leadership & Recognition",
       credentialsIntro: "Source-supplied publications, research, conference participation, recognition, and professional-status leads are shown for structured review. Supporting evidence, exact descriptions, dates, roles, identity matching, and permission to publish remain required before production publication.",
       credentialsPending: "Verification pending",
+      evidenceLinkLabel: "Evidence link",
       credentials: [
         {
           title: "University of Essex research",
@@ -325,6 +326,7 @@ export const copy = {
       credentialsTitle: "Rayonnement intellectuel et reconnaissance",
       credentialsIntro: "Les publications, travaux de recherche, participations à des conférences, distinctions et pistes relatives au statut professionnel sont présentés pour une revue structurée. Les preuves, descriptions exactes, dates, rôles, correspondance d’identité et autorisations de publication restent requis avant toute mise en production.",
       credentialsPending: "Vérification en attente",
+      evidenceLinkLabel: "Lien vers la preuve",
       credentials: [
         {
           title: "Recherche à l’Université d’Essex",
@@ -530,6 +532,7 @@ export const copy = {
       credentialsTitle: "思想领导力与认可",
       credentialsIntro: "以下出版成果、研究、会议参与、认可和专业状态线索来自所提供的材料，仅用于结构化审查。生产发布前仍须核实支持证据、准确表述、日期、角色、身份对应关系及公开发布许可。",
       credentialsPending: "待核实",
+      evidenceLinkLabel: "证据链接",
       credentials: [
         {
           title: "埃塞克斯大学研究",
@@ -711,6 +714,7 @@ copy["zh-Hant"] = {
     credentialsTitle: "思想領導力與認可",
     credentialsIntro: "以下出版成果、研究、會議參與、認可及專業狀態線索來自所提供的材料，僅供結構化審查。正式發布前仍須核實支持證據、準確描述、日期、角色、身分對應關係及公開發布許可。",
     credentialsPending: "有待核實",
+    evidenceLinkLabel: "證據連結",
     credentials: [
       {
         title: "艾塞克斯大學研究",
