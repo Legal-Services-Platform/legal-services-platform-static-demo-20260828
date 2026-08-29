@@ -520,6 +520,32 @@ products.push({
   }
 });
 
+const additionalLibraryResources = [
+  ["resource-investment-law", "investment-law", "Investment Law", "International Investment Law Research Brief", "Research brief on selected investment-treaty concepts and investor-State dispute developments."],
+  ["resource-business-human-rights", "business-human-rights", "Business & Human Rights", "Business & Human Rights Research Guide", "A development guide to selected human-rights frameworks and responsible business considerations."],
+  ["resource-extractive-industries", "extractive-industries", "Extractive Industries", "Extractive Industries and Natural Resources Guide", "A development resource on selected legal and policy considerations for extractive projects."],
+  ["resource-international-economic-law", "international-economic-law", "International Economic Law", "International Economic Law Research Guide", "A concise development guide to selected trade, investment, and economic-law concepts."],
+  ["resource-legal-research", "legal-research", "Legal Research", "International Legal Research Methods", "A development guide to structured comparative and international legal research."]
+];
+
+for (const [id, category, topic, title, summary] of additionalLibraryResources) {
+  products.push({
+    id,
+    category,
+    topic,
+    resourceType: "Research Guide",
+    language: "English",
+    fixture: true,
+    price: null,
+    translations: {
+      en: { title, summary, format: "Digital research guide", limitation: "Content, currency, jurisdictional coverage, license, and update policy are pending approval." },
+      fr: { title: `[Espace réservé] ${title}`, summary: `Ressource de développement : ${summary}`, format: "Guide de recherche numérique", limitation: "Le contenu, l’actualité, la couverture juridictionnelle, la licence et la politique de mise à jour restent à approuver." },
+      zh: { title: `[占位内容] ${title}`, summary: `开发资源：${summary}`, format: "数字研究指南", limitation: "内容、时效性、司法管辖区覆盖、许可和更新政策尚待批准。" },
+      "zh-Hant": { title: `[預留內容] ${title}`, summary: `開發資源：${summary}`, format: "數碼研究指南", limitation: "內容、時效性、司法管轄區覆蓋、授權及更新政策尚待批准。" }
+    }
+  });
+}
+
 for (const product of products) {
   if (!product.translations["zh-Hant"]) {
     product.translations["zh-Hant"] = product.translations.zh
