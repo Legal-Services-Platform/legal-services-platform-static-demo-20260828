@@ -40,6 +40,7 @@ export function getRoute(hash) {
     "product",
     "book",
     "guidance",
+    "assessment",
     "about",
     "contact",
     "admin"
