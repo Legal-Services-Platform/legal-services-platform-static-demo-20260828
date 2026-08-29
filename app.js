@@ -39,6 +39,12 @@ const thoughtLeadershipFieldLabels = {
   zh: { sourceTitle: "来源标题", sourceType: "来源类型", identityMatch: "身份匹配", publicationPermission: "发布许可", pending: "待审查" },
   "zh-Hant": { sourceTitle: "來源標題", sourceType: "來源類型", identityMatch: "身分匹配", publicationPermission: "發布許可", pending: "待審查" }
 };
+const adminEvidenceCopy = {
+  en: { eyebrow: "Thought Leadership & Recognition", title: "Evidence review filters", identity: "Identity-match status", permission: "Publication-permission status", all: "All statuses", pendingIdentity: "Pending or partial match", noIdentity: "No identity match", pendingPermission: "Permission pending", development: "Development linking only", apply: "Apply filters", noResults: "No matching items", adjust: "Adjust the review filters" },
+  fr: { eyebrow: "Rayonnement intellectuel et reconnaissance", title: "Filtres de revue des preuves", identity: "Statut de correspondance d’identité", permission: "Statut d’autorisation de publication", all: "Tous les statuts", pendingIdentity: "Correspondance partielle ou en attente", noIdentity: "Aucune correspondance d’identité", pendingPermission: "Autorisation en attente", development: "Lien limité au développement", apply: "Appliquer les filtres", noResults: "Aucun élément correspondant", adjust: "Ajustez les filtres de revue" },
+  zh: { eyebrow: "思想领导力与认可", title: "证据审查筛选", identity: "身份匹配状态", permission: "发布许可状态", all: "所有状态", pendingIdentity: "待核实或部分匹配", noIdentity: "没有身份匹配", pendingPermission: "发布许可待定", development: "仅限开发环境链接", apply: "应用筛选", noResults: "没有匹配项目", adjust: "请调整审查筛选条件" },
+  "zh-Hant": { eyebrow: "思想領導力與認可", title: "證據審查篩選", identity: "身分匹配狀態", permission: "發布許可狀態", all: "所有狀態", pendingIdentity: "有待核實或部分匹配", noIdentity: "沒有身分匹配", pendingPermission: "發布許可待定", development: "僅限開發環境連結", apply: "套用篩選", noResults: "沒有相符項目", adjust: "請調整審查篩選條件" }
+};
 const thoughtLeadershipMeta = {
   credentials: [
     ["About Tezzeta Mbuya N'Gungwa.docx", "Supplied biography", "Not independently matched", "Not yet approved"],
@@ -857,12 +863,12 @@ function adminView() {
                 </div>
               </div>
               <div>
-                <p class="eyebrow">Thought Leadership &amp; Recognition</p>
-                <h2>Evidence review filters</h2>
+                <p class="eyebrow">${escapeHtml((adminEvidenceCopy[state.locale] || adminEvidenceCopy.en).eyebrow)}</p>
+                <h2>${escapeHtml((adminEvidenceCopy[state.locale] || adminEvidenceCopy.en).title)}</h2>
                 <form id="thought-leadership-filter-form" class="audit-filter-form">
-                  <label><span>Identity-match status</span><select name="identityMatch"><option value="all">All statuses</option><option value="pending">Pending or partial match</option><option value="none">No identity match</option></select></label>
-                  <label><span>Publication-permission status</span><select name="publicationPermission"><option value="all">All statuses</option><option value="pending">Permission pending</option><option value="development">Development linking only</option></select></label>
-                  <button class="button button-secondary button-small" type="submit">Apply filters</button>
+                  <label><span>${escapeHtml((adminEvidenceCopy[state.locale] || adminEvidenceCopy.en).identity)}</span><select name="identityMatch"><option value="all">${escapeHtml((adminEvidenceCopy[state.locale] || adminEvidenceCopy.en).all)}</option><option value="pending">${escapeHtml((adminEvidenceCopy[state.locale] || adminEvidenceCopy.en).pendingIdentity)}</option><option value="none">${escapeHtml((adminEvidenceCopy[state.locale] || adminEvidenceCopy.en).noIdentity)}</option></select></label>
+                  <label><span>${escapeHtml((adminEvidenceCopy[state.locale] || adminEvidenceCopy.en).permission)}</span><select name="publicationPermission"><option value="all">${escapeHtml((adminEvidenceCopy[state.locale] || adminEvidenceCopy.en).all)}</option><option value="pending">${escapeHtml((adminEvidenceCopy[state.locale] || adminEvidenceCopy.en).pendingPermission)}</option><option value="development">${escapeHtml((adminEvidenceCopy[state.locale] || adminEvidenceCopy.en).development)}</option></select></label>
+                  <button class="button button-secondary button-small" type="submit">${escapeHtml((adminEvidenceCopy[state.locale] || adminEvidenceCopy.en).apply)}</button>
                 </form>
                 <div class="data-table" id="thought-leadership-admin-results">
                   ${thoughtLeadershipItems().filter((item) => {
@@ -874,7 +880,7 @@ function adminView() {
                       (state.thoughtLeadershipFilters.publicationPermission === "pending" && permission.toLowerCase().includes("pending")) ||
                       (state.thoughtLeadershipFilters.publicationPermission === "development" && permission.toLowerCase().includes("development"));
                     return identityOk && permissionOk;
-                  }).map((item) => `<div><strong>${escapeHtml(item.section)}: ${escapeHtml(item.title)}</strong><span>${escapeHtml(item.meta[2])}<br />${escapeHtml(item.meta[3])}</span></div>`).join("") || `<div><strong>No matching items</strong><span>Adjust the review filters</span></div>`}
+                  }).map((item) => `<div><strong>${escapeHtml(item.section)}: ${escapeHtml(item.title)}</strong><span>${escapeHtml(item.meta[2])}<br />${escapeHtml(item.meta[3])}</span></div>`).join("") || `<div><strong>${escapeHtml((adminEvidenceCopy[state.locale] || adminEvidenceCopy.en).noResults)}</strong><span>${escapeHtml((adminEvidenceCopy[state.locale] || adminEvidenceCopy.en).adjust)}</span></div>`}
                 </div>
               </div>
             `
