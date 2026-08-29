@@ -62,6 +62,7 @@ export function evaluateGuidance(input, sources) {
     return {
       status: "needs_input",
       code: "MISSING_SCOPE",
+      language,
       sources: []
     };
   }
@@ -70,6 +71,7 @@ export function evaluateGuidance(input, sources) {
     return {
       status: "escalate",
       code: "URGENT_REVIEW",
+      language,
       sources: []
     };
   }
@@ -87,6 +89,7 @@ export function evaluateGuidance(input, sources) {
     return {
       status: "unsupported",
       code: "NO_APPROVED_SOURCE",
+      language,
       sources: []
     };
   }
@@ -94,6 +97,7 @@ export function evaluateGuidance(input, sources) {
   return {
     status: "supported",
     code: "APPROVED_ORIENTATION",
+    language,
     sources: eligible.map((source) => ({
       id: source.id,
       title: source.title,

@@ -468,6 +468,12 @@ function productDetailView(id) {
 
 function catalogControls(prefix, search, category, categories) {
   const c = t();
+  const serviceCategoryLabels = {
+    en: { advisory: "Advisory support", documents: "Document review", "international-law": "International Law", research: "Legal Research" },
+    fr: { advisory: "Soutien consultatif", documents: "Revue de documents", "international-law": "Droit international", research: "Recherche juridique" },
+    zh: { advisory: "咨询支持", documents: "文件审查", "international-law": "国际法", research: "法律研究" },
+    "zh-Hant": { advisory: "諮詢支援", documents: "文件審查", "international-law": "國際法", research: "法律研究" }
+  };
   return `
     <form class="catalog-controls" id="${prefix}-filters">
       <label class="search-field">
@@ -479,7 +485,7 @@ function catalogControls(prefix, search, category, categories) {
         <span class="sr-only">${escapeHtml(c.common.all)}</span>
         <select name="category">
           <option value="all">${escapeHtml(c.common.all)}</option>
-          ${categories.map((item) => `<option value="${item}" ${item === category ? "selected" : ""}>${escapeHtml(item)}</option>`).join("")}
+          ${categories.map((item) => `<option value="${item}" ${item === category ? "selected" : ""}>${escapeHtml(prefix === "service" ? (serviceCategoryLabels[state.locale] || serviceCategoryLabels.en)[item] || item : item)}</option>`).join("")}
         </select>
       </label>
     </form>
@@ -593,6 +599,7 @@ function guidanceResult(result) {
   }[result.status];
   return `
     <div class="result-status result-${result.status}">${icon(content[2])}<strong>${escapeHtml(content[0])}</strong></div>
+    <p class="assessment-language" data-guidance-language="${escapeHtml(result.language || state.locale)}">Language: ${escapeHtml(result.language || state.locale)}</p>
     <p>${escapeHtml(content[1])}</p>
     ${
       result.status === "supported"
@@ -1100,8 +1107,7 @@ function bindEvents() {
         topic: formData.get("topic"),
         language: formData.get("language"),
         situation: formData.get("situation"),
-        urgency: formData.get("urgency") === "on",
-        language: state.locale
+        urgency: formData.get("urgency") === "on"
       },
       knowledgeSources
     );
