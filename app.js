@@ -233,6 +233,12 @@ function fixtureBadge() {
 
 function homeView() {
   const c = t();
+  const aiCopy = {
+    en: ["Preliminary Legal Assessment", "A structured intake can organize facts, identify jurisdiction and urgency, and prepare a review brief. It does not replace an attorney or create a professional relationship.", "Start preliminary assessment"],
+    fr: ["Évaluation juridique préliminaire", "Un parcours structuré peut organiser les faits, identifier la juridiction et l’urgence, et préparer une note de revue. Il ne remplace pas un avocat et ne crée pas de relation professionnelle.", "Commencer l’évaluation"],
+    zh: ["初步法律评估", "结构化问卷可整理事实、识别司法管辖区和紧迫性，并准备审查摘要。它不替代律师，也不会建立专业关系。", "开始初步评估"],
+    "zh-Hant": ["初步法律評估", "結構化問卷可整理事實、識別司法管轄區及緊迫性，並準備審查摘要。它不取代律師，也不會建立專業關係。", "開始初步評估"]
+  }[state.locale] || [];
   return `
     <section class="hero">
       <div class="hero-content">
@@ -281,6 +287,14 @@ function homeView() {
       </div>
       <p class="profile-copy">${escapeHtml(c.about.profileText)}</p>
       <a class="text-link" href="#/about">${escapeHtml(c.about.profileCta)}${icon("arrow")}</a>
+    </section>
+    <section class="section ai-assessment-band">
+      <div class="section-heading">
+        <p class="eyebrow">${escapeHtml(aiCopy[0])}</p>
+        <h2>${escapeHtml(aiCopy[0])}</h2>
+      </div>
+      <p class="profile-copy">${escapeHtml(aiCopy[1])}</p>
+      <a class="button button-secondary" href="#/guidance">${escapeHtml(aiCopy[2])}${icon("arrow")}</a>
     </section>
     <section class="process-band">
       <div class="section-heading">

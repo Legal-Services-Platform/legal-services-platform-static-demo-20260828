@@ -25,6 +25,9 @@ export const copy = {
       libraryText: "Browse approved guides, templates, and checklists when they become available.",
       guidanceTitle: "Controlled preliminary guidance",
       guidanceText: "Answer structured questions and receive information only when approved source coverage exists.",
+      aiTitle: "Preliminary Legal Assessment",
+      aiText: "A structured intake can organize facts, identify jurisdiction and urgency, and prepare a review brief. It does not replace an attorney or create a professional relationship.",
+      aiCta: "Start preliminary assessment",
       processTitle: "How the platform works",
       process: [
         "Identify a service, resource, or information need.",
@@ -231,6 +234,9 @@ export const copy = {
       libraryText: "Parcourez les guides, modèles et listes approuvés lorsqu’ils seront disponibles.",
       guidanceTitle: "Orientation préliminaire contrôlée",
       guidanceText: "Répondez à des questions structurées et recevez des informations uniquement lorsque des sources approuvées existent.",
+      aiTitle: "Évaluation juridique préliminaire",
+      aiText: "Un parcours structuré peut organiser les faits, identifier la juridiction et l’urgence, et préparer une note de revue. Il ne remplace pas un avocat et ne crée pas de relation professionnelle.",
+      aiCta: "Commencer l’évaluation",
       processTitle: "Fonctionnement de la plateforme",
       process: [
         "Identifiez un besoin de service, de ressource ou d’information.",
