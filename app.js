@@ -21,6 +21,10 @@ import { copy } from "./i18n.js";
 const app = document.querySelector("#app");
 const staticDemo = document.documentElement.dataset.staticDemo === "true";
 const thoughtLeadershipEvidence = {
+  credentials: [
+    null,
+    "https://iccwbo.org/news-publications/news/2022/icc-hold-the-door-open-scholarship-programme/"
+  ],
   publications: [
     "https://www.omicsonline.org/open-access/when-confidentiality-in-international-commercial-arbitration-ica-is-not-salutary-african-perspectives-on-transparency-2169-0170-1000313.php",
     "https://www.omicsonline.org/open-access/reinforcing-the-definition-of-ecocide-proposed-by-the-independent-expert-panel-iep-in-light-of-the-niger-delta-case-opportunities-and-challenges-2169-0170-1000312.php"
@@ -38,18 +42,18 @@ const thoughtLeadershipFieldLabels = {
 const thoughtLeadershipMeta = {
   credentials: [
     ["About Tezzeta Mbuya N'Gungwa.docx", "Supplied biography", "Not independently matched", "Not yet approved"],
-    ["Publications, Conferences & Recognition.docx", "Supplied recognition document", "Not independently matched", "Not yet approved"],
+    ["Publications, Conferences & Recognition.docx; ICC official programme page", "Supplied document + ICC source", "Name appears in source lead; personal identity confirmation pending", "Linking in development only; publication permission pending"],
     ["Publications, Conferences & Recognition.docx", "Supplied recognition document", "Not independently matched", "Not yet approved"],
     ["Publications, Conferences & Recognition.docx", "Supplied recognition document", "Not independently matched", "Not yet approved"],
     ["Publications, Conferences & Recognition.docx", "Supplied recognition document", "Not independently matched", "Not yet approved"],
     ["Public web references reviewed Aug. 29, 2026", "Public legal publication / secondary directory lead", "No identity-matched current official record located", "Not yet approved"]
   ],
   publications: [
-    ["Publications, Conferences & Recognition.docx; OMICS article page", "Supplied document + publisher page", "Not independently matched", "Not yet approved"],
-    ["Publications, Conferences & Recognition.docx; OMICS article page", "Supplied document + publisher page", "Not independently matched", "Not yet approved"]
+    ["Publications, Conferences & Recognition.docx; OMICS article page", "Supplied document + publisher page", "Name appears in source lead; personal identity confirmation pending", "Linking in development only; publication permission pending"],
+    ["Publications, Conferences & Recognition.docx; OMICS article page", "Supplied document + publisher page", "Name appears in source lead; personal identity confirmation pending", "Linking in development only; publication permission pending"]
   ],
   engagements: [
-    ["Publications, Conferences & Recognition.docx; Vienna Arbitration Days 2022", "Supplied document + event page", "Participation not independently matched", "Not yet approved"],
+    ["Publications, Conferences & Recognition.docx; Vienna Arbitration Days 2022", "Supplied document + event page", "Participation listing appears in source lead; personal identity confirmation pending", "Linking in development only; publication permission pending"],
     ["Publications, Conferences & Recognition.docx", "Supplied recognition document", "Speaker identity not independently matched", "Not yet approved"]
   ],
   development: [
@@ -68,6 +72,15 @@ const safeBarDetail = {
   zh: "已审阅公开资料，但尚未找到与全名匹配的现行官方或经认证记录。身份和当前状态仍待核实。",
   "zh-Hant": "已審閱公開資料，但尚未找到與全名相符的現行官方或經認證記錄。身分及目前狀態仍待核實。"
 };
+function thoughtLeadershipItems() {
+  const c = t().about;
+  return [
+    ...c.credentials.map((item, index) => ({ section: "Credential", title: item.title, meta: thoughtLeadershipMeta.credentials[index] })),
+    ...c.publications.map((item, index) => ({ section: "Publication", title: item, meta: thoughtLeadershipMeta.publications[index] })),
+    ...c.engagements.map((item, index) => ({ section: "Engagement", title: item, meta: thoughtLeadershipMeta.engagements[index] })),
+    ...c.development.map((item, index) => ({ section: "Development", title: item, meta: thoughtLeadershipMeta.development[index] }))
+  ];
+}
 const STORAGE = {
   locale: "lsp-locale",
   gates: "lsp-gates"
@@ -88,7 +101,8 @@ const state = {
   availabilityRules: [],
   adminBookings: [],
   authConfig: { developmentLoginEnabled: !staticDemo },
-  adminFlash: ""
+  adminFlash: "",
+  thoughtLeadershipFilters: { identityMatch: "all", publicationPermission: "all" }
 };
 
 function loadGateStatuses() {
@@ -587,7 +601,7 @@ function aboutView() {
             ${c.credentials
               .map(
                 (item, index) =>
-                  `<li><div><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(index === 5 ? safeBarDetail[state.locale] : item.detail)}</p>${fields(thoughtLeadershipMeta.credentials[index])}</div><span class="badge badge-warning">${escapeHtml(c.credentialsPending)}</span></li>`
+                  `<li><div><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(index === 5 ? safeBarDetail[state.locale] : item.detail)}</p>${thoughtLeadershipEvidence.credentials[index] ? `<a href="${thoughtLeadershipEvidence.credentials[index]}" target="_blank" rel="noopener noreferrer">${escapeHtml(c.evidenceLinkLabel || "Evidence link")}</a>` : ""}${fields(thoughtLeadershipMeta.credentials[index])}</div><span class="badge badge-warning">${escapeHtml(c.credentialsPending)}</span></li>`
               )
               .join("")}
           </ul>
@@ -840,6 +854,27 @@ function adminView() {
                       ? state.auditEvents.slice(0, 12).map((event) => `<div><strong>${escapeHtml(event.action)}</strong><span>${escapeHtml(event.targetType ?? "")} ${escapeHtml(event.targetId ?? "")}<br />${escapeHtml(event.createdAt ?? event.at ?? "")}</span></div>`).join("")
                       : `<div><strong>No events yet</strong><span>Authenticate or create a version</span></div>`
                   }
+                </div>
+              </div>
+              <div>
+                <p class="eyebrow">Thought Leadership &amp; Recognition</p>
+                <h2>Evidence review filters</h2>
+                <form id="thought-leadership-filter-form" class="audit-filter-form">
+                  <label><span>Identity-match status</span><select name="identityMatch"><option value="all">All statuses</option><option value="pending">Pending or partial match</option><option value="none">No identity match</option></select></label>
+                  <label><span>Publication-permission status</span><select name="publicationPermission"><option value="all">All statuses</option><option value="pending">Permission pending</option><option value="development">Development linking only</option></select></label>
+                  <button class="button button-secondary button-small" type="submit">Apply filters</button>
+                </form>
+                <div class="data-table" id="thought-leadership-admin-results">
+                  ${thoughtLeadershipItems().filter((item) => {
+                    const [, , identity, permission] = item.meta;
+                    const identityOk = state.thoughtLeadershipFilters.identityMatch === "all" ||
+                      (state.thoughtLeadershipFilters.identityMatch === "none" && identity.toLowerCase().includes("no identity")) ||
+                      (state.thoughtLeadershipFilters.identityMatch === "pending" && !identity.toLowerCase().includes("no identity"));
+                    const permissionOk = state.thoughtLeadershipFilters.publicationPermission === "all" ||
+                      (state.thoughtLeadershipFilters.publicationPermission === "pending" && permission.toLowerCase().includes("pending")) ||
+                      (state.thoughtLeadershipFilters.publicationPermission === "development" && permission.toLowerCase().includes("development"));
+                    return identityOk && permissionOk;
+                  }).map((item) => `<div><strong>${escapeHtml(item.section)}: ${escapeHtml(item.title)}</strong><span>${escapeHtml(item.meta[2])}<br />${escapeHtml(item.meta[3])}</span></div>`).join("") || `<div><strong>No matching items</strong><span>Adjust the review filters</span></div>`}
                 </div>
               </div>
             `
@@ -1281,6 +1316,15 @@ function bindEvents() {
       state.auditEvents = (await response.json()).events;
       render();
     }
+  });
+  document.querySelector("#thought-leadership-filter-form")?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    state.thoughtLeadershipFilters = {
+      identityMatch: String(formData.get("identityMatch") || "all"),
+      publicationPermission: String(formData.get("publicationPermission") || "all")
+    };
+    render();
   });
 }
 
