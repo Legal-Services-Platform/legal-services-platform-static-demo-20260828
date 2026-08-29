@@ -108,7 +108,8 @@ const state = {
   adminBookings: [],
   authConfig: { developmentLoginEnabled: !staticDemo },
   adminFlash: "",
-  thoughtLeadershipFilters: { identityMatch: "all", publicationPermission: "all" }
+  thoughtLeadershipFilters: { identityMatch: "all", publicationPermission: "all" },
+  assessmentQueue: []
 };
 
 function loadGateStatuses() {
@@ -516,12 +517,17 @@ function libraryControls() {
 
 function guidanceView() {
   const c = t().guidance;
+  const languageLabels = { en: ["Language", "English", "French", "Chinese"], fr: ["Langue", "Anglais", "Français", "Chinois"], zh: ["语言", "英语", "法语", "中文"], "zh-Hant": ["語言", "英語", "法語", "中文"] }[state.locale] || [];
   return pageIntro(
     c.title,
     c.intro,
     `
       <section class="guidance-layout section compact-top">
         <form id="guidance-form" class="form-panel" novalidate>
+          <label>
+            <span>${escapeHtml(languageLabels[0])} <em>${escapeHtml(t().common.required)}</em></span>
+            <select name="language"><option value="en" ${state.locale === "en" ? "selected" : ""}>${escapeHtml(languageLabels[1])}</option><option value="fr" ${state.locale === "fr" ? "selected" : ""}>${escapeHtml(languageLabels[2])}</option><option value="zh" ${state.locale.startsWith("zh") ? "selected" : ""}>${escapeHtml(languageLabels[3])}</option></select>
+          </label>
           <label>
             <span>${escapeHtml(c.jurisdiction)} <em>${escapeHtml(t().common.required)}</em></span>
             <select name="jurisdiction" required>
@@ -773,6 +779,13 @@ function adminView() {
           ${
             state.adminUser
               ? `
+                <div class="version-panel">
+                  <p class="eyebrow">Attorney review queue</p>
+                  <h2>Preliminary Legal Assessments</h2>
+                  <div class="data-table">
+                    ${state.assessmentQueue.length ? state.assessmentQueue.map((item) => `<div><strong>${escapeHtml(item.status)}</strong><span>${escapeHtml(item.jurisdiction)} · ${escapeHtml(item.issue)}<br />${escapeHtml(item.language)}</span></div>`).join("") : `<div><strong>No assessment submissions</strong><span>New structured intakes will appear here</span></div>`}
+                  </div>
+                </div>
                 <div class="version-panel">
                   <div class="admin-heading">
                     <div>
@@ -1054,6 +1067,9 @@ function bindEvents() {
             ? ["ESCALATE", "This may be time-sensitive. Do not rely on automated analysis; seek prompt attorney review.", "alert"]
             : ["ATTORNEY_REVIEW_REQUIRED", "The intake is organized for attorney review. No legal conclusion or attorney-client relationship is created.", "shield"];
     result.innerHTML = `<div class="result-status result-${state[0].toLowerCase()}">${icon(state[2])}<strong>${escapeHtml(state[0])}</strong></div><p>${escapeHtml(state[1])}</p><p class="fine-print">Status: ${escapeHtml(state[0])}</p>`;
+    if (state[0] !== "MISSING_INFORMATION") {
+      fetch("/api/assessments", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ language: data.get("language"), jurisdiction, issue, urgent, status: state[0] }) }).catch(() => {});
+    }
   });
 
   const menuButton = document.querySelector(".mobile-menu");
@@ -1082,6 +1098,7 @@ function bindEvents() {
       {
         jurisdiction: formData.get("jurisdiction"),
         topic: formData.get("topic"),
+        language: formData.get("language"),
         situation: formData.get("situation"),
         urgency: formData.get("urgency") === "on",
         language: state.locale
@@ -1465,6 +1482,8 @@ async function refreshServerState() {
         state.availabilityRules = (await availabilityResponse.json()).rules;
       }
       if (bookingsResponse.ok) state.adminBookings = (await bookingsResponse.json()).bookings;
+      const assessmentsResponse = await fetch("/api/admin/assessments");
+      if (assessmentsResponse.ok) state.assessmentQueue = (await assessmentsResponse.json()).assessments;
     }
   } catch {
     // The static preview remains usable when the server boundary is unavailable.
