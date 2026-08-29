@@ -312,18 +312,24 @@ function detailBlock(title, text) {
 
 function libraryView() {
   const c = t();
-  const filtered = filterCatalog(
-    products,
-    state.locale,
-    state.productSearch,
-    state.productCategory
-  );
+  const filtered = products.filter((item) => {
+    const query = state.productSearch.trim().toLocaleLowerCase(state.locale);
+    const localizedText = [
+      localized(item, state.locale, "title"),
+      localized(item, state.locale, "summary"),
+      item.category,
+      item.resourceType,
+      item.language
+    ].join(" ").toLocaleLowerCase(state.locale);
+    return (!query || localizedText.includes(query)) &&
+      (state.productCategory === "all" || item.category === state.productCategory);
+  });
   return pageIntro(
     c.library.title,
     c.library.intro,
     `
       <section class="section compact-top">
-        ${catalogControls("product", state.productSearch, state.productCategory, ["guides", "checklists"])}
+        ${libraryControls()}
         <div class="catalog-grid" id="product-results" aria-live="polite">
           ${
             filtered.length
@@ -340,12 +346,12 @@ function productCard(product) {
   const tr = product.translations[state.locale] ?? product.translations.en;
   return `
     <article class="catalog-card">
-      <div class="catalog-meta">${fixtureBadge()}<span>${escapeHtml(product.category)}</span></div>
+      <div class="catalog-meta">${fixtureBadge()}<span>${escapeHtml(product.resourceType ?? "Legal resource")} · ${escapeHtml(product.language ?? "English")}</span></div>
       <h2>${escapeHtml(tr.title)}</h2>
       <p>${escapeHtml(tr.summary)}</p>
-      <div class="price-line">${escapeHtml(t().common.unavailable)}</div>
+      <div class="price-line">${escapeHtml(product.topic ?? product.category)}</div>
       <a class="button button-secondary button-small" href="${routeHref("product", product.id)}">
-        ${escapeHtml(t().common.learnMore)}${icon("arrow")}
+        ${escapeHtml(t().library.readResource)}${icon("arrow")}
       </a>
     </article>
   `;
@@ -394,6 +400,36 @@ function catalogControls(prefix, search, category, categories) {
         </select>
       </label>
     </form>
+  `;
+}
+
+function libraryControls() {
+  const c = t();
+  const topics = [
+    ["international-arbitration", "International Arbitration"],
+    ["investment-law", "Investment Law"],
+    ["african-trade", "African Trade & AfCFTA"],
+    ["business-human-rights", "Business & Human Rights"],
+    ["extractive-industries", "Extractive Industries"],
+    ["international-economic-law", "International Economic Law"],
+    ["legal-research", "Legal Research"]
+  ];
+  return `
+    <form class="catalog-controls library-controls" id="product-filters">
+      <label class="search-field">
+        <span class="sr-only">${escapeHtml(c.common.search)}</span>
+        ${icon("search")}
+        <input type="search" name="query" value="${escapeHtml(state.productSearch)}" placeholder="${escapeHtml(c.library.searchPlaceholder)}" />
+      </label>
+      <label>
+        <span>${escapeHtml(c.library.topicFilter)}</span>
+        <select name="category">
+          <option value="all">${escapeHtml(c.common.all)}</option>
+          ${topics.map(([value, label]) => `<option value="${value}" ${value === state.productCategory ? "selected" : ""}>${escapeHtml(label)}</option>`).join("")}
+        </select>
+      </label>
+    </form>
+    <p class="filter-note">${escapeHtml(c.library.filterBy)}: 🇬🇧 English · 🇫🇷 Français · 🇨🇳 中文 · ${escapeHtml(c.library.resourceType)}: ${escapeHtml(c.library.readResource)}</p>
   `;
 }
 

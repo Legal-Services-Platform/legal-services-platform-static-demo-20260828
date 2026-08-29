@@ -426,13 +426,16 @@ for (const service of services) {
 export const products = [
   {
     id: "product-guide",
-    category: "guides",
+    category: "legal-research",
+    topic: "Legal Research",
+    resourceType: "Research Guide",
+    language: "English",
     fixture: true,
     price: null,
     translations: {
       en: {
-        title: "[Placeholder] Practical legal information guide",
-        summary: "Demonstrates a multilingual digital resource page with controlled publication states.",
+        title: "International Commercial Arbitration in Africa",
+        summary: "A concise overview of key concepts, legal frameworks, and developments.",
         format: "Digital document",
         limitation: "Content, price, license, and update policy are pending approval."
       },
@@ -452,7 +455,10 @@ export const products = [
   },
   {
     id: "product-checklist",
-    category: "checklists",
+    category: "international-arbitration",
+    topic: "International Arbitration",
+    resourceType: "Practical Guide",
+    language: "English",
     fixture: true,
     price: null,
     translations: {
@@ -477,6 +483,50 @@ export const products = [
     }
   }
 ];
+
+products.push({
+  id: "resource-african-trade",
+  category: "african-trade",
+  topic: "African Trade & AfCFTA",
+  resourceType: "Research Guide",
+  language: "English",
+  fixture: true,
+  price: null,
+  translations: {
+    en: {
+      title: "African Trade and AfCFTA Research Guide",
+      summary: "A development resource covering selected concepts and legal developments in African trade.",
+      format: "Digital research guide",
+      limitation: "Content, currency, jurisdictional coverage, license, and update policy are pending approval."
+    },
+    fr: {
+      title: "Guide de recherche sur le commerce africain et la ZLECAf",
+      summary: "Une ressource de développement présentant certains concepts et évolutions juridiques du commerce africain.",
+      format: "Guide de recherche numérique",
+      limitation: "Le contenu, l’actualité, la couverture juridictionnelle, la licence et la politique de mise à jour restent à approuver."
+    },
+    zh: {
+      title: "非洲贸易与非洲大陆自由贸易区研究指南",
+      summary: "介绍非洲贸易部分概念和法律发展的开发资源。",
+      format: "数字研究指南",
+      limitation: "内容、时效性、司法管辖区覆盖、许可和更新政策尚待批准。"
+    },
+    "zh-Hant": {
+      title: "非洲貿易與非洲大陸自由貿易區研究指南",
+      summary: "介紹非洲貿易部分概念及法律發展的開發資源。",
+      format: "數碼研究指南",
+      limitation: "內容、時效性、司法管轄區覆蓋、授權及更新政策尚待批准。"
+    }
+  }
+});
+
+for (const product of products) {
+  if (!product.translations["zh-Hant"]) {
+    product.translations["zh-Hant"] = product.translations.zh
+      ? { ...product.translations.zh }
+      : { ...product.translations.en };
+  }
+}
 
 export const knowledgeSources = [
   {

@@ -55,11 +55,17 @@ export const copy = {
       disabled: "Booking disabled pending service approval"
     },
     library: {
-      title: "Legal library",
-      intro: "Search the multilingual development catalog. Products and prices are explicit placeholders and cannot be purchased.",
+      title: "Legal Library",
+      intro: "Search our multilingual collection of legal resources, publications, research materials, and practical guides.",
+      searchPlaceholder: "Search legal resources...",
+      filterBy: "Filter by",
+      languageFilter: "Language",
+      topicFilter: "Topic",
+      resourceType: "Resource type",
+      readResource: "Read resource",
       format: "Format",
       limitation: "Availability and limitations",
-      purchase: "Purchase unavailable pending approval"
+      purchase: "Resource unavailable pending approval"
     },
     guidance: {
       title: "Preliminary legal information",
@@ -229,10 +235,16 @@ export const copy = {
     },
     library: {
       title: "Bibliothèque juridique",
-      intro: "Recherchez dans le catalogue multilingue de développement. Les produits et prix sont des espaces réservés et ne peuvent pas être achetés.",
+      intro: "Recherchez dans notre collection multilingue de ressources juridiques, publications, travaux de recherche et guides pratiques.",
+      searchPlaceholder: "Rechercher des ressources juridiques...",
+      filterBy: "Filtrer par",
+      languageFilter: "Langue",
+      topicFilter: "Sujet",
+      resourceType: "Type de ressource",
+      readResource: "Lire la ressource",
       format: "Format",
       limitation: "Disponibilité et limites",
-      purchase: "Achat indisponible en attente d’approbation"
+      purchase: "Ressource indisponible en attente d’approbation"
     },
     guidance: {
       title: "Informations juridiques préliminaires",
@@ -402,10 +414,16 @@ export const copy = {
     },
     library: {
       title: "法律资源库",
-      intro: "搜索多语言开发目录。产品和价格均为明确占位内容，当前无法购买。",
+      intro: "搜索我们的多语言法律资源、出版物、研究材料和实务指南集合。",
+      searchPlaceholder: "搜索法律资源……",
+      filterBy: "筛选条件",
+      languageFilter: "语言",
+      topicFilter: "主题",
+      resourceType: "资源类型",
+      readResource: "阅读资源",
       format: "格式",
       limitation: "可用性与限制",
-      purchase: "获批前不可购买"
+      purchase: "获批前不可使用"
     },
     guidance: {
       title: "初步法律信息",
@@ -555,6 +573,19 @@ copy["zh-Hant"] = {
       "僅提供所選流程所需的資訊。",
       "接收確認、資源或經適當限定的下一步。"
     ]
+  },
+  library: {
+    title: "法律資源庫",
+    intro: "搜尋我們的多語言法律資源、出版物、研究材料及實務指南集合。",
+    searchPlaceholder: "搜尋法律資源……",
+    filterBy: "篩選條件",
+    languageFilter: "語言",
+    topicFilter: "主題",
+    resourceType: "資源類型",
+    readResource: "閱讀資源",
+    format: "格式",
+    limitation: "可用性與限制",
+    purchase: "獲批前不可使用"
   },
   common: {
     ...copy.zh.common,
