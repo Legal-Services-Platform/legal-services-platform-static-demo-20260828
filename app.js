@@ -562,16 +562,17 @@ function guidanceView() {
 
 function assessmentView() {
   const labels = {
-    en: ["Preliminary Legal Assessment", "Structured intake for language, jurisdiction, legal issue, urgency, and attorney review.", "Language", "Jurisdiction", "Legal issue", "Urgency", "Attorney review state", "Select an option", "English", "French", "Chinese", "International matter", "General orientation", "Urgent or time-sensitive", "Submit for attorney review"],
-    fr: ["Évaluation juridique préliminaire", "Parcours structuré pour la langue, la juridiction, la question juridique, l’urgence et la revue par un avocat.", "Langue", "Juridiction", "Question juridique", "Urgence", "État de revue par l’avocat", "Sélectionnez une option", "Anglais", "Français", "Chinois", "Question internationale", "Orientation générale", "Urgent ou sensible au délai", "Soumettre à la revue"],
-    zh: ["初步法律评估", "用于语言、司法管辖区、法律问题、紧迫性和律师审查的结构化流程。", "语言", "司法管辖区", "法律问题", "紧迫性", "律师审查状态", "请选择", "英语", "法语", "中文", "国际事项", "一般指导", "紧急或有时间限制", "提交律师审查"],
-    "zh-Hant": ["初步法律評估", "用於語言、司法管轄區、法律問題、緊迫性及律師審查的結構化流程。", "語言", "司法管轄區", "法律問題", "緊迫性", "律師審查狀態", "請選擇", "英語", "法語", "中文", "國際事項", "一般指引", "緊急或有時間限制", "提交律師審查"]
+    en: ["Preliminary Legal Assessment", "Structured intake for language, jurisdiction, legal issue, urgency, and attorney review.", "Language", "Jurisdiction", "Legal issue", "Urgency", "Attorney review state", "Select an option", "English", "French", "Chinese", "International matter", "General orientation", "Urgent or time-sensitive", "Submit for attorney review", "Missing information", "Unsupported jurisdiction", "Attorney-approved response"],
+    fr: ["Évaluation juridique préliminaire", "Parcours structuré pour la langue, la juridiction, la question juridique, l’urgence et la revue par un avocat.", "Langue", "Juridiction", "Question juridique", "Urgence", "État de revue par l’avocat", "Sélectionnez une option", "Anglais", "Français", "Chinois", "Question internationale", "Orientation générale", "Urgent ou sensible au délai", "Soumettre à la revue", "Informations manquantes", "Juridiction non prise en charge", "Réponse approuvée par l’avocat"],
+    zh: ["初步法律评估", "用于语言、司法管辖区、法律问题、紧迫性和律师审查的结构化流程。", "语言", "司法管辖区", "法律问题", "紧迫性", "律师审查状态", "请选择", "英语", "法语", "中文", "国际事项", "一般指导", "紧急或有时间限制", "提交律师审查", "信息不足", "不受支持的司法管辖区", "律师已批准的回复"],
+    "zh-Hant": ["初步法律評估", "用於語言、司法管轄區、法律問題、緊迫性及律師審查的結構化流程。", "語言", "司法管轄區", "法律問題", "緊迫性", "律師審查狀態", "請選擇", "英語", "法語", "中文", "國際事項", "一般指引", "緊急或有時間限制", "提交律師審查", "資訊不足", "不支援的司法管轄區", "律師已核准的回覆"]
   }[state.locale] || [];
   return pageIntro(labels[0], labels[1], `<section class="guidance-layout section compact-top"><form id="assessment-form" class="form-panel" novalidate>
     <label><span>${labels[2]}</span><select name="language" required><option value="">${labels[7]}</option><option>${labels[8]}</option><option>${labels[9]}</option><option>${labels[10]}</option></select></label>
     <label><span>${labels[3]}</span><input name="jurisdiction" required placeholder="${labels[7]}" /></label>
     <label><span>${labels[4]}</span><select name="issue" required><option value="">${labels[7]}</option><option>${labels[11]}</option><option>${labels[12]}</option></select></label>
     <label class="checkbox-row"><input type="checkbox" name="urgent" /><span>${labels[13]}</span></label>
+    <label><span>${labels[6]}</span><select name="reviewState"><option value="attorney_review">Attorney review required</option><option value="attorney_approved">${labels[17]}</option></select></label>
     <button class="button button-primary" type="submit">${labels[14]}${icon("arrow")}</button>
   </form><section class="result-panel" aria-live="polite"><h2>${labels[6]}</h2><div id="assessment-result"><p>${labels[7]}</p></div></section></section>`);
 }
@@ -1039,8 +1040,20 @@ function bindEvents() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const urgent = data.get("urgent") === "on";
+    const jurisdiction = String(data.get("jurisdiction") || "").trim();
+    const issue = String(data.get("issue") || "").trim();
+    const reviewState = String(data.get("reviewState") || "attorney_review");
     const result = document.querySelector("#assessment-result");
-    result.innerHTML = `<div class="result-status result-${urgent ? "escalate" : "supported"}"><strong>${urgent ? "Attorney review required" : "Draft intake prepared"}</strong></div><p>${urgent ? "This may be time-sensitive. Do not rely on automated analysis; seek prompt attorney review." : "The intake is organized for attorney review. No legal conclusion or attorney-client relationship is created."}</p><p class="fine-print">Status: ${urgent ? "ESCALATE" : "ATTORNEY_REVIEW_REQUIRED"}</p>`;
+    const state = !jurisdiction || !issue
+      ? ["MISSING_INFORMATION", "Additional jurisdiction and legal-issue information is required before a reliable assessment can be prepared.", "alert"]
+      : jurisdiction.toUpperCase() === "UNSUPPORTED"
+        ? ["UNSUPPORTED_JURISDICTION", "This jurisdiction is not covered by the approved development scope. No assessment is provided.", "alert"]
+        : reviewState === "attorney_approved" && !urgent
+          ? ["ATTORNEY_APPROVED_RESPONSE", "An attorney-approved response may be shown only after the responsible attorney has reviewed and approved the draft.", "check"]
+          : urgent
+            ? ["ESCALATE", "This may be time-sensitive. Do not rely on automated analysis; seek prompt attorney review.", "alert"]
+            : ["ATTORNEY_REVIEW_REQUIRED", "The intake is organized for attorney review. No legal conclusion or attorney-client relationship is created.", "shield"];
+    result.innerHTML = `<div class="result-status result-${state[0].toLowerCase()}">${icon(state[2])}<strong>${escapeHtml(state[0])}</strong></div><p>${escapeHtml(state[1])}</p><p class="fine-print">Status: ${escapeHtml(state[0])}</p>`;
   });
 
   const menuButton = document.querySelector(".mobile-menu");
