@@ -10,7 +10,7 @@ export const copy = {
       contact: "Contact",
       admin: "Launch controls"
     },
-    banner: "Development preview: professional identity, jurisdictions, products, prices, and production providers are not yet approved.",
+    banner: "Development preview: professional identity, jurisdictions, service claims, translations, products, prices, and production providers are not yet approved.",
     home: {
       eyebrow: "International legal services platform",
       title: "International Law. African Perspective. Strategic Results.",
@@ -143,11 +143,11 @@ export const copy = {
       contact: "Contact",
       admin: "Contrôles de lancement"
     },
-    banner: "Aperçu de développement : l’identité professionnelle, les juridictions, les produits, les prix et les fournisseurs de production ne sont pas encore approuvés.",
+    banner: "Aperçu de développement : l’identité professionnelle, les juridictions, les affirmations sur les services, les traductions, les produits, les prix et les fournisseurs de production ne sont pas encore approuvés.",
     home: {
       eyebrow: "Plateforme internationale de services juridiques",
-      title: "Services professionnels, ressources pratiques et orientation soigneusement contrôlée.",
-      intro: "Une base multilingue conçue pour aider les utilisateurs à comprendre les parcours disponibles sans confondre information générale et conseil professionnel.",
+      title: "Droit international. Perspective africaine. Résultats stratégiques.",
+      intro: "Recherche juridique spécialisée, arbitrage international, droit des investissements et conseil transfrontalier pour les entreprises, investisseurs, cabinets et organisations opérant en Afrique et sur les marchés internationaux.",
       book: "Réserver une consultation",
       explore: "Explorer les ressources",
       guide: "Obtenir des informations préliminaires",
@@ -224,8 +224,11 @@ export const copy = {
       disclaimer: "Il s’agit d’informations générales de démonstration. Elles ne créent pas de relation professionnelle et ne remplacent pas un conseil juridique."
     },
     about: {
-      title: "À propos de la plateforme",
+      title: "À propos",
       text: "La base publique est conçue pour un professionnel ou une organisation vérifiée. L’identité, les titres, les autorisations et les juridictions doivent être fournis et approuvés avant publication.",
+      profileTitle: "Découvrez Tezzeta Mbuya N'Gungwa",
+      profileText: "Chercheuse en droit international, chercheuse juridique et spécialiste du règlement des différends, axée sur le droit international des investissements, l’arbitrage commercial et l’évolution du paysage juridique africain.",
+      profileCta: "En savoir plus sur Tezzeta",
       principlesTitle: "Principes de fonctionnement",
       principles: [
         "Uniquement des affirmations vérifiées.",
@@ -273,11 +276,11 @@ export const copy = {
       contact: "联系",
       admin: "上线控制"
     },
-    banner: "开发预览：专业身份、司法管辖范围、产品、价格和生产服务商尚未获批。",
+    banner: "开发预览：专业身份、司法管辖范围、服务陈述、翻译、产品、价格和生产服务商尚未获批。",
     home: {
       eyebrow: "国际法律服务平台",
-      title: "专业服务、实用资源与严格受控的初步信息。",
-      intro: "多语言平台基础，帮助用户了解可选路径，同时明确区分一般信息与专业意见。",
+      title: "国际法。非洲视角。战略成果。",
+      intro: "为在非洲及国际市场开展业务的企业、投资者、律师事务所和组织提供国际法律研究、国际仲裁、投资法和跨境咨询支持。",
       book: "预约咨询",
       explore: "浏览资源",
       guide: "获取初步信息",
@@ -354,8 +357,11 @@ export const copy = {
       disclaimer: "这是开发演示的一般信息，不建立专业关系，也不能替代法律意见。"
     },
     about: {
-      title: "关于平台",
+      title: "关于",
       text: "此公共平台基础面向经过验证的专业人士或机构。生产发布前必须提供并批准身份、资质、授权和司法管辖范围。",
+      profileTitle: "认识 Tezzeta Mbuya N'Gungwa",
+      profileText: "国际法学者、法律研究员及争议解决专家，专注于国际投资法、商事仲裁以及不断发展的非洲法律环境。",
+      profileCta: "进一步了解 Tezzeta",
       principlesTitle: "运营原则",
       principles: [
         "仅使用经过验证的陈述。",
