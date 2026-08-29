@@ -117,8 +117,8 @@ export const copy = {
         "Extractive Industries",
         "International Economic Law"
       ],
-      credentialsTitle: "Credentials & Recognition",
-      credentialsIntro: "Source-supplied credibility categories are shown for structured review. Supporting evidence, exact descriptions, dates, roles, and permission to publish remain required before production publication.",
+      credentialsTitle: "Thought Leadership & Recognition",
+      credentialsIntro: "Source-supplied publications, research, conference participation, recognition, and professional-status leads are shown for structured review. Supporting evidence, exact descriptions, dates, roles, identity matching, and permission to publish remain required before production publication.",
       credentialsPending: "Verification pending",
       credentials: [
         {
@@ -140,7 +140,33 @@ export const copy = {
         {
           title: "Professional affiliations",
           detail: "Confirm organization names, membership category, current status, dates, and permitted designations."
+        },
+        {
+          title: "Bar admission & professional status",
+          detail: "A public Congolese legal publication and secondary directory appear to identify an Mbuya Tezzeta as an Avocate associated with the Kinshasa/Gombe Bar. Confirm that this is the same person and verify current status before publishing."
         }
+      ],
+      thoughtLeadershipTitle: "Thought Leadership in International Law",
+      thoughtLeadershipText: "The supplied material describes work at the intersection of international economic law, arbitration, investment, environmental protection, and Africa’s legal and commercial landscape. These statements remain subject to source and identity review.",
+      publicationsTitle: "Selected Publications",
+      publications: [
+        "When Confidentiality in International Commercial Arbitration (ICA) is not Salutary: African Perspectives on Transparency — Journal of Civil & Legal Sciences, Vol. 11, Issue 11 (2022).",
+        "Reinforcing the Definition of Ecocide Proposed by the Independent Expert Panel (IEP) in Light of the Niger Delta Case: Opportunities and Challenges — Journal of Civil & Legal Sciences, Vol. 11, Issue 11 (2022)."
+      ],
+      engagementTitle: "Conferences & Academic Engagement",
+      engagements: [
+        "Vienna Arbitration Days 2022 — participation listing to be verified.",
+        "African International Economic Law Network webinar on the AfCFTA Protocol on Rules and Procedures Governing the Settlement of Disputes (2024) — speaker role and event record to be verified."
+      ],
+      developmentTitle: "Professional & Academic Development",
+      development: [
+        "International commercial arbitration",
+        "International investment law and dispute resolution",
+        "Bilateral investment treaties",
+        "Business and human rights",
+        "Natural-resource governance",
+        "Climate-change law",
+        "African mining and natural-resource frameworks"
       ],
       principlesTitle: "Operating principles",
       principles: [
@@ -296,8 +322,8 @@ export const copy = {
         "Industries extractives",
         "Droit économique international"
       ],
-      credentialsTitle: "Titres et reconnaissance",
-      credentialsIntro: "Ces catégories de crédibilité, fournies comme éléments de travail, sont présentées pour une revue structurée. Les preuves, descriptions exactes, dates, rôles et autorisations de publication restent requis avant toute mise en production.",
+      credentialsTitle: "Rayonnement intellectuel et reconnaissance",
+      credentialsIntro: "Les publications, travaux de recherche, participations à des conférences, distinctions et pistes relatives au statut professionnel sont présentés pour une revue structurée. Les preuves, descriptions exactes, dates, rôles, correspondance d’identité et autorisations de publication restent requis avant toute mise en production.",
       credentialsPending: "Vérification en attente",
       credentials: [
         {
@@ -319,7 +345,33 @@ export const copy = {
         {
           title: "Affiliations professionnelles",
           detail: "Confirmer les organisations, la catégorie d’adhésion, le statut actuel, les dates et les désignations autorisées."
+        },
+        {
+          title: "Admission au barreau et statut professionnel",
+          detail: "Une publication juridique congolaise et un annuaire secondaire semblent identifier une Mbuya Tezzeta comme avocate liée au Barreau de Kinshasa/Gombe. Confirmer qu’il s’agit de la même personne et vérifier le statut actuel avant publication."
         }
+      ],
+      thoughtLeadershipTitle: "Rayonnement intellectuel en droit international",
+      thoughtLeadershipText: "Les documents fournis décrivent des travaux à l’intersection du droit économique international, de l’arbitrage, de l’investissement, de la protection de l’environnement et du paysage juridique et commercial africain. Ces affirmations restent soumises à une revue des sources et de l’identité.",
+      publicationsTitle: "Publications sélectionnées",
+      publications: [
+        "When Confidentiality in International Commercial Arbitration (ICA) is not Salutary: African Perspectives on Transparency — Journal of Civil & Legal Sciences, vol. 11, no 11 (2022).",
+        "Reinforcing the Definition of Ecocide Proposed by the Independent Expert Panel (IEP) in Light of the Niger Delta Case: Opportunities and Challenges — Journal of Civil & Legal Sciences, vol. 11, no 11 (2022)."
+      ],
+      engagementTitle: "Conférences et engagement académique",
+      engagements: [
+        "Vienna Arbitration Days 2022 — participation à vérifier.",
+        "Webinaire de l’African International Economic Law Network sur le Protocole de la ZLECAf relatif aux règles et procédures régissant le règlement des différends (2024) — rôle d’intervenante et fiche de l’événement à vérifier."
+      ],
+      developmentTitle: "Développement professionnel et académique",
+      development: [
+        "Arbitrage commercial international",
+        "Droit international des investissements et règlement des différends",
+        "Traités bilatéraux d’investissement",
+        "Entreprises et droits humains",
+        "Gouvernance des ressources naturelles",
+        "Droit du changement climatique",
+        "Cadres africains des mines et des ressources naturelles"
       ],
       principlesTitle: "Principes de fonctionnement",
       principles: [
@@ -475,8 +527,8 @@ export const copy = {
         "采掘业",
         "国际经济法"
       ],
-      credentialsTitle: "资历与认可",
-      credentialsIntro: "以下可信度类别来自所提供的材料，仅用于结构化审查。生产发布前仍须核实支持证据、准确表述、日期、角色以及公开发布许可。",
+      credentialsTitle: "思想领导力与认可",
+      credentialsIntro: "以下出版成果、研究、会议参与、认可和专业状态线索来自所提供的材料，仅用于结构化审查。生产发布前仍须核实支持证据、准确表述、日期、角色、身份对应关系及公开发布许可。",
       credentialsPending: "待核实",
       credentials: [
         {
@@ -498,7 +550,33 @@ export const copy = {
         {
           title: "专业 affiliations",
           detail: "核实组织名称、会员类别、当前状态、日期及获准使用的称谓。"
+        },
+        {
+          title: "律师执业资格与专业状态",
+          detail: "一份刚果法律出版物和一个次级目录似乎将一名 Mbuya Tezzeta 识别为与金沙萨/Gombe 律师协会有关的律师。发布前必须确认是否为同一人并核实当前状态。"
         }
+      ],
+      thoughtLeadershipTitle: "国际法领域的思想领导力",
+      thoughtLeadershipText: "所提供材料描述了国际经济法、仲裁、投资、环境保护以及非洲法律和商业环境交叉领域的工作。这些陈述仍需进行来源和身份审查。",
+      publicationsTitle: "精选出版成果",
+      publications: [
+        "When Confidentiality in International Commercial Arbitration (ICA) is not Salutary: African Perspectives on Transparency — Journal of Civil & Legal Sciences，第 11 卷第 11 期（2022 年）。",
+        "Reinforcing the Definition of Ecocide Proposed by the Independent Expert Panel (IEP) in Light of the Niger Delta Case: Opportunities and Challenges — Journal of Civil & Legal Sciences，第 11 卷第 11 期（2022 年）。"
+      ],
+      engagementTitle: "会议与学术参与",
+      engagements: [
+        "2022 年 Vienna Arbitration Days —— 参与记录待核实。",
+        "2024 年 African International Economic Law Network 关于非洲大陆自由贸易区争议解决议定书的网络研讨会 —— 演讲者身份和活动记录待核实。"
+      ],
+      developmentTitle: "专业与学术发展",
+      development: [
+        "国际商事仲裁",
+        "国际投资法与争议解决",
+        "双边投资条约",
+        "企业与人权",
+        "自然资源治理",
+        "气候变化法",
+        "非洲采矿与自然资源框架"
       ],
       principlesTitle: "运营原则",
       principles: [
@@ -630,8 +708,8 @@ copy["zh-Hant"] = {
       "採掘業",
       "國際經濟法"
     ],
-    credentialsTitle: "資歷與認可",
-    credentialsIntro: "以下可信度類別來自所提供的材料，僅供結構化審查。正式發布前仍須核實支持證據、準確描述、日期、角色及公開發布許可。",
+    credentialsTitle: "思想領導力與認可",
+    credentialsIntro: "以下出版成果、研究、會議參與、認可及專業狀態線索來自所提供的材料，僅供結構化審查。正式發布前仍須核實支持證據、準確描述、日期、角色、身分對應關係及公開發布許可。",
     credentialsPending: "有待核實",
     credentials: [
       {
@@ -653,7 +731,33 @@ copy["zh-Hant"] = {
       {
         title: "專業聯繫",
         detail: "核實組織名稱、會員類別、目前狀態、日期及獲准使用的稱謂。"
+      },
+      {
+        title: "律師執業資格與專業狀態",
+        detail: "一份剛果法律出版物及一個次級名錄似乎將一名 Mbuya Tezzeta 識別為與金沙薩/Gombe 律師協會有關的律師。發布前必須確認是否為同一人並核實目前狀態。"
       }
+    ],
+    thoughtLeadershipTitle: "國際法領域的思想領導力",
+    thoughtLeadershipText: "所提供材料描述了國際經濟法、仲裁、投資、環境保護以及非洲法律和商業環境交叉領域的工作。這些陳述仍需進行來源和身分審查。",
+    publicationsTitle: "精選出版成果",
+    publications: [
+      "When Confidentiality in International Commercial Arbitration (ICA) is not Salutary: African Perspectives on Transparency — Journal of Civil & Legal Sciences，第 11 卷第 11 期（2022 年）。",
+      "Reinforcing the Definition of Ecocide Proposed by the Independent Expert Panel (IEP) in Light of the Niger Delta Case: Opportunities and Challenges — Journal of Civil & Legal Sciences，第 11 卷第 11 期（2022 年）。"
+    ],
+    engagementTitle: "會議與學術參與",
+    engagements: [
+      "2022 年 Vienna Arbitration Days —— 參與記錄有待核實。",
+      "2024 年 African International Economic Law Network 關於非洲大陸自由貿易區爭議解決議定書的網絡研討會 —— 講者身分及活動記錄有待核實。"
+    ],
+    developmentTitle: "專業與學術發展",
+    development: [
+      "國際商事仲裁",
+      "國際投資法與爭議解決",
+      "雙邊投資條約",
+      "企業與人權",
+      "自然資源治理",
+      "氣候變化法",
+      "非洲採礦與自然資源框架"
     ],
     principlesTitle: "運作原則",
     principles: [

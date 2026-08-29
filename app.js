@@ -542,6 +542,27 @@ function aboutView() {
               .join("")}
           </ul>
         </div>
+        <div class="thought-leadership-section">
+          <div class="section-heading">
+            <p class="eyebrow">${escapeHtml(c.thoughtLeadershipTitle)}</p>
+            <h2>${escapeHtml(c.thoughtLeadershipTitle)}</h2>
+            <p>${escapeHtml(c.thoughtLeadershipText)}</p>
+          </div>
+          <div class="thought-leadership-grid">
+            <article>
+              <h3>${escapeHtml(c.publicationsTitle)}</h3>
+              <ul>${c.publications.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+            </article>
+            <article>
+              <h3>${escapeHtml(c.engagementTitle)}</h3>
+              <ul>${c.engagements.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+            </article>
+            <article>
+              <h3>${escapeHtml(c.developmentTitle)}</h3>
+              <ul>${c.development.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+            </article>
+          </div>
+        </div>
         <div class="principles">
           <div>
             <p class="eyebrow">${escapeHtml(c.principlesTitle)}</p>

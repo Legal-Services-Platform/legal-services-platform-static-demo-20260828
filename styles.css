@@ -215,6 +215,34 @@ svg {
   color: var(--muted);
 }
 
+.thought-leadership-section {
+  border-top: 1px solid var(--line);
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+}
+
+.thought-leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.thought-leadership-grid article {
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+
+.thought-leadership-grid ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+
+.thought-leadership-grid li + li {
+  margin-top: 0.8rem;
+}
+
 .header-inner {
   min-height: 74px;
   display: flex;
@@ -1259,6 +1287,7 @@ h3 {
   .guidance-layout,
   .contact-layout,
   .credentials-section,
+  .thought-leadership-grid,
   .principles,
   .admin-grid,
   .split-table-section {
