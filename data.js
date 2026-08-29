@@ -14,6 +14,12 @@ export const platformConfig = {
         status: "in_review",
         qualifiedReviewerApproved: false,
         scriptAndRegionsApproved: false
+      },
+      "zh-Hant": {
+        status: "in_review",
+        qualifiedReviewerApproved: false,
+        scriptAndRegionsApproved: false,
+        targetRegionsApproved: false
       }
     }
   },
@@ -76,7 +82,7 @@ export const launchGates = [
   },
   {
     id: "localization",
-    title: "Approve French and Chinese meaning-sensitive content",
+    title: "Approve French, Simplified Chinese, and Traditional Chinese meaning-sensitive content",
     owner: "Qualified reviewers",
     status: "open",
     blocking: true
@@ -346,6 +352,76 @@ export const services = [
     }
   }
 ];
+
+const traditionalChineseServiceTranslations = {
+  "service-orientation": {
+    title: "[預留內容] 初步法律服務導向",
+    summary: "透過結構化的初步諮詢，協助識別可能合適的服務途徑。",
+    audience: "希望進行初步溝通的個人或機構。",
+    included: "預約的初步溝通及後續步驟說明。",
+    excluded: "不承諾代理、期限保障或任何結果。"
+  },
+  "service-document-review": {
+    title: "[預留內容] 文件審閱服務",
+    summary: "用於展示服務範圍、排除事項及資料收集流程的可設定服務記錄。",
+    audience: "持有可能需要專業審閱文件的使用者。",
+    included: "發布前必須批准具體範圍及交付內容。",
+    excluded: "此開發測試內容不構成法律服務要約。"
+  },
+  "service-international-arbitration": {
+    title: "國際仲裁",
+    summary: "為複雜的跨境商事爭議、仲裁程序及爭議解決事項提供策略支援。",
+    audience: "涉及跨境爭議的國際企業、投資者、律師事務所及組織。",
+    included: "仲裁策略與案件評估、法律研究、條款審閱、程序分析及書面陳述支援。",
+    excluded: "不承諾代理、超出獲批文字的保密安排、期限保障或任何結果。"
+  },
+  "service-investment-law": {
+    title: "國際投資法",
+    summary: "就國際投資、投資條約、投資者保障及投資者與國家爭議提供研究與諮詢支援。",
+    audience: "外國投資者、跨國公司、非洲企業，以及就國際投資提供建議的法律團隊。",
+    included: "投資條約研究、條約解釋、投資保障分析，以及影響外國投資的國家措施評估。",
+    excluded: "不承諾提出申索、取得救濟、提供代理或達成投資結果。"
+  },
+  "service-cross-border-business": {
+    title: "以非洲為重點的跨境業務",
+    summary: "為進入非洲市場、管理國際交易及應對跨境法律風險的企業提供實務法律分析。",
+    audience: "評估或經營非洲跨境業務的企業、投資者及法律團隊。",
+    included: "跨境交易研究、國際合約審閱、法律選擇與司法管轄權分析，以及區域整合背景研究。",
+    excluded: "不保證交易獲准、完整或取得商業成功。"
+  },
+  "service-extractive-industries": {
+    title: "採掘業與自然資源",
+    summary: "就採礦、自然資源、投資爭議、環境責任，以及企業與人權議題進行專業研究。",
+    audience: "投資者、採礦及採掘企業、法律團隊，以及評估非洲自然資源市場的組織。",
+    included: "研究與分析合約、監管、投資、環境及責任相關考量。",
+    excluded: "不提供認證、監管批准、環境許可或結果保證。"
+  },
+  "service-business-human-rights": {
+    title: "企業與人權",
+    summary: "就國際商業活動、人權框架及負責任商業行為進行研究與法律分析。",
+    audience: "處理國際業務中人權議題的組織及法律團隊。",
+    included: "分析企業責任、採掘業影響、環境與社會責任，以及適用的國際標準。",
+    excluded: "不提供合規認證，亦不保證任何商業做法符合所有適用要求。"
+  },
+  "service-afcfta-trade": {
+    title: "非洲大陸自由貿易區與非洲貿易法",
+    summary: "就非洲貿易、投資、經濟整合及新興非洲大陸自由貿易區法律框架提供研究與諮詢。",
+    audience: "在非洲進行跨境商業活動的企業、投資者、機構及法律團隊。",
+    included: "研究非洲大陸自由貿易區相關發展、區域爭議解決機制及國際經濟法。",
+    excluded: "不承諾市場准入、貿易途徑或監管立場可行或已獲批准。"
+  },
+  "service-international-research": {
+    title: "法律研究與國際法諮詢",
+    summary: "為複雜的國際法事項提供高層次法律研究、比較分析、法律備忘錄及專業支援。",
+    audience: "需要國際法專業知識的律師事務所、企業、學者、機構及組織。",
+    included: "國際法及比較法研究、法律備忘錄、專業分析，以及訴訟或仲裁研究支援。",
+    excluded: "不保證研究涵蓋所有事項、反映每個司法管轄區的最新情況，亦不能取代合資格的當地法律意見。"
+  }
+};
+
+for (const service of services) {
+  service.translations["zh-Hant"] = traditionalChineseServiceTranslations[service.id];
+}
 
 export const products = [
   {

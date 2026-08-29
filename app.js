@@ -93,7 +93,8 @@ function navLink(route, label) {
 
 function layout(content) {
   const c = t();
-  document.documentElement.lang = state.locale === "zh" ? "zh-Hans" : state.locale;
+  document.documentElement.lang =
+    state.locale === "zh" ? "zh-Hans" : state.locale === "zh-Hant" ? "zh-Hant" : state.locale;
   document.title = `${routeTitle()} | Legal Services Platform`;
   return `
     <div class="preview-banner">${escapeHtml(c.banner)}</div>
@@ -172,12 +173,12 @@ function homeView() {
         <p class="hero-copy">${escapeHtml(c.home.intro)}</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#/services">${icon("calendar")}${escapeHtml(c.home.book)}</a>
-          <a class="button button-secondary" href="#/library">${icon("book")}${escapeHtml(c.home.explore)}</a>
+          <a class="button button-secondary" href="#/services">${icon("book")}${escapeHtml(c.home.explore)}</a>
           <a class="text-link" href="#/guidance">${escapeHtml(c.home.guide)}${icon("arrow")}</a>
         </div>
         <div class="trust-row">
           <span>${icon("shield")} Source-governed</span>
-          <span>${icon("globe")} EN / FR / 中文</span>
+          <span>${icon("globe")} EN / FR / 简体中文 / 繁體中文</span>
           <span>${icon("lock")} Privacy by design</span>
         </div>
       </div>
@@ -480,7 +481,30 @@ function aboutView() {
         <div class="profile-highlight">
           <p class="eyebrow">${escapeHtml(c.profileTitle)}</p>
           <h2>${escapeHtml(c.profileTitle)}</h2>
-          <p>${escapeHtml(c.profileText)}</p>
+          <p class="profile-tagline">${escapeHtml(c.profileTagline)}</p>
+          ${c.profileParagraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+        </div>
+        <div class="expertise-strip">
+          <p class="eyebrow">${escapeHtml(c.expertiseTitle)}</p>
+          <h2>${escapeHtml(c.expertiseTitle)}</h2>
+          <div class="expertise-list">
+            ${c.expertise.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
+          </div>
+        </div>
+        <div class="credentials-section">
+          <div>
+            <p class="eyebrow">${escapeHtml(c.credentialsTitle)}</p>
+            <h2>${escapeHtml(c.credentialsTitle)}</h2>
+            <p>${escapeHtml(c.credentialsIntro)}</p>
+          </div>
+          <ul class="credentials-list">
+            ${c.credentials
+              .map(
+                (item) =>
+                  `<li><div><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.detail)}</p></div><span class="badge badge-warning">${escapeHtml(c.credentialsPending)}</span></li>`
+              )
+              .join("")}
+          </ul>
         </div>
         <div class="principles">
           <div>

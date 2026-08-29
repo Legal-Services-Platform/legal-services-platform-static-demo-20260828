@@ -1,4 +1,4 @@
-export const SUPPORTED_LOCALES = Object.freeze(["en", "fr", "zh"]);
+export const SUPPORTED_LOCALES = Object.freeze(["en", "fr", "zh", "zh-Hant"]);
 export const DEFAULT_LOCALE = "en";
 
 export function normalizeLocale(locale) {

@@ -13,7 +13,7 @@ export const copy = {
     banner: "Development preview: professional identity, jurisdictions, service claims, translations, products, prices, and production providers are not yet approved.",
     home: {
       eyebrow: "International legal services platform",
-      title: "International Law. African Perspective. Strategic Results.",
+      title: "International Law. African Perspective. Strategic Insight.",
       intro: "Specialized legal research, international arbitration, investment-law, and cross-border advisory services for businesses, investors, law firms, and organizations navigating Africa and international markets.",
       book: "Book a consultation",
       explore: "Explore our services",
@@ -91,11 +91,51 @@ export const copy = {
       disclaimer: "This is general development-demo information. It does not create a professional relationship and is not a substitute for legal advice."
     },
     about: {
-      title: "About",
-      text: "The public foundation is designed for a verified professional or organization. Identity, credentials, authorizations, and jurisdictions must be supplied and approved before production publication.",
+      title: "About Tezzeta Mbuya N'Gungwa",
+      text: "International law research. African perspective.",
       profileTitle: "Meet Tezzeta Mbuya N'Gungwa",
-      profileText: "International law scholar, legal researcher, and dispute-resolution specialist focused on international investment law, commercial arbitration, and the evolving legal landscape of Africa.",
+      profileText: "Legal researcher, international law specialist, and dispute-resolution specialist focused on international investment, commercial arbitration, international economic law, business and human rights, and Africa’s evolving legal landscape.",
       profileCta: "Learn More About Tezzeta",
+      profileTagline: "Research-Driven. Internationally Focused. Africa-Centered.",
+      profileParagraphs: [
+        "Tezzeta Mbuya N'Gungwa is a legal researcher, international law specialist, and dispute-resolution specialist whose work focuses on the intersection of international investment, commercial arbitration, international economic law, business and human rights, and Africa’s evolving legal landscape.",
+        "With a particular focus on Africa, Tezzeta brings an internationally informed perspective to complex cross-border legal and commercial matters. Her work explores how international dispute-resolution mechanisms can better respond to the realities, opportunities, and challenges of African markets.",
+        "Whether supporting a business, investor, law firm, or organization, Tezzeta combines legal research with practical strategic analysis to support informed decisions on complex international legal issues."
+      ],
+      expertiseTitle: "Areas of Expertise",
+      expertise: [
+        "International Arbitration",
+        "Investment Law",
+        "African Trade & AfCFTA",
+        "Business & Human Rights",
+        "Extractive Industries",
+        "International Economic Law"
+      ],
+      credentialsTitle: "Credentials & Recognition",
+      credentialsIntro: "Source-supplied credibility categories are shown for structured review. Supporting evidence, exact descriptions, dates, roles, and permission to publish remain required before production publication.",
+      credentialsPending: "Verification pending",
+      credentials: [
+        {
+          title: "University of Essex research",
+          detail: "Confirm the research title, institutional relationship, dates, status, and approved wording."
+        },
+        {
+          title: "ICC scholarship recognition",
+          detail: "Confirm the award name, awarding body, date, basis, and permitted public description."
+        },
+        {
+          title: "Publications",
+          detail: "Confirm titles, authorship, publishers or journals, publication dates, and stable references."
+        },
+        {
+          title: "Conferences",
+          detail: "Confirm event names, dates, organizers, and whether participation was as speaker, presenter, panelist, or attendee."
+        },
+        {
+          title: "Professional affiliations",
+          detail: "Confirm organization names, membership category, current status, dates, and permitted designations."
+        }
+      ],
       principlesTitle: "Operating principles",
       principles: [
         "Verified claims only.",
@@ -146,7 +186,7 @@ export const copy = {
     banner: "Aperçu de développement : l’identité professionnelle, les juridictions, les affirmations sur les services, les traductions, les produits, les prix et les fournisseurs de production ne sont pas encore approuvés.",
     home: {
       eyebrow: "Plateforme internationale de services juridiques",
-      title: "Droit international. Perspective africaine. Résultats stratégiques.",
+      title: "Droit international. Perspective africaine. Éclairage stratégique.",
       intro: "Recherche juridique spécialisée, arbitrage international, droit des investissements et conseil transfrontalier pour les entreprises, investisseurs, cabinets et organisations opérant en Afrique et sur les marchés internationaux.",
       book: "Réserver une consultation",
       explore: "Explorer les ressources",
@@ -224,11 +264,51 @@ export const copy = {
       disclaimer: "Il s’agit d’informations générales de démonstration. Elles ne créent pas de relation professionnelle et ne remplacent pas un conseil juridique."
     },
     about: {
-      title: "À propos",
-      text: "La base publique est conçue pour un professionnel ou une organisation vérifiée. L’identité, les titres, les autorisations et les juridictions doivent être fournis et approuvés avant publication.",
+      title: "À propos de Tezzeta Mbuya N'Gungwa",
+      text: "Recherche en droit international. Perspective africaine.",
       profileTitle: "Découvrez Tezzeta Mbuya N'Gungwa",
-      profileText: "Chercheuse en droit international, chercheuse juridique et spécialiste du règlement des différends, axée sur le droit international des investissements, l’arbitrage commercial et l’évolution du paysage juridique africain.",
+      profileText: "Chercheuse juridique, spécialiste du droit international et du règlement des différends, axée sur l’investissement international, l’arbitrage commercial, le droit économique international, les entreprises et les droits humains, ainsi que l’évolution du paysage juridique africain.",
       profileCta: "En savoir plus sur Tezzeta",
+      profileTagline: "Fondée sur la recherche. Tournée vers l’international. Centrée sur l’Afrique.",
+      profileParagraphs: [
+        "Tezzeta Mbuya N'Gungwa est chercheuse juridique et spécialiste du droit international et du règlement des différends. Ses travaux portent sur les liens entre l’investissement international, l’arbitrage commercial, le droit économique international, les entreprises et les droits humains, et l’évolution du paysage juridique africain.",
+        "Avec une attention particulière portée à l’Afrique, Tezzeta apporte une perspective nourrie par le contexte international aux questions juridiques et commerciales transfrontalières complexes. Ses travaux examinent comment les mécanismes internationaux de règlement des différends peuvent mieux répondre aux réalités, aux possibilités et aux défis des marchés africains.",
+        "Dans le cadre d’un soutien à une entreprise, un investisseur, un cabinet d’avocats ou une organisation, Tezzeta associe recherche juridique et analyse stratégique pratique afin d’éclairer les décisions relatives à des questions complexes de droit international."
+      ],
+      expertiseTitle: "Domaines d’expertise",
+      expertise: [
+        "Arbitrage international",
+        "Droit des investissements",
+        "Commerce africain et ZLECAf",
+        "Entreprises et droits humains",
+        "Industries extractives",
+        "Droit économique international"
+      ],
+      credentialsTitle: "Titres et reconnaissance",
+      credentialsIntro: "Ces catégories de crédibilité, fournies comme éléments de travail, sont présentées pour une revue structurée. Les preuves, descriptions exactes, dates, rôles et autorisations de publication restent requis avant toute mise en production.",
+      credentialsPending: "Vérification en attente",
+      credentials: [
+        {
+          title: "Recherche à l’Université d’Essex",
+          detail: "Confirmer le sujet de recherche, le lien institutionnel, les dates, le statut et la formulation approuvée."
+        },
+        {
+          title: "Reconnaissance liée à une bourse de l’ICC",
+          detail: "Confirmer le nom de la distinction, l’organisme attributaire, la date, le fondement et la description publique autorisée."
+        },
+        {
+          title: "Publications",
+          detail: "Confirmer les titres, la qualité d’auteur, les éditeurs ou revues, les dates de publication et les références stables."
+        },
+        {
+          title: "Conférences",
+          detail: "Confirmer les événements, dates, organisateurs et le rôle exact : intervenante, présentatrice, panéliste ou participante."
+        },
+        {
+          title: "Affiliations professionnelles",
+          detail: "Confirmer les organisations, la catégorie d’adhésion, le statut actuel, les dates et les désignations autorisées."
+        }
+      ],
       principlesTitle: "Principes de fonctionnement",
       principles: [
         "Uniquement des affirmations vérifiées.",
@@ -279,7 +359,7 @@ export const copy = {
     banner: "开发预览：专业身份、司法管辖范围、服务陈述、翻译、产品、价格和生产服务商尚未获批。",
     home: {
       eyebrow: "国际法律服务平台",
-      title: "国际法。非洲视角。战略成果。",
+      title: "国际法。非洲视角。战略洞见。",
       intro: "为在非洲及国际市场开展业务的企业、投资者、律师事务所和组织提供国际法律研究、国际仲裁、投资法和跨境咨询支持。",
       book: "预约咨询",
       explore: "浏览资源",
@@ -357,11 +437,51 @@ export const copy = {
       disclaimer: "这是开发演示的一般信息，不建立专业关系，也不能替代法律意见。"
     },
     about: {
-      title: "关于",
-      text: "此公共平台基础面向经过验证的专业人士或机构。生产发布前必须提供并批准身份、资质、授权和司法管辖范围。",
+      title: "关于 Tezzeta Mbuya N'Gungwa",
+      text: "国际法研究。非洲视角。",
       profileTitle: "认识 Tezzeta Mbuya N'Gungwa",
-      profileText: "国际法学者、法律研究员及争议解决专家，专注于国际投资法、商事仲裁以及不断发展的非洲法律环境。",
+      profileText: "法律研究员、国际法及争议解决专业人士，重点关注国际投资、商事仲裁、国际经济法、企业与人权，以及不断发展的非洲法律环境。",
       profileCta: "进一步了解 Tezzeta",
+      profileTagline: "以研究为基础。立足国际。聚焦非洲。",
+      profileParagraphs: [
+        "Tezzeta Mbuya N'Gungwa 是一名法律研究员、国际法及争议解决专业人士。她的工作重点关注国际投资、商事仲裁、国际经济法、企业与人权，以及不断发展的非洲法律环境之间的交叉领域。",
+        "Tezzeta 尤其关注非洲，并以国际化视角研究复杂的跨境法律与商业事项。她的工作探讨国际争议解决机制如何更好地回应非洲市场的现实、机遇与挑战。",
+        "在为企业、投资者、律师事务所或组织提供支持时，Tezzeta 将法律研究与实务战略分析相结合，以协助相关方就复杂的国际法律问题作出知情决定。"
+      ],
+      expertiseTitle: "专业领域",
+      expertise: [
+        "国际仲裁",
+        "投资法",
+        "非洲贸易与非洲大陆自由贸易区",
+        "企业与人权",
+        "采掘业",
+        "国际经济法"
+      ],
+      credentialsTitle: "资历与认可",
+      credentialsIntro: "以下可信度类别来自所提供的材料，仅用于结构化审查。生产发布前仍须核实支持证据、准确表述、日期、角色以及公开发布许可。",
+      credentialsPending: "待核实",
+      credentials: [
+        {
+          title: "埃塞克斯大学研究",
+          detail: "核实研究题目、与该机构的关系、日期、状态及获准使用的表述。"
+        },
+        {
+          title: "ICC 奖学金相关认可",
+          detail: "核实奖项名称、授予机构、日期、依据及获准公开使用的描述。"
+        },
+        {
+          title: "出版成果",
+          detail: "核实标题、作者身份、出版社或期刊、出版日期及稳定引用信息。"
+        },
+        {
+          title: "会议活动",
+          detail: "核实活动名称、日期、主办方及具体身份，例如演讲者、报告人、讨论嘉宾或参会者。"
+        },
+        {
+          title: "专业 affiliations",
+          detail: "核实组织名称、会员类别、当前状态、日期及获准使用的称谓。"
+        }
+      ],
       principlesTitle: "运营原则",
       principles: [
         "仅使用经过验证的陈述。",
@@ -397,5 +517,125 @@ export const copy = {
       privacy: "隐私决策待审查",
       accessibility: "无障碍目标：WCAG 2.2 AA"
     }
+  }
+};
+
+copy["zh-Hant"] = {
+  ...copy.zh,
+  localeName: "繁體中文",
+  nav: {
+    home: "首頁",
+    services: "服務",
+    library: "法律資源庫",
+    guidance: "初步資訊",
+    about: "關於",
+    contact: "聯絡",
+    admin: "上線控制"
+  },
+  banner: "開發預覽：專業身分、司法管轄區、服務陳述、翻譯、產品、價格及正式環境供應商尚未獲得批准。",
+  home: {
+    ...copy.zh.home,
+    eyebrow: "國際法律服務平台",
+    title: "國際法。非洲視角。策略洞見。",
+    intro: "為在非洲及國際市場運作的企業、投資者、律師事務所與組織，提供專業法律研究、國際仲裁、投資法及跨境諮詢支援。",
+    book: "預約諮詢",
+    explore: "探索我們的服務",
+    guide: "取得初步資訊",
+    sectionTitle: "選擇合適的起點",
+    servicesTitle: "專業服務",
+    servicesText: "查看明確界定的範圍、排除事項、語言及預約供應情況。",
+    libraryTitle: "法律資源庫",
+    libraryText: "在獲得批准後，瀏覽指南、範本及檢查清單。",
+    guidanceTitle: "受控初步資訊",
+    guidanceText: "回答結構化問題；僅在有獲批來源涵蓋時提供資訊。",
+    processTitle: "平台運作方式",
+    process: [
+      "確認所需的服務、資源或資訊。",
+      "查看範圍、限制及適用司法管轄區。",
+      "僅提供所選流程所需的資訊。",
+      "接收確認、資源或經適當限定的下一步。"
+    ]
+  },
+  common: {
+    ...copy.zh.common,
+    learnMore: "查看詳情",
+    search: "搜尋",
+    all: "所有類別",
+    unavailable: "尚未提供",
+    placeholder: "開發測試內容",
+    back: "返回",
+    submit: "提交",
+    noResults: "沒有相符結果。",
+    required: "必填",
+    status: "狀態"
+  },
+  services: {
+    title: "服務",
+    intro: "服務記錄可供設定；在範圍及專業審查完成前，不會於正式環境發布。",
+    audience: "適用對象",
+    included: "包括內容",
+    excluded: "不包括內容",
+    booking: "提出開發環境預約",
+    disabled: "服務獲批前暫停預約"
+  },
+  about: {
+    title: "關於 Tezzeta Mbuya N'Gungwa",
+    text: "國際法研究。非洲視角。",
+    profileTitle: "認識 Tezzeta Mbuya N'Gungwa",
+    profileText: "法律研究員、國際法及爭議解決專業人士，重點關注國際投資、商事仲裁、國際經濟法、企業與人權，以及持續發展的非洲法律環境。",
+    profileCta: "進一步了解 Tezzeta",
+    profileTagline: "以研究為本。立足國際。聚焦非洲。",
+    profileParagraphs: [
+      "Tezzeta Mbuya N'Gungwa 是一名法律研究員、國際法及爭議解決專業人士。她的工作重點關注國際投資、商事仲裁、國際經濟法、企業與人權，以及持續發展的非洲法律環境之間的交會領域。",
+      "Tezzeta 尤其關注非洲，並以國際視角研究複雜的跨境法律與商業事項。她的工作探討國際爭議解決機制如何更有效回應非洲市場的現實、機遇與挑戰。",
+      "在為企業、投資者、律師事務所或組織提供支援時，Tezzeta 將法律研究與實務策略分析結合，以協助相關方就複雜的國際法律問題作出知情決定。"
+    ],
+    expertiseTitle: "專業領域",
+    expertise: [
+      "國際仲裁",
+      "投資法",
+      "非洲貿易與非洲大陸自由貿易區",
+      "企業與人權",
+      "採掘業",
+      "國際經濟法"
+    ],
+    credentialsTitle: "資歷與認可",
+    credentialsIntro: "以下可信度類別來自所提供的材料，僅供結構化審查。正式發布前仍須核實支持證據、準確描述、日期、角色及公開發布許可。",
+    credentialsPending: "有待核實",
+    credentials: [
+      {
+        title: "艾塞克斯大學研究",
+        detail: "核實研究題目、與該機構的關係、日期、狀態及獲准使用的描述。"
+      },
+      {
+        title: "ICC 獎學金相關認可",
+        detail: "核實獎項名稱、授予機構、日期、依據及獲准公開使用的描述。"
+      },
+      {
+        title: "出版成果",
+        detail: "核實標題、作者身分、出版社或期刊、出版日期及穩定引用資料。"
+      },
+      {
+        title: "會議活動",
+        detail: "核實活動名稱、日期、主辦單位及確切身分，例如講者、發表人、與談人或與會者。"
+      },
+      {
+        title: "專業聯繫",
+        detail: "核實組織名稱、會員類別、目前狀態、日期及獲准使用的稱謂。"
+      }
+    ],
+    principlesTitle: "運作原則",
+    principles: [
+      "僅使用經核實的陳述。",
+      "明確區分資訊、產品與專業服務。",
+      "只收集必要資料。",
+      "以來源治理人工智能並安全拒答。",
+      "提供無障礙多語言體驗。"
+    ]
+  },
+  footer: {
+    notice: "僅供開發使用。不提供法律意見、代理、保證或已獲批准的商業要約。",
+    privacy: "私隱決策有待審查",
+    accessibility: "無障礙目標：WCAG 2.2 AA"
   }
 };
