@@ -130,6 +130,111 @@ export const services = [
         excluded: "此演示内容不构成法律服务要约。"
       }
     }
+  },
+  {
+    id: "service-international-arbitration",
+    category: "international-law",
+    fixture: true,
+    bookingEnabled: false,
+    translations: {
+      en: {
+        title: "International Arbitration",
+        summary: "Strategic support for complex cross-border commercial disputes, arbitration proceedings, and dispute-resolution matters.",
+        audience: "International businesses, investors, law firms, and organizations involved in cross-border disputes.",
+        included: "Arbitration strategy and case assessment, legal research, clause review, procedural analysis, and written submissions support.",
+        excluded: "No promise of representation, confidentiality beyond approved wording, deadline protection, or outcome."
+      }
+    }
+  },
+  {
+    id: "service-investment-law",
+    category: "international-law",
+    fixture: true,
+    bookingEnabled: false,
+    translations: {
+      en: {
+        title: "International Investment Law",
+        summary: "Research and advisory support concerning international investments, investment treaties, investor protection, and investor-State disputes.",
+        audience: "Foreign investors, multinational companies, African businesses, and legal teams advising on international investments.",
+        included: "Investment treaty research, treaty interpretation, investment-protection analysis, and assessment of State measures affecting foreign investments.",
+        excluded: "No promise of a claim, remedy, representation, or investment outcome."
+      }
+    }
+  },
+  {
+    id: "service-cross-border-business",
+    category: "international-law",
+    fixture: true,
+    bookingEnabled: false,
+    translations: {
+      en: {
+        title: "Africa-Focused Cross-Border Business",
+        summary: "Practical legal analysis for companies entering African markets, managing international transactions, and navigating cross-border legal risks.",
+        audience: "Businesses, investors, and legal teams evaluating or operating across African markets.",
+        included: "Cross-border transaction research, international contract review, choice-of-law and jurisdiction analysis, and regional integration context.",
+        excluded: "No assurance that a transaction is permitted, complete, or commercially successful."
+      }
+    }
+  },
+  {
+    id: "service-extractive-industries",
+    category: "international-law",
+    fixture: true,
+    bookingEnabled: false,
+    translations: {
+      en: {
+        title: "Extractive Industries & Natural Resources",
+        summary: "Specialized research concerning mining, natural resources, investment disputes, environmental responsibility, and business and human rights.",
+        audience: "Investors, mining and extractive companies, legal teams, and organizations evaluating African natural-resource markets.",
+        included: "Research and analysis of contractual, regulatory, investment, environmental, and responsibility considerations.",
+        excluded: "No certification, regulatory approval, environmental clearance, or outcome guarantee."
+      }
+    }
+  },
+  {
+    id: "service-business-human-rights",
+    category: "international-law",
+    fixture: true,
+    bookingEnabled: false,
+    translations: {
+      en: {
+        title: "Business & Human Rights",
+        summary: "Research and legal analysis concerning international business activity, human-rights frameworks, and responsible business conduct.",
+        audience: "Organizations and legal teams navigating human-rights considerations in international business.",
+        included: "Analysis of corporate responsibility, extractive-industry impacts, environmental and social responsibility, and applicable international standards.",
+        excluded: "No certification of compliance or assurance that a business practice meets every applicable requirement."
+      }
+    }
+  },
+  {
+    id: "service-afcfta-trade",
+    category: "international-law",
+    fixture: true,
+    bookingEnabled: false,
+    translations: {
+      en: {
+        title: "AfCFTA & African Trade Law",
+        summary: "Research and advisory services concerning African trade, investment, economic integration, and emerging AfCFTA legal frameworks.",
+        audience: "Businesses, investors, institutions, and legal teams navigating cross-border commerce in Africa.",
+        included: "Research on AfCFTA-related developments, regional dispute-resolution mechanisms, and international economic law.",
+        excluded: "No promise that a market entry, trade route, or regulatory position is available or approved."
+      }
+    }
+  },
+  {
+    id: "service-international-research",
+    category: "research",
+    fixture: true,
+    bookingEnabled: false,
+    translations: {
+      en: {
+        title: "Legal Research & International Law Consultancy",
+        summary: "High-level legal research, comparative analysis, memoranda, and specialist support for complex international-law matters.",
+        audience: "Law firms, businesses, academics, institutions, and organizations requiring specialized international-law expertise.",
+        included: "International and comparative legal research, memoranda, expert analysis, and litigation or arbitration research support.",
+        excluded: "No guarantee that research is exhaustive, current for every jurisdiction, or a substitute for qualified local advice."
+      }
+    }
   }
 ];
 

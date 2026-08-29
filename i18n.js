@@ -13,10 +13,10 @@ export const copy = {
     banner: "Development preview: professional identity, jurisdictions, products, prices, and production providers are not yet approved.",
     home: {
       eyebrow: "International legal services platform",
-      title: "Professional services, practical resources, and carefully controlled guidance.",
-      intro: "A multilingual foundation designed to help users understand available paths without blurring the line between general information and professional advice.",
+      title: "International Law. African Perspective. Strategic Results.",
+      intro: "Specialized legal research, international arbitration, investment-law, and cross-border advisory services for businesses, investors, law firms, and organizations navigating Africa and international markets.",
       book: "Book a consultation",
-      explore: "Explore resources",
+      explore: "Explore our services",
       guide: "Get preliminary information",
       sectionTitle: "Choose the right starting point",
       servicesTitle: "Professional services",
@@ -91,8 +91,11 @@ export const copy = {
       disclaimer: "This is general development-demo information. It does not create a professional relationship and is not a substitute for legal advice."
     },
     about: {
-      title: "About the platform",
+      title: "About",
       text: "The public foundation is designed for a verified professional or organization. Identity, credentials, authorizations, and jurisdictions must be supplied and approved before production publication.",
+      profileTitle: "Meet Tezzeta Mbuya N'Gungwa",
+      profileText: "International law scholar, legal researcher, and dispute-resolution specialist focused on international investment law, commercial arbitration, and the evolving legal landscape of Africa.",
+      profileCta: "Learn More About Tezzeta",
       principlesTitle: "Operating principles",
       principles: [
         "Verified claims only.",

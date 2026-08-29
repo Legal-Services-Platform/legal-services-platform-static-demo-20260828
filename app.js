@@ -205,6 +205,14 @@ function homeView() {
         ${pathCard("compass", c.home.guidanceTitle, c.home.guidanceText, "guidance")}
       </div>
     </section>
+    <section class="section profile-band">
+      <div class="section-heading">
+        <p class="eyebrow">${escapeHtml(c.about.profileTitle)}</p>
+        <h2>${escapeHtml(c.about.profileTitle)}</h2>
+      </div>
+      <p class="profile-copy">${escapeHtml(c.about.profileText)}</p>
+      <a class="text-link" href="#/about">${escapeHtml(c.about.profileCta)}${icon("arrow")}</a>
+    </section>
     <section class="process-band">
       <div class="section-heading">
         <p class="eyebrow">01 — 04</p>
@@ -241,7 +249,7 @@ function servicesView() {
     c.services.intro,
     `
       <section class="section compact-top">
-        ${catalogControls("service", state.serviceSearch, state.serviceCategory, ["advisory", "documents"])}
+        ${catalogControls("service", state.serviceSearch, state.serviceCategory, ["advisory", "documents", "international-law", "research"])}
         <div class="catalog-grid" id="service-results" aria-live="polite">
           ${
             filtered.length
@@ -469,6 +477,12 @@ function aboutView() {
     c.text,
     `
       <section class="section compact-top">
+        <div class="profile-highlight">
+          <p class="eyebrow">${escapeHtml(c.profileTitle)}</p>
+          <h2>${escapeHtml(c.profileTitle)}</h2>
+          <p>${escapeHtml(c.profileText)}</p>
+          <a class="button button-secondary button-small" href="#/contact">${escapeHtml(c.profileCta)}${icon("arrow")}</a>
+        </div>
         <div class="principles">
           <div>
             <p class="eyebrow">${escapeHtml(c.principlesTitle)}</p>
