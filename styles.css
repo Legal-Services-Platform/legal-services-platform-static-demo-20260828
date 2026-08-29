@@ -215,6 +215,31 @@ svg {
   color: var(--muted);
 }
 
+.evidence-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem 0.8rem;
+  margin: 0.7rem 0 0;
+  font-size: 0.78rem;
+}
+
+.evidence-fields div {
+  min-width: 0;
+}
+
+.evidence-fields dt {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.evidence-fields dd {
+  margin: 0.1rem 0 0;
+}
+
+.thought-leadership-grid .evidence-fields {
+  grid-template-columns: 1fr;
+}
+
 .thought-leadership-section {
   border-top: 1px solid var(--line);
   margin-top: 2.5rem;

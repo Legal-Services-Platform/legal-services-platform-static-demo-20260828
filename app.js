@@ -29,6 +29,45 @@ const thoughtLeadershipEvidence = {
     "https://viennaarbitrationdays.com/2022/"
   ]
 };
+const thoughtLeadershipFieldLabels = {
+  en: { sourceTitle: "Source title", sourceType: "Source type", identityMatch: "Identity match", publicationPermission: "Publication permission", pending: "Pending review" },
+  fr: { sourceTitle: "Titre de la source", sourceType: "Type de source", identityMatch: "Correspondance d’identité", publicationPermission: "Autorisation de publication", pending: "Revue en attente" },
+  zh: { sourceTitle: "来源标题", sourceType: "来源类型", identityMatch: "身份匹配", publicationPermission: "发布许可", pending: "待审查" },
+  "zh-Hant": { sourceTitle: "來源標題", sourceType: "來源類型", identityMatch: "身分匹配", publicationPermission: "發布許可", pending: "待審查" }
+};
+const thoughtLeadershipMeta = {
+  credentials: [
+    ["About Tezzeta Mbuya N'Gungwa.docx", "Supplied biography", "Not independently matched", "Not yet approved"],
+    ["Publications, Conferences & Recognition.docx", "Supplied recognition document", "Not independently matched", "Not yet approved"],
+    ["Publications, Conferences & Recognition.docx", "Supplied recognition document", "Not independently matched", "Not yet approved"],
+    ["Publications, Conferences & Recognition.docx", "Supplied recognition document", "Not independently matched", "Not yet approved"],
+    ["Publications, Conferences & Recognition.docx", "Supplied recognition document", "Not independently matched", "Not yet approved"],
+    ["Public web references reviewed Aug. 29, 2026", "Public legal publication / secondary directory lead", "No identity-matched current official record located", "Not yet approved"]
+  ],
+  publications: [
+    ["Publications, Conferences & Recognition.docx; OMICS article page", "Supplied document + publisher page", "Not independently matched", "Not yet approved"],
+    ["Publications, Conferences & Recognition.docx; OMICS article page", "Supplied document + publisher page", "Not independently matched", "Not yet approved"]
+  ],
+  engagements: [
+    ["Publications, Conferences & Recognition.docx; Vienna Arbitration Days 2022", "Supplied document + event page", "Participation not independently matched", "Not yet approved"],
+    ["Publications, Conferences & Recognition.docx", "Supplied recognition document", "Speaker identity not independently matched", "Not yet approved"]
+  ],
+  development: [
+    ["Publications, Conferences & Recognition.docx", "Supplied recognition document", "Not independently matched", "Not yet approved"],
+    ["Publications, Conferences & Recognition.docx", "Supplied recognition document", "Not independently matched", "Not yet approved"],
+    ["Publications, Conferences & Recognition.docx", "Supplied recognition document", "Not independently matched", "Not yet approved"],
+    ["Publications, Conferences & Recognition.docx", "Supplied recognition document", "Not independently matched", "Not yet approved"],
+    ["Publications, Conferences & Recognition.docx", "Supplied recognition document", "Not independently matched", "Not yet approved"],
+    ["Publications, Conferences & Recognition.docx", "Supplied recognition document", "Not independently matched", "Not yet approved"],
+    ["Publications, Conferences & Recognition.docx", "Supplied recognition document", "Not independently matched", "Not yet approved"]
+  ]
+};
+const safeBarDetail = {
+  en: "Public references were reviewed, but no current official or authenticated record matching the full name was located. Identity and current status remain unverified.",
+  fr: "Des références publiques ont été examinées, mais aucun document officiel ou authentifié actuel correspondant au nom complet n’a été trouvé. L’identité et le statut actuel restent non vérifiés.",
+  zh: "已审阅公开资料，但尚未找到与全名匹配的现行官方或经认证记录。身份和当前状态仍待核实。",
+  "zh-Hant": "已審閱公開資料，但尚未找到與全名相符的現行官方或經認證記錄。身分及目前狀態仍待核實。"
+};
 const STORAGE = {
   locale: "lsp-locale",
   gates: "lsp-gates"
@@ -414,15 +453,14 @@ function catalogControls(prefix, search, category, categories) {
 
 function libraryControls() {
   const c = t();
-  const topics = [
-    ["international-arbitration", "International Arbitration"],
-    ["investment-law", "Investment Law"],
-    ["african-trade", "African Trade & AfCFTA"],
-    ["business-human-rights", "Business & Human Rights"],
-    ["extractive-industries", "Extractive Industries"],
-    ["international-economic-law", "International Economic Law"],
-    ["legal-research", "Legal Research"]
-  ];
+  const values = ["international-arbitration", "investment-law", "african-trade", "business-human-rights", "extractive-industries", "international-economic-law", "legal-research"];
+  const labelsByLocale = {
+    en: ["International Arbitration", "Investment Law", "African Trade & AfCFTA", "Business & Human Rights", "Extractive Industries", "International Economic Law", "Legal Research"],
+    fr: ["Arbitrage international", "Droit des investissements", "Commerce africain et ZLECAf", "Entreprises et droits humains", "Industries extractives", "Droit économique international", "Recherche juridique"],
+    zh: ["国际仲裁", "投资法", "非洲贸易与非洲大陆自贸区", "企业与人权", "采掘业", "国际经济法", "法律研究"],
+    "zh-Hant": ["國際仲裁", "投資法", "非洲貿易與非洲大陸自由貿易區", "企業與人權", "採掘業", "國際經濟法", "法律研究"]
+  };
+  const topics = values.map((value, index) => [value, (labelsByLocale[state.locale] || labelsByLocale.en)[index]]);
   return `
     <form class="catalog-controls library-controls" id="product-filters">
       <label class="search-field">
@@ -438,7 +476,7 @@ function libraryControls() {
         </select>
       </label>
     </form>
-    <p class="filter-note">${escapeHtml(c.library.filterBy)}: 🇬🇧 English · 🇫🇷 Français · 🇨🇳 中文 · ${escapeHtml(c.library.resourceType)}: ${escapeHtml(c.library.readResource)}</p>
+    <p class="filter-note">${escapeHtml(c.library.filterBy)}: ${escapeHtml(({ en: "🇬🇧 English · 🇫🇷 Français · 🇨🇳 中文 (Simplified / Traditional)", fr: "🇬🇧 English · 🇫🇷 Français · 🇨🇳 中文 (chinois simplifié / traditionnel)", zh: "🇬🇧 English · 🇫🇷 Français · 🇨🇳 中文（简体中文 / 繁體中文）", "zh-Hant": "🇬🇧 English · 🇫🇷 Français · 🇨🇳 中文（簡體中文 / 繁體中文）" }[state.locale] || "🇬🇧 English · 🇫🇷 Français · 🇨🇳 中文"))} · ${escapeHtml(c.library.resourceType)}: ${escapeHtml(c.library.readResource)}</p>
   `;
 }
 
@@ -518,6 +556,9 @@ function guidanceResult(result) {
 
 function aboutView() {
   const c = t().about;
+  const labels = thoughtLeadershipFieldLabels[state.locale] || thoughtLeadershipFieldLabels.en;
+  const fields = (meta = []) =>
+    `<dl class="evidence-fields"><div><dt>${escapeHtml(labels.sourceTitle)}</dt><dd>${escapeHtml(meta[0] || "Not supplied")}</dd></div><div><dt>${escapeHtml(labels.sourceType)}</dt><dd>${escapeHtml(meta[1] || "Not supplied")}</dd></div><div><dt>${escapeHtml(labels.identityMatch)}</dt><dd>${escapeHtml(meta[2] || labels.pending)}</dd></div><div><dt>${escapeHtml(labels.publicationPermission)}</dt><dd>${escapeHtml(meta[3] || labels.pending)}</dd></div></dl>`;
   return pageIntro(
     c.title,
     c.text,
@@ -545,8 +586,8 @@ function aboutView() {
           <ul class="credentials-list">
             ${c.credentials
               .map(
-                (item) =>
-                  `<li><div><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.detail)}</p></div><span class="badge badge-warning">${escapeHtml(c.credentialsPending)}</span></li>`
+                (item, index) =>
+                  `<li><div><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(index === 5 ? safeBarDetail[state.locale] : item.detail)}</p>${fields(thoughtLeadershipMeta.credentials[index])}</div><span class="badge badge-warning">${escapeHtml(c.credentialsPending)}</span></li>`
               )
               .join("")}
           </ul>
@@ -563,7 +604,7 @@ function aboutView() {
               <ul>${c.publications
                 .map(
                   (item, index) =>
-                    `<li>${escapeHtml(item)}${thoughtLeadershipEvidence.publications[index] ? ` <a href="${thoughtLeadershipEvidence.publications[index]}" target="_blank" rel="noopener noreferrer">${escapeHtml(c.evidenceLinkLabel || "Evidence link")}</a>` : ""}</li>`
+                    `<li><div>${escapeHtml(item)}${thoughtLeadershipEvidence.publications[index] ? ` <a href="${thoughtLeadershipEvidence.publications[index]}" target="_blank" rel="noopener noreferrer">${escapeHtml(c.evidenceLinkLabel || "Evidence link")}</a>` : ""}</div>${fields(thoughtLeadershipMeta.publications[index])}</li>`
                 )
                 .join("")}</ul>
             </article>
@@ -572,13 +613,13 @@ function aboutView() {
               <ul>${c.engagements
                 .map(
                   (item, index) =>
-                    `<li>${escapeHtml(item)}${thoughtLeadershipEvidence.engagements[index] ? ` <a href="${thoughtLeadershipEvidence.engagements[index]}" target="_blank" rel="noopener noreferrer">${escapeHtml(c.evidenceLinkLabel || "Evidence link")}</a>` : ""}</li>`
+                    `<li><div>${escapeHtml(item)}${thoughtLeadershipEvidence.engagements[index] ? ` <a href="${thoughtLeadershipEvidence.engagements[index]}" target="_blank" rel="noopener noreferrer">${escapeHtml(c.evidenceLinkLabel || "Evidence link")}</a>` : ""}</div>${fields(thoughtLeadershipMeta.engagements[index])}</li>`
                 )
                 .join("")}</ul>
             </article>
             <article>
               <h3>${escapeHtml(c.developmentTitle)}</h3>
-              <ul>${c.development.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+              <ul>${c.development.map((item, index) => `<li><div>${escapeHtml(item)}</div>${fields(thoughtLeadershipMeta.development[index])}</li>`).join("")}</ul>
             </article>
           </div>
         </div>
