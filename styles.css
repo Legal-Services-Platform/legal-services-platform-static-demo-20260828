@@ -128,6 +128,27 @@ svg {
   margin-inline: auto;
 }
 
+.profile-band,
+.profile-highlight {
+  border-top: 1px solid var(--line);
+  padding-top: 2.5rem;
+}
+
+.profile-copy {
+  max-width: 58rem;
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.profile-highlight {
+  margin-bottom: 2.5rem;
+  max-width: 52rem;
+}
+
+.profile-highlight p {
+  max-width: 48rem;
+}
+
 .header-inner {
   min-height: 74px;
   display: flex;
