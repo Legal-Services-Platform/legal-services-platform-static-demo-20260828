@@ -481,7 +481,6 @@ function aboutView() {
           <p class="eyebrow">${escapeHtml(c.profileTitle)}</p>
           <h2>${escapeHtml(c.profileTitle)}</h2>
           <p>${escapeHtml(c.profileText)}</p>
-          <a class="button button-secondary button-small" href="#/contact">${escapeHtml(c.profileCta)}${icon("arrow")}</a>
         </div>
         <div class="principles">
           <div>
