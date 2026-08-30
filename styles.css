@@ -371,6 +371,16 @@ svg {
   max-width: 44rem;
 }
 
+/* Keep the About page hierarchy focused on the section title. */
+.about-section > .section-heading > .eyebrow,
+.thought-leadership-section > .section-heading > .eyebrow,
+.expertise-strip > .eyebrow,
+.credentials-section > div > .eyebrow,
+.languages-section > .eyebrow,
+.principles > div > .eyebrow {
+  display: none;
+}
+
 .expertise-strip,
 .credentials-section {
   border-top: 1px solid var(--line);
@@ -1569,17 +1579,17 @@ h3 {
   }
 
   .about-portrait {
-    min-height: 420px;
+    min-height: 360px;
     aspect-ratio: 4 / 5;
   }
 
   .about-hero-copy {
-    padding: 2rem 1.25rem 2.5rem;
+    padding: 1.6rem 1.25rem 2rem;
   }
 
   .about-hero-summary {
     max-width: 34rem;
-    margin: 1rem 0;
+    margin: 0.8rem 0;
     font-size: 1rem;
     line-height: 1.55;
   }
@@ -1590,7 +1600,7 @@ h3 {
 
   .credential-timeline article,
   .experience-list article {
-    padding: 1.1rem 0;
+    padding: 0.95rem 0;
   }
 
   .credential-timeline article,
@@ -1605,6 +1615,8 @@ h3 {
 
   .about-cta {
     align-items: stretch;
+    gap: 1.25rem;
+    padding: 2rem 1.25rem 2.25rem;
   }
 
   .process-band,
