@@ -790,19 +790,20 @@ copy["zh-Hant"] = {
 };
 
 Object.assign(copy.en.about, {
-  photoAlt: "Professional portrait of Tezzeta Mbuya",
+  displayName: "Tezzeta Mbuya N'Gungwa",
+  photoAlt: "Professional portrait of Tezzeta Mbuya N'Gungwa",
   professionalTitle: "Dispute Resolution Specialist | PhD Candidate in Investment Arbitration",
-  sourceNotice: "Professional profile supplied in CV Brick court.docx. Current bar status, public use of regulated titles, and publication permission require responsible-reviewer approval before production.",
-  heroSummary: "A dispute-resolution professional and doctoral researcher working across international investment law, arbitration, public international law, commercial disputes, and Africa-focused legal development.",
+  sourceNotice: "Development profile based on supplied CV materials. Identity alignment, current bar status, regulated titles, and publication permission require responsible-reviewer approval before production.",
+  heroSummary: "A legal researcher and dispute-resolution specialist working across international investment law, arbitration, public international law, commercial disputes, and Africa-focused legal development.",
   profileHeading: "Professional Profile",
   profileParagraphs: [
-    "Tezzeta Mbuya is a dispute-resolution professional and PhD candidate in investment arbitration. Her supplied CV describes work spanning international investment law, international arbitration, public international law, commercial disputes, legal research, drafting, and cross-border matters.",
-    "Her doctoral research at the University of Essex examines the Africanization of investor-State dispute settlement in light of the AfCFTA Investment Protocol. Her experience includes research and practice relating to governments, investors, mining operations, international organizations, and commercial disputes.",
-    "The production website must not present current bar status, authorization to practise, client relationships, or professional outcomes as independently verified until the designated reviewers approve the supporting evidence."
+    "Tezzeta Mbuya is a legal researcher, international law specialist, and dispute-resolution specialist. The supplied CV describes work spanning international investment law, international arbitration, public international law, commercial disputes, legal research, drafting, and cross-border matters.",
+    "Her doctoral research at the University of Essex examines the Africanization of investor-State dispute settlement in light of the AfCFTA Investment Protocol. The CV also records research and advisory work relating to governments, investors, mining operations, international organizations, and commercial disputes.",
+    "This profile is an evidence-led development draft. Current bar status, authorization to practise, client relationships, and professional outcomes must not be treated as independently verified until the designated reviewers approve the supporting evidence."
   ],
   educationTitle: "Education",
   education: [
-    { period: "2023 - Present", institution: "University of Essex", qualification: "PhD Candidate in Investment Arbitration", detail: "Research: The Africanization of the Investor-State Dispute Settlement Mechanism in light of the AfCFTA Investment Protocol." },
+    { period: "2023 - Present", institution: "University of Essex", qualification: "PhD Candidate in Investment Arbitration", detail: "Research focus: The Africanization of the Investor-State Dispute Settlement Mechanism in light of the AfCFTA Investment Protocol." },
     { period: "2016 - 2017", institution: "Nottingham Trent University", qualification: "LLM in Oil, Gas and Mining Law", detail: "Coursework included investment law, investor-State dispute settlement, public international law, project finance, environmental law, governance, and commercial dispute resolution." },
     { period: "2015 - 2016", institution: "University of Oregon", qualification: "LLM in Environmental and Natural Resource Law", detail: "Coursework included public international law, international environmental law, arbitration, business organizations, and advanced legal writing." },
     { period: "2005 - 2010", institution: "Université de Lubumbashi", qualification: "Bachelor of Laws (LLB)", detail: "Legal studies included contract, constitutional, administrative, civil procedure, public international, tax, labour, and mining law." }
@@ -815,12 +816,12 @@ Object.assign(copy.en.about, {
   experienceTitle: "Selected Experience",
   experience: [
     { period: "Sep - Nov 2024", role: "Legal Intern", organization: "United Nations Commission on International Trade Law (UNCITRAL)", detail: "CV-supplied experience includes comparative legal research, briefing materials, conference support, and work relating to international conventions, model laws, and legal instruments." },
-    { period: "2017 - Present", role: "Independent Counsel", organization: "Kinshasa/Gombe Bar Association", detail: "The CV describes commercial-contract, dispute, labour, regulatory, mining-infrastructure, investment, and advisory work. Current status and public wording remain gated." },
+    { period: "2017 - Present", role: "Independent advisory and legal research work", organization: "Kinshasa/Gombe Bar Association (CV-supplied context)", detail: "The CV describes commercial-contract, dispute, labour, regulatory, mining-infrastructure, investment, and advisory work. Current status, jurisdiction, and public wording remain gated." },
     { period: "2017", role: "Legal Intern", organization: "Leigh Day", detail: "The CV describes research and case-support work involving multinational mining companies, human rights, corporate accountability, environmental damage, witness statements, and compensation claims." },
     { period: "2010 - 2017", role: "Of Counsel", organization: "Kinshasa/Gombe Bar Association", detail: "The CV lists work concerning production-sharing agreements, public-private partnerships, joint ventures, mining titles, regulatory compliance, ESG, tax and customs disputes, treaty-claim negotiations, and commercial disputes." }
   ],
   approachTitle: "Approach",
-  approachText: "The supplied materials support a research-led approach to complex international and cross-border questions, with careful attention to legal sources, jurisdiction, commercial context, and the limits of any preliminary assessment.",
+  approachText: "The supplied materials support a research-led approach to complex international and cross-border questions, with careful attention to legal sources, jurisdiction, commercial context, and the limits of any preliminary assessment. The website presents this as informational and advisory support, not a promise of a legal outcome.",
   approachValues: ["Rigorous legal research", "International and African perspective", "Clear jurisdictional boundaries", "Attorney review before individualized advice"],
   languagesTitle: "Languages",
   languages: ["French - Native", "English - Fluent", "Spanish - Basic"],
@@ -836,19 +837,20 @@ Object.assign(copy.en.about, {
 });
 
 Object.assign(copy.fr.about, {
-  photoAlt: "Portrait professionnel de Tezzeta Mbuya",
+  displayName: "Tezzeta Mbuya N'Gungwa",
+  photoAlt: "Portrait professionnel de Tezzeta Mbuya N'Gungwa",
   professionalTitle: "Spécialiste du règlement des différends | Doctorante en arbitrage d’investissement",
-  sourceNotice: "Profil professionnel fourni dans CV Brick court.docx. Le statut actuel au barreau, l’usage public des titres réglementés et l’autorisation de publication doivent être approuvés avant toute mise en production.",
-  heroSummary: "Professionnelle du règlement des différends et chercheuse doctorale travaillant sur le droit international des investissements, l’arbitrage, le droit international public, les litiges commerciaux et l’évolution du droit en Afrique.",
+  sourceNotice: "Profil de développement fondé sur les éléments de CV fournis. La concordance d’identité, le statut actuel au barreau, les titres réglementés et l’autorisation de publication doivent être approuvés avant toute mise en production.",
+  heroSummary: "Chercheuse juridique et spécialiste du règlement des différends travaillant sur le droit international des investissements, l’arbitrage, le droit international public, les litiges commerciaux et l’évolution du droit en Afrique.",
   profileHeading: "Profil professionnel",
   profileParagraphs: [
-    "Tezzeta Mbuya est une professionnelle du règlement des différends et doctorante en arbitrage d’investissement. Le CV fourni décrit des travaux en droit international des investissements, arbitrage international, droit international public, litiges commerciaux, recherche juridique, rédaction et questions transfrontalières.",
-    "Ses recherches doctorales à l’Université d’Essex portent sur l’africanisation du règlement des différends investisseur-État au regard du Protocole sur l’investissement de la ZLECAf. Son expérience concerne notamment des gouvernements, investisseurs, activités minières, organisations internationales et différends commerciaux.",
-    "Le site de production ne doit pas présenter le statut actuel au barreau, l’autorisation d’exercer, les relations clients ou les résultats professionnels comme vérifiés indépendamment avant l’approbation des responsables désignés."
+    "Tezzeta Mbuya est chercheuse juridique, spécialiste du droit international et du règlement des différends. Le CV fourni décrit des travaux en droit international des investissements, arbitrage international, droit international public, litiges commerciaux, recherche juridique, rédaction et questions transfrontalières.",
+    "Ses recherches doctorales à l’Université d’Essex portent sur l’africanisation du règlement des différends investisseur-État au regard du Protocole sur l’investissement de la ZLECAf. Le CV mentionne également des travaux de recherche et d’appui consultatif concernant des gouvernements, investisseurs, activités minières, organisations internationales et différends commerciaux.",
+    "Ce profil est un projet de développement fondé sur les éléments disponibles. Le statut actuel au barreau, l’autorisation d’exercer, les relations clients et les résultats professionnels ne doivent pas être présentés comme vérifiés indépendamment avant l’approbation des preuves."
   ],
   educationTitle: "Formation",
   education: [
-    { period: "2023 - aujourd’hui", institution: "University of Essex", qualification: "Doctorat en arbitrage d’investissement", detail: "Recherche : africanisation du mécanisme de règlement des différends investisseur-État au regard du Protocole sur l’investissement de la ZLECAf." },
+    { period: "2023 - aujourd’hui", institution: "University of Essex", qualification: "Doctorante en arbitrage d’investissement", detail: "Thème de recherche : africanisation du mécanisme de règlement des différends investisseur-État au regard du Protocole sur l’investissement de la ZLECAf." },
     { period: "2016 - 2017", institution: "Nottingham Trent University", qualification: "LLM en droit du pétrole, du gaz et des mines", detail: "Enseignements comprenant le droit des investissements, le règlement investisseur-État, le droit international public, le financement de projets, le droit de l’environnement, la gouvernance et le règlement des différends commerciaux." },
     { period: "2015 - 2016", institution: "University of Oregon", qualification: "LLM en droit de l’environnement et des ressources naturelles", detail: "Enseignements comprenant le droit international public, le droit international de l’environnement, l’arbitrage, les organisations commerciales et la rédaction juridique avancée." },
     { period: "2005 - 2010", institution: "Université de Lubumbashi", qualification: "Licence en droit (LLB)", detail: "Études comprenant le droit des contrats, constitutionnel, administratif, procédural, international public, fiscal, du travail et minier." }
@@ -861,12 +863,12 @@ Object.assign(copy.fr.about, {
   experienceTitle: "Expérience sélectionnée",
   experience: [
     { period: "sept. - nov. 2024", role: "Stagiaire juridique", organization: "Commission des Nations Unies pour le droit commercial international (CNUDCI)", detail: "Le CV mentionne des recherches juridiques comparatives, des notes d’information, un soutien aux conférences et des travaux sur les conventions, lois types et instruments juridiques internationaux." },
-    { period: "2017 - aujourd’hui", role: "Conseil indépendante", organization: "Barreau de Kinshasa/Gombe", detail: "Le CV décrit des travaux en contrats commerciaux, différends, droit du travail, réglementation, infrastructures minières et investissement. Le statut actuel et la formulation publique restent soumis à approbation." },
+    { period: "2017 - aujourd’hui", role: "Travaux indépendants de recherche juridique et d’appui consultatif", organization: "Barreau de Kinshasa/Gombe (contexte indiqué dans le CV)", detail: "Le CV décrit des travaux en contrats commerciaux, différends, droit du travail, réglementation, infrastructures minières et investissement. Le statut actuel, la juridiction et la formulation publique restent soumis à approbation." },
     { period: "2017", role: "Stagiaire juridique", organization: "Leigh Day", detail: "Le CV décrit des recherches et un soutien contentieux concernant des sociétés minières multinationales, les droits humains, la responsabilité des entreprises, les dommages environnementaux et les demandes d’indemnisation." },
     { period: "2010 - 2017", role: "Of Counsel", organization: "Barreau de Kinshasa/Gombe", detail: "Le CV mentionne les contrats de partage de production, partenariats public-privé, coentreprises, titres miniers, conformité, ESG, fiscalité, douanes, négociations liées aux traités et différends commerciaux." }
   ],
   approachTitle: "Approche",
-  approachText: "Les documents fournis soutiennent une approche fondée sur la recherche pour les questions internationales et transfrontalières complexes, avec une attention portée aux sources, à la juridiction, au contexte commercial et aux limites de toute évaluation préliminaire.",
+  approachText: "Les documents fournis soutiennent une approche fondée sur la recherche pour les questions internationales et transfrontalières complexes, avec une attention portée aux sources, à la juridiction, au contexte commercial et aux limites de toute évaluation préliminaire. Le site présente cette démarche comme un appui informatif et consultatif, sans promesse de résultat juridique.",
   approachValues: ["Recherche juridique rigoureuse", "Perspective internationale et africaine", "Limites juridictionnelles claires", "Revue par un avocat avant tout conseil individualisé"],
   languagesTitle: "Langues",
   languages: ["Français - langue maternelle", "Anglais - courant", "Espagnol - notions"],
@@ -882,19 +884,20 @@ Object.assign(copy.fr.about, {
 });
 
 Object.assign(copy.zh.about, {
-  photoAlt: "Tezzeta Mbuya 的专业肖像",
-  professionalTitle: "争议解决律师 | 投资仲裁博士研究生",
-  sourceNotice: "专业资料来自 CV Brick court.docx。当前律师协会状态、受监管职称的公开使用及发布许可，均须由责任审核人批准后方可用于正式网站。",
-  heroSummary: "从事国际投资法、仲裁、国际公法、商事争议及非洲法律发展研究与争议解决工作的专业人士和博士研究人员。",
+  displayName: "Tezzeta Mbuya N'Gungwa",
+  photoAlt: "Tezzeta Mbuya N'Gungwa 的专业肖像",
+  professionalTitle: "争议解决专业人士 | 投资仲裁博士研究生",
+  sourceNotice: "本开发版简介依据所提供的简历材料编写。姓名一致性、当前律师协会状态、受监管职称及发布许可，均须在正式上线前由责任审核人批准。",
+  heroSummary: "从事国际投资法、仲裁、国际公法、商事争议及非洲法律发展研究的法律研究人员和争议解决专业人士。",
   profileHeading: "专业简介",
   profileParagraphs: [
-    "Tezzeta Mbuya 是争议解决专业人士及投资仲裁博士研究生。所提供的简历记载了其在国际投资法、国际仲裁、国际公法、商事争议、法律研究、法律文书及跨境事务方面的工作。",
-    "她在埃塞克斯大学的博士研究聚焦《非洲大陆自由贸易区投资议定书》背景下投资者与国家争端解决机制的非洲化。简历所载经历涉及政府、投资者、矿业活动、国际组织及商事争议。",
-    "在指定审核人批准证据前，正式网站不得将当前律师协会状态、执业授权、客户关系或专业成果表述为已经独立核实。"
+    "Tezzeta Mbuya 是法律研究人员、国际法及争议解决专业人士。所提供的简历记载了其在国际投资法、国际仲裁、国际公法、商事争议、法律研究、法律文书及跨境事务方面的工作。",
+    "她在埃塞克斯大学的博士研究聚焦《非洲大陆自由贸易区投资议定书》背景下投资者与国家争端解决机制的非洲化。简历还记载了与政府、投资者、矿业活动、国际组织及商事争议相关的研究和咨询支持工作。",
+    "本简介是依据现有材料编写的开发版。在指定审核人批准相关证据前，不得将当前律师协会状态、执业授权、客户关系或专业成果表述为已经独立核实。"
   ],
   educationTitle: "教育背景",
   education: [
-    { period: "2023年至今", institution: "埃塞克斯大学", qualification: "投资仲裁博士", detail: "研究方向：在《非洲大陆自由贸易区投资议定书》背景下投资者与国家争端解决机制的非洲化。" },
+    { period: "2023年至今", institution: "埃塞克斯大学", qualification: "投资仲裁博士研究生", detail: "研究方向：在《非洲大陆自由贸易区投资议定书》背景下投资者与国家争端解决机制的非洲化。" },
     { period: "2016 - 2017", institution: "诺丁汉特伦特大学", qualification: "石油、天然气与矿业法法学硕士", detail: "课程包括投资法、投资者与国家争端解决、国际公法、项目融资、环境法、公司治理及商事争议解决。" },
     { period: "2015 - 2016", institution: "俄勒冈大学", qualification: "环境与自然资源法法学硕士", detail: "课程包括国际公法、国际环境法、仲裁、商业组织及高级法律写作。" },
     { period: "2005 - 2010", institution: "卢本巴希大学", qualification: "法学学士（LLB）", detail: "课程包括合同法、宪法、行政法、民事诉讼、国际公法、税法、劳动法及矿业法。" }
@@ -907,12 +910,12 @@ Object.assign(copy.zh.about, {
   experienceTitle: "精选经历",
   experience: [
     { period: "2024年9月至11月", role: "法律实习生", organization: "联合国国际贸易法委员会（UNCITRAL）", detail: "简历记载的工作包括比较法律研究、简报材料、会议支持，以及国际公约、示范法和法律文书相关工作。" },
-    { period: "2017年至今", role: "独立法律顾问", organization: "金沙萨/Gombe律师协会", detail: "简历描述了商事合同、争议、劳动与监管、矿业基础设施及投资方面的工作。当前状态及公开表述仍受发布门槛控制。" },
+    { period: "2017年至今", role: "独立法律研究与咨询支持工作", organization: "金沙萨/Gombe律师协会（简历所载背景）", detail: "简历描述了商事合同、争议、劳动与监管、矿业基础设施及投资方面的工作。当前状态、司法管辖范围及公开表述仍须审核批准。" },
     { period: "2017", role: "法律实习生", organization: "Leigh Day", detail: "简历记载了涉及跨国矿业公司、人权、企业责任、环境损害、证人陈述及赔偿请求的研究和案件支持。" },
     { period: "2010 - 2017", role: "Of Counsel", organization: "金沙萨/Gombe律师协会", detail: "简历列明了产品分成协议、公私合作、合资、矿权、监管合规、ESG、税务与海关争议、条约索赔谈判及商事争议工作。" }
   ],
   approachTitle: "工作方法",
-  approachText: "所提供材料支持以研究为基础处理复杂国际及跨境问题，并重视法律来源、司法管辖区、商业背景及任何初步评估的界限。",
+  approachText: "所提供材料支持以研究为基础处理复杂国际及跨境问题，并重视法律来源、司法管辖区、商业背景及任何初步评估的界限。网站将其表述为信息与咨询支持，不承诺任何法律结果。",
   approachValues: ["严谨的法律研究", "国际与非洲视角", "明确的司法管辖界限", "个性化意见须经律师审核"],
   languagesTitle: "语言",
   languages: ["法语 - 母语", "英语 - 流利", "西班牙语 - 基础"],
@@ -928,19 +931,20 @@ Object.assign(copy.zh.about, {
 });
 
 Object.assign(copy["zh-Hant"].about, {
-  photoAlt: "Tezzeta Mbuya 的專業肖像",
-  professionalTitle: "爭議解決律師 | 投資仲裁博士研究生",
-  sourceNotice: "專業資料來自 CV Brick court.docx。現行律師公會狀態、受規管職稱的公開使用及發布許可，均須由責任審核人批准後方可用於正式網站。",
-  heroSummary: "從事國際投資法、仲裁、國際公法、商事爭議及非洲法律發展研究與爭議解決工作的專業人士和博士研究人員。",
+  displayName: "Tezzeta Mbuya N'Gungwa",
+  photoAlt: "Tezzeta Mbuya N'Gungwa 的專業肖像",
+  professionalTitle: "爭議解決專業人士 | 投資仲裁博士研究生",
+  sourceNotice: "本開發版簡介依據所提供的履歷資料編寫。姓名一致性、現行律師公會狀態、受規管職稱及發布許可，均須在正式上線前由責任審核人批准。",
+  heroSummary: "從事國際投資法、仲裁、國際公法、商事爭議及非洲法律發展研究的法律研究人員和爭議解決專業人士。",
   profileHeading: "專業簡介",
   profileParagraphs: [
-    "Tezzeta Mbuya 是爭議解決專業人士及投資仲裁博士研究生。所提供的履歷記載了其在國際投資法、國際仲裁、國際公法、商事爭議、法律研究、法律文書及跨境事務方面的工作。",
-    "她在艾塞克斯大學的博士研究聚焦《非洲大陸自由貿易區投資議定書》背景下投資者與國家爭端解決機制的非洲化。履歷所載經歷涉及政府、投資者、礦業活動、國際組織及商事爭議。",
-    "在指定審核人批准證據前，正式網站不得將現行律師公會狀態、執業授權、客戶關係或專業成果表述為已經獨立核實。"
+    "Tezzeta Mbuya 是法律研究人員、國際法及爭議解決專業人士。所提供的履歷記載了其在國際投資法、國際仲裁、國際公法、商事爭議、法律研究、法律文書及跨境事務方面的工作。",
+    "她在艾塞克斯大學的博士研究聚焦《非洲大陸自由貿易區投資議定書》背景下投資者與國家爭端解決機制的非洲化。履歷亦記載了與政府、投資者、礦業活動、國際組織及商事爭議相關的研究和諮詢支援工作。",
+    "本簡介是依據現有資料編寫的開發版。在指定審核人批准相關證據前，不得將現行律師公會狀態、執業授權、客戶關係或專業成果表述為已經獨立核實。"
   ],
   educationTitle: "教育背景",
   education: [
-    { period: "2023年至今", institution: "艾塞克斯大學", qualification: "投資仲裁博士", detail: "研究方向：在《非洲大陸自由貿易區投資議定書》背景下投資者與國家爭端解決機制的非洲化。" },
+    { period: "2023年至今", institution: "艾塞克斯大學", qualification: "投資仲裁博士研究生", detail: "研究方向：在《非洲大陸自由貿易區投資議定書》背景下投資者與國家爭端解決機制的非洲化。" },
     { period: "2016 - 2017", institution: "諾丁漢特倫特大學", qualification: "石油、天然氣與礦業法法學碩士", detail: "課程包括投資法、投資者與國家爭端解決、國際公法、項目融資、環境法、公司治理及商事爭端解決。" },
     { period: "2015 - 2016", institution: "俄勒岡大學", qualification: "環境與自然資源法法學碩士", detail: "課程包括國際公法、國際環境法、仲裁、商業組織及高級法律寫作。" },
     { period: "2005 - 2010", institution: "盧本巴希大學", qualification: "法學學士（LLB）", detail: "課程包括合約法、憲法、行政法、民事訴訟、國際公法、稅法、勞動法及礦業法。" }
@@ -953,12 +957,12 @@ Object.assign(copy["zh-Hant"].about, {
   experienceTitle: "精選經歷",
   experience: [
     { period: "2024年9月至11月", role: "法律實習生", organization: "聯合國國際貿易法委員會（UNCITRAL）", detail: "履歷記載的工作包括比較法律研究、簡報材料、會議支援，以及國際公約、示範法和法律文書相關工作。" },
-    { period: "2017年至今", role: "獨立法律顧問", organization: "金沙薩/Gombe律師公會", detail: "履歷描述了商事合約、爭議、勞動與監管、礦業基礎設施及投資方面的工作。現行狀態及公開表述仍受發布門檻控制。" },
+    { period: "2017年至今", role: "獨立法律研究與諮詢支援工作", organization: "金沙薩/Gombe律師公會（履歷所載背景）", detail: "履歷描述了商事合約、爭議、勞動與監管、礦業基礎設施及投資方面的工作。現行狀態、司法管轄範圍及公開表述仍須審核批准。" },
     { period: "2017", role: "法律實習生", organization: "Leigh Day", detail: "履歷記載了涉及跨國礦業公司、人權、企業責任、環境損害、證人陳述及賠償請求的研究和案件支援。" },
     { period: "2010 - 2017", role: "Of Counsel", organization: "金沙薩/Gombe律師公會", detail: "履歷列明了產品分成協議、公私合作、合資、礦權、監管合規、ESG、稅務與海關爭議、條約索賠談判及商事爭議工作。" }
   ],
   approachTitle: "工作方法",
-  approachText: "所提供材料支持以研究為基礎處理複雜國際及跨境問題，並重視法律來源、司法管轄區、商業背景及任何初步評估的界限。",
+  approachText: "所提供材料支持以研究為基礎處理複雜國際及跨境問題，並重視法律來源、司法管轄區、商業背景及任何初步評估的界限。網站將其表述為資訊與諮詢支援，不承諾任何法律結果。",
   approachValues: ["嚴謹的法律研究", "國際與非洲視角", "明確的司法管轄界限", "個人化意見須經律師審核"],
   languagesTitle: "語言",
   languages: ["法語 - 母語", "英語 - 流利", "西班牙語 - 基礎"],

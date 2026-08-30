@@ -634,7 +634,7 @@ function aboutView() {
         </div>
         <div class="about-hero-copy">
           <p class="eyebrow">${escapeHtml(c.profileHeading)}</p>
-          <h1>Tezzeta Mbuya</h1>
+          <h1>${escapeHtml(c.displayName)}</h1>
           <p class="about-professional-title">${escapeHtml(c.professionalTitle)}</p>
           <p class="about-hero-summary">${escapeHtml(c.heroSummary)}</p>
           <div class="about-source-notice">${icon("alert")}<p>${escapeHtml(c.sourceNotice)}</p></div>
