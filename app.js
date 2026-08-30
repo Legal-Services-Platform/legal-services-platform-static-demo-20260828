@@ -18,6 +18,8 @@ import {
 } from "./data.js";
 import { copy } from "./i18n.js";
 
+const PUBLIC_DEMO_URL = "https://lyshabo.github.io/legal-services-platform-backend/";
+
 const app = document.querySelector("#app");
 const staticDemo = document.documentElement.dataset.staticDemo === "true";
 const thoughtLeadershipEvidence = {
@@ -207,6 +209,7 @@ function layout(content) {
         <div>
           <span>${escapeHtml(c.footer.privacy)}</span>
           <span>${escapeHtml(c.footer.accessibility)}</span>
+          <a href="${PUBLIC_DEMO_URL}" target="_blank" rel="noopener noreferrer">${escapeHtml(c.footer.publicDemo)}</a>
         </div>
       </div>
     </footer>

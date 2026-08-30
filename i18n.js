@@ -205,7 +205,8 @@ export const copy = {
     footer: {
       notice: "Development foundation only. No legal advice, representation, guarantees, or approved commercial offer.",
       privacy: "Privacy decisions pending review",
-      accessibility: "Accessibility target: WCAG 2.2 AA"
+      accessibility: "Accessibility target: WCAG 2.2 AA",
+      publicDemo: "Open public static demo"
     }
   },
   fr: {
@@ -414,7 +415,8 @@ export const copy = {
     footer: {
       notice: "Base de développement uniquement. Aucun conseil juridique, représentation, garantie ou offre commerciale approuvée.",
       privacy: "Décisions de confidentialité en attente",
-      accessibility: "Objectif d’accessibilité : WCAG 2.2 AA"
+      accessibility: "Objectif d’accessibilité : WCAG 2.2 AA",
+      publicDemo: "Ouvrir la démo statique publique"
     }
   },
   zh: {
@@ -620,7 +622,8 @@ export const copy = {
     footer: {
       notice: "仅为开发基础。不提供法律意见、代理、保证或已批准的商业要约。",
       privacy: "隐私决策待审查",
-      accessibility: "无障碍目标：WCAG 2.2 AA"
+      accessibility: "无障碍目标：WCAG 2.2 AA",
+      publicDemo: "打开公开静态演示"
     }
   }
 };
@@ -781,6 +784,7 @@ copy["zh-Hant"] = {
   footer: {
     notice: "僅供開發使用。不提供法律意見、代理、保證或已獲批准的商業要約。",
     privacy: "私隱決策有待審查",
-    accessibility: "無障礙目標：WCAG 2.2 AA"
+    accessibility: "無障礙目標：WCAG 2.2 AA",
+    publicDemo: "開啟公開靜態演示"
   }
 };
