@@ -439,6 +439,18 @@ svg {
   font-size: 0.78rem;
 }
 
+.evidence-details {
+  margin-top: 0.7rem;
+}
+
+.evidence-details summary {
+  color: var(--teal-dark);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 750;
+  list-style-position: inside;
+}
+
 .evidence-fields div {
   min-width: 0;
 }
@@ -1563,6 +1575,22 @@ h3 {
 
   .about-hero-copy {
     padding: 2rem 1.25rem 2.5rem;
+  }
+
+  .about-hero-summary {
+    max-width: 34rem;
+    margin: 1rem 0;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .evidence-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .credential-timeline article,
+  .experience-list article {
+    padding: 1.1rem 0;
   }
 
   .credential-timeline article,

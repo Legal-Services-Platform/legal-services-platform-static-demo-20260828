@@ -36,10 +36,10 @@ const thoughtLeadershipEvidence = {
   ]
 };
 const thoughtLeadershipFieldLabels = {
-  en: { sourceTitle: "Source title", sourceType: "Source type", identityMatch: "Identity match", publicationPermission: "Publication permission", pending: "Pending review" },
-  fr: { sourceTitle: "Titre de la source", sourceType: "Type de source", identityMatch: "Correspondance d’identité", publicationPermission: "Autorisation de publication", pending: "Revue en attente" },
-  zh: { sourceTitle: "来源标题", sourceType: "来源类型", identityMatch: "身份匹配", publicationPermission: "发布许可", pending: "待审查" },
-  "zh-Hant": { sourceTitle: "來源標題", sourceType: "來源類型", identityMatch: "身分匹配", publicationPermission: "發布許可", pending: "待審查" }
+  en: { evidence: "Evidence metadata", sourceTitle: "Source title", sourceType: "Source type", identityMatch: "Identity match", publicationPermission: "Publication permission", pending: "Pending review" },
+  fr: { evidence: "Métadonnées des preuves", sourceTitle: "Titre de la source", sourceType: "Type de source", identityMatch: "Correspondance d’identité", publicationPermission: "Autorisation de publication", pending: "Revue en attente" },
+  zh: { evidence: "证据元数据", sourceTitle: "来源标题", sourceType: "来源类型", identityMatch: "身份匹配", publicationPermission: "发布许可", pending: "待审查" },
+  "zh-Hant": { evidence: "證據中繼資料", sourceTitle: "來源標題", sourceType: "來源類型", identityMatch: "身分匹配", publicationPermission: "發布許可", pending: "待審查" }
 };
 const adminEvidenceCopy = {
   en: { eyebrow: "Thought Leadership & Recognition", title: "Evidence review filters", identity: "Identity-match status", permission: "Publication-permission status", all: "All statuses", pendingIdentity: "Pending or partial match", noIdentity: "No identity match", pendingPermission: "Permission pending", development: "Development linking only", apply: "Apply filters", noResults: "No matching items", adjust: "Adjust the review filters" },
@@ -626,7 +626,7 @@ function aboutView() {
   const c = t().about;
   const labels = thoughtLeadershipFieldLabels[state.locale] || thoughtLeadershipFieldLabels.en;
   const fields = (meta = []) =>
-    `<dl class="evidence-fields"><div><dt>${escapeHtml(labels.sourceTitle)}</dt><dd>${escapeHtml(meta[0] || "Not supplied")}</dd></div><div><dt>${escapeHtml(labels.sourceType)}</dt><dd>${escapeHtml(meta[1] || "Not supplied")}</dd></div><div><dt>${escapeHtml(labels.identityMatch)}</dt><dd>${escapeHtml(meta[2] || labels.pending)}</dd></div><div><dt>${escapeHtml(labels.publicationPermission)}</dt><dd>${escapeHtml(meta[3] || labels.pending)}</dd></div></dl>`;
+    `<details class="evidence-details"><summary>${escapeHtml(labels.evidence)}</summary><dl class="evidence-fields"><div><dt>${escapeHtml(labels.sourceTitle)}</dt><dd>${escapeHtml(meta[0] || "Not supplied")}</dd></div><div><dt>${escapeHtml(labels.sourceType)}</dt><dd>${escapeHtml(meta[1] || "Not supplied")}</dd></div><div><dt>${escapeHtml(labels.identityMatch)}</dt><dd>${escapeHtml(meta[2] || labels.pending)}</dd></div><div><dt>${escapeHtml(labels.publicationPermission)}</dt><dd>${escapeHtml(meta[3] || labels.pending)}</dd></div></dl></details>`;
   return `
       <section class="about-hero">
         <div class="about-portrait">
