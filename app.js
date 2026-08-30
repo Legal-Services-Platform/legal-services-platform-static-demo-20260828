@@ -148,7 +148,8 @@ function icon(name) {
     close: '<path d="m6 6 12 12M18 6 6 18"/>',
     check: '<path d="m5 12 4 4L19 6"/>',
     alert: '<path d="M10.3 2.9 1.8 17a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 2.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/>',
-    lock: '<rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>'
+    lock: '<rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>',
+    users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/>'
   };
   return `<svg aria-hidden="true" viewBox="0 0 24 24">${icons[name] || icons.arrow}</svg>`;
 }
@@ -626,15 +627,23 @@ function aboutView() {
   const labels = thoughtLeadershipFieldLabels[state.locale] || thoughtLeadershipFieldLabels.en;
   const fields = (meta = []) =>
     `<dl class="evidence-fields"><div><dt>${escapeHtml(labels.sourceTitle)}</dt><dd>${escapeHtml(meta[0] || "Not supplied")}</dd></div><div><dt>${escapeHtml(labels.sourceType)}</dt><dd>${escapeHtml(meta[1] || "Not supplied")}</dd></div><div><dt>${escapeHtml(labels.identityMatch)}</dt><dd>${escapeHtml(meta[2] || labels.pending)}</dd></div><div><dt>${escapeHtml(labels.publicationPermission)}</dt><dd>${escapeHtml(meta[3] || labels.pending)}</dd></div></dl>`;
-  return pageIntro(
-    c.title,
-    c.text,
-    `
-      <section class="section compact-top">
-        <div class="profile-highlight">
-          <p class="eyebrow">${escapeHtml(c.profileTitle)}</p>
-          <h2>${escapeHtml(c.profileTitle)}</h2>
-          <p class="profile-tagline">${escapeHtml(c.profileTagline)}</p>
+  return `
+      <section class="about-hero">
+        <div class="about-portrait">
+          <img src="about-tezzeta.jpg" alt="${escapeHtml(c.photoAlt)}" />
+        </div>
+        <div class="about-hero-copy">
+          <p class="eyebrow">${escapeHtml(c.profileHeading)}</p>
+          <h1>Tezzeta Mbuya</h1>
+          <p class="about-professional-title">${escapeHtml(c.professionalTitle)}</p>
+          <p class="about-hero-summary">${escapeHtml(c.heroSummary)}</p>
+          <div class="about-source-notice">${icon("alert")}<p>${escapeHtml(c.sourceNotice)}</p></div>
+        </div>
+      </section>
+      <section class="section about-content">
+        <div class="profile-highlight about-profile">
+          <p class="eyebrow">${escapeHtml(c.profileHeading)}</p>
+          <h2>${escapeHtml(c.profileHeading)}</h2>
           ${c.profileParagraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
         </div>
         <div class="expertise-strip">
@@ -643,6 +652,72 @@ function aboutView() {
           <div class="expertise-list">
             ${c.expertise.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
           </div>
+        </div>
+        <div class="about-section education-section">
+          <div class="section-heading">
+            <p class="eyebrow">${escapeHtml(c.educationTitle)}</p>
+            <h2>${escapeHtml(c.educationTitle)}</h2>
+          </div>
+          <div class="credential-timeline">
+            ${c.education.map((item) => `
+              <article>
+                <time>${escapeHtml(item.period)}</time>
+                <div>
+                  <h3>${escapeHtml(item.qualification)}</h3>
+                  <p class="about-organization">${escapeHtml(item.institution)}</p>
+                  <p>${escapeHtml(item.detail)}</p>
+                </div>
+              </article>
+            `).join("")}
+          </div>
+        </div>
+        <div class="about-section bar-section">
+          <div class="section-heading">
+            <p class="eyebrow">${escapeHtml(c.barTitle)}</p>
+            <h2>${escapeHtml(c.barTitle)}</h2>
+          </div>
+          ${c.barItems.map((item) => `
+            <article class="bar-status-panel">
+              <div>
+                <h3>${escapeHtml(item.title)}</h3>
+                <p>${escapeHtml(item.detail)}</p>
+              </div>
+              <span class="badge badge-warning">${escapeHtml(c.barStatus)}</span>
+            </article>
+          `).join("")}
+        </div>
+        <div class="about-section experience-section">
+          <div class="section-heading">
+            <p class="eyebrow">${escapeHtml(c.experienceTitle)}</p>
+            <h2>${escapeHtml(c.experienceTitle)}</h2>
+          </div>
+          <div class="experience-list">
+            ${c.experience.map((item) => `
+              <article>
+                <div class="experience-period">${escapeHtml(item.period)}</div>
+                <div>
+                  <h3>${escapeHtml(item.role)}</h3>
+                  <p class="about-organization">${escapeHtml(item.organization)}</p>
+                  <p>${escapeHtml(item.detail)}</p>
+                </div>
+              </article>
+            `).join("")}
+          </div>
+        </div>
+        <div class="about-section approach-section">
+          <div>
+            <p class="eyebrow">${escapeHtml(c.approachTitle)}</p>
+            <h2>${escapeHtml(c.approachTitle)}</h2>
+            <p>${escapeHtml(c.approachText)}</p>
+          </div>
+          <ul>
+            ${c.approachValues.map((item) => `<li>${icon("check")}<span>${escapeHtml(item)}</span></li>`).join("")}
+          </ul>
+        </div>
+        <div class="about-section languages-section">
+          <p class="eyebrow">${escapeHtml(c.languagesTitle)}</p>
+          <h2>${escapeHtml(c.languagesTitle)}</h2>
+          <div class="language-list">${c.languages.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}</div>
         </div>
         <div class="credentials-section">
           <div>
@@ -699,9 +774,35 @@ function aboutView() {
             ${c.principles.map((item) => `<li>${icon("check")}<span>${escapeHtml(item)}</span></li>`).join("")}
           </ul>
         </div>
+        <div class="about-section future-team-grid">
+          <article>
+            <span class="card-icon">${icon("users")}</span>
+            <p class="eyebrow">${escapeHtml(c.counselTitle)}</p>
+            <h2>${escapeHtml(c.counselTitle)}</h2>
+            <p>${escapeHtml(c.counselText)}</p>
+            <span class="badge badge-warning">${escapeHtml(c.futureStatus)}</span>
+          </article>
+          <article>
+            <span class="card-icon">${icon("shield")}</span>
+            <p class="eyebrow">${escapeHtml(c.advisorsTitle)}</p>
+            <h2>${escapeHtml(c.advisorsTitle)}</h2>
+            <p>${escapeHtml(c.advisorsText)}</p>
+            <span class="badge badge-warning">${escapeHtml(c.futureStatus)}</span>
+          </article>
+        </div>
+        <div class="about-cta">
+          <div>
+            <p class="eyebrow">${escapeHtml(c.ctaTitle)}</p>
+            <h2>${escapeHtml(c.ctaTitle)}</h2>
+            <p>${escapeHtml(c.ctaText)}</p>
+          </div>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#/book/service-orientation">${escapeHtml(c.ctaPrimary)}${icon("arrow")}</a>
+            <a class="button button-secondary" href="#/services">${escapeHtml(c.ctaSecondary)}${icon("arrow")}</a>
+          </div>
+        </div>
       </section>
-    `
-  );
+    `;
 }
 
 function contactView() {
