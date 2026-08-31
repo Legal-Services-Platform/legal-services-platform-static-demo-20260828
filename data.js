@@ -423,6 +423,74 @@ for (const service of services) {
   service.translations["zh-Hant"] = traditionalChineseServiceTranslations[service.id];
 }
 
+const requestedServiceCategories = [
+  {
+    id: "service-expert-witness",
+    category: "expert-witness",
+    fixture: true,
+    bookingEnabled: false,
+    translations: {
+      en: { title: "Expert Witness Services", summary: "Development-stage research and analytical support for matters that may require an independent legal or international-law perspective.", audience: "Counsel, institutions, or organizations assessing whether expert analysis may be appropriate.", included: "Potential scope, source review, comparative legal analysis, and written or oral analysis only after role, jurisdiction, conflicts, and instructions are approved.", excluded: "No assurance of appointment, admissibility, independence determination, testimony, or case outcome." },
+      fr: { title: "Services d’expertise juridique", summary: "Soutien de recherche et d’analyse en développement pour les dossiers pouvant nécessiter une perspective juridique ou de droit international indépendante.", audience: "Conseils, institutions ou organisations évaluant la pertinence d’une analyse experte.", included: "Définition éventuelle du périmètre, examen des sources et analyse juridique comparative, uniquement après approbation du rôle, de la juridiction, des conflits et des instructions.", excluded: "Aucune garantie de nomination, d’admissibilité, d’indépendance, de témoignage ou de résultat." },
+      zh: { title: "专家证人服务", summary: "面向可能需要独立法律或国际法视角的事项，提供处于开发阶段的研究与分析支持。", audience: "评估是否适合采用专家分析的律师、机构或组织。", included: "潜在范围界定、来源审查和比较法律分析；任何书面或口头分析均须先批准角色、司法管辖区、利益冲突和具体指示。", excluded: "不保证获聘、证据可采性、独立性认定、作证或案件结果。" },
+      "zh-Hant": { title: "專家證人服務", summary: "為可能需要獨立法律或國際法觀點的事項提供處於開發階段的研究及分析支援。", audience: "評估是否適合採用專家分析的律師、機構或組織。", included: "潛在範圍界定、來源審查及比較法律分析；任何書面或口頭分析均須先批准角色、司法管轄區、利益衝突及具體指示。", excluded: "不保證獲聘、證據可採性、獨立性認定、作證或案件結果。" }
+    }
+  },
+  {
+    id: "service-legal-representation",
+    category: "representation",
+    fixture: true,
+    bookingEnabled: false,
+    translations: {
+      en: { title: "Legal Representation", summary: "A gated service category for possible representation-related enquiries, subject to verified authorization, jurisdiction, conflicts, and engagement terms.", audience: "Users seeking to understand whether a representation pathway may be available.", included: "Initial scope and eligibility discussion only; any representation requires a separate accepted engagement.", excluded: "No representation, attorney-client relationship, deadline protection, or outcome is created by this page or a consultation request." },
+      fr: { title: "Représentation juridique", summary: "Catégorie de service soumise à validation pour les demandes pouvant concerner une représentation, sous réserve de l’autorisation, de la juridiction, des conflits et des conditions d’engagement.", audience: "Utilisateurs souhaitant vérifier si un parcours de représentation pourrait être disponible.", included: "Échange initial sur le périmètre et l’éligibilité uniquement ; toute représentation nécessite une mission distincte acceptée.", excluded: "Cette page ou une demande de consultation ne crée aucune représentation, relation avocat-client, protection des délais ni garantie de résultat." },
+      zh: { title: "法律代理", summary: "针对可能涉及代理的咨询，提供受控的服务类别；须先核实授权、司法管辖区、利益冲突和委托条款。", audience: "希望了解是否可能存在代理路径的用户。", included: "仅进行初步范围和资格讨论；任何代理均须另行接受委托。", excluded: "本页面或咨询请求不会建立代理关系、律师与客户关系、期限保护或结果保证。" },
+      "zh-Hant": { title: "法律代理", summary: "針對可能涉及代理的查詢提供受控服務類別；須先核實授權、司法管轄區、利益衝突及委託條款。", audience: "希望了解是否可能存在代理途徑的使用者。", included: "僅進行初步範圍及資格討論；任何代理均須另行接受委託。", excluded: "本頁面或諮詢請求不會建立代理關係、律師與客戶關係、期限保障或結果保證。" }
+    }
+  },
+  {
+    id: "service-legal-consultancy",
+    category: "consultancy",
+    fixture: true,
+    bookingEnabled: false,
+    translations: {
+      en: { title: "Legal Consultancy", summary: "Gated research and advisory support for international-law, investment, commercial, and cross-border questions.", audience: "Organizations, businesses, institutions, or legal teams seeking scoped analysis.", included: "Issue framing, source-based research, comparative analysis, and written guidance where the jurisdiction, role, and deliverable are approved.", excluded: "No universal legal advice, local-law opinion, regulatory clearance, representation, or guaranteed result." },
+      fr: { title: "Conseil juridique", summary: "Soutien de recherche et d’appui consultatif soumis à validation pour des questions de droit international, d’investissement, commerciales et transfrontalières.", audience: "Organisations, entreprises, institutions ou équipes juridiques recherchant une analyse définie.", included: "Définition de la question, recherche fondée sur les sources, analyse comparative et orientations écrites lorsque la juridiction, le rôle et le livrable sont approuvés.", excluded: "Aucun conseil juridique universel, avis de droit local, agrément réglementaire, représentation ni garantie de résultat." },
+      zh: { title: "法律咨询", summary: "围绕国际法、投资、商业及跨境问题提供受控的研究与咨询支持。", audience: "需要明确范围分析的组织、企业、机构或法律团队。", included: "问题界定、基于来源的研究、比较分析，以及在批准司法管辖区、角色和交付内容后提供书面指导。", excluded: "不提供普遍适用的法律意见、当地法意见、监管许可、代理或结果保证。" },
+      "zh-Hant": { title: "法律諮詢", summary: "圍繞國際法、投資、商業及跨境問題提供受控的研究及諮詢支援。", audience: "需要明確範圍分析的組織、企業、機構或法律團隊。", included: "問題界定、基於來源的研究、比較分析，以及在批准司法管轄區、角色及交付內容後提供書面指導。", excluded: "不提供普遍適用的法律意見、當地法意見、監管許可、代理或結果保證。" }
+    }
+  },
+  {
+    id: "service-environmental-law",
+    category: "environmental-law",
+    fixture: true,
+    bookingEnabled: false,
+    translations: {
+      en: { title: "Environmental Law", summary: "Gated research and advisory support on environmental and international-law questions connected with natural resources, investment, and cross-border activity.", audience: "Organizations assessing environmental-law issues within an approved jurisdiction and scope.", included: "Source review and comparative analysis of environmental, natural-resource, and international-law considerations.", excluded: "No environmental permit, regulatory approval, compliance certification, or outcome guarantee." },
+      fr: { title: "Droit de l’environnement", summary: "Soutien de recherche et d’appui consultatif soumis à validation sur des questions de droit de l’environnement et de droit international liées aux ressources naturelles, à l’investissement et aux activités transfrontalières.", audience: "Organisations examinant des questions de droit de l’environnement dans une juridiction et un périmètre approuvés.", included: "Examen des sources et analyse comparative des considérations environnementales, relatives aux ressources naturelles et au droit international.", excluded: "Aucun permis environnemental, agrément réglementaire, certification de conformité ni garantie de résultat." },
+      zh: { title: "环境法", summary: "围绕与自然资源、投资和跨境活动相关的环境法及国际法问题，提供受控的研究与咨询支持。", audience: "在获批司法管辖区和范围内评估环境法问题的组织。", included: "审查来源，并比较分析环境、自然资源及国际法相关事项。", excluded: "不提供环境许可、监管批准、合规认证或结果保证。" },
+      "zh-Hant": { title: "環境法", summary: "圍繞與自然資源、投資及跨境活動相關的環境法及國際法問題，提供受控的研究及諮詢支援。", audience: "在獲批司法管轄區及範圍內評估環境法問題的組織。", included: "審查來源，並比較分析環境、自然資源及國際法相關事項。", excluded: "不提供環境許可、監管批准、合規認證或結果保證。" }
+    }
+  },
+  {
+    id: "service-esg-advisory",
+    category: "esg-advisory",
+    fixture: true,
+    bookingEnabled: false,
+    translations: {
+      en: { title: "Environmental, Social and Governance (ESG) Advisory", summary: "Gated research and advisory support on ESG and international-law frameworks, responsible business conduct, human rights, and natural-resource activity.", audience: "Organizations reviewing ESG-related legal and policy questions within an approved scope.", included: "Framework mapping, source-based analysis, and identification of questions requiring local or specialist review.", excluded: "No ESG certification, compliance assurance, investment recommendation, regulatory approval, or outcome guarantee." },
+      fr: { title: "Conseil en matière environnementale, sociale et de gouvernance (ESG)", summary: "Soutien de recherche et d’appui consultatif soumis à validation sur les cadres ESG et de droit international, la conduite responsable des affaires, les droits humains et les activités liées aux ressources naturelles.", audience: "Organisations examinant des questions juridiques et stratégiques liées à l’ESG dans un périmètre approuvé.", included: "Cartographie des cadres, analyse fondée sur les sources et identification des questions nécessitant un examen local ou spécialisé.", excluded: "Aucune certification ESG, assurance de conformité, recommandation d’investissement, autorisation réglementaire ni garantie de résultat." },
+      zh: { title: "环境、社会与治理（ESG）咨询", summary: "围绕 ESG 与国际法框架、负责任商业行为、人权和自然资源活动，提供受控的研究与咨询支持。", audience: "在获批范围内审查 ESG 相关法律与政策问题的组织。", included: "框架梳理、基于来源的分析，以及识别需要当地或专业审查的问题。", excluded: "不提供 ESG 认证、合规保证、投资建议、监管批准或结果保证。" },
+      "zh-Hant": { title: "環境、社會及管治（ESG）諮詢", summary: "圍繞 ESG 與國際法框架、負責任商業行為、人權及自然資源活動，提供受控的研究及諮詢支援。", audience: "在獲批範圍內審查 ESG 相關法律及政策問題的組織。", included: "框架梳理、基於來源的分析，以及識別需要當地或專業審查的問題。", excluded: "不提供 ESG 認證、合規保證、投資建議、監管批准或結果保證。" }
+    }
+  }
+];
+
+for (const service of requestedServiceCategories) {
+  service.evidenceStatus = "pending";
+  services.push(service);
+}
+
 export const products = [
   {
     id: "product-guide",

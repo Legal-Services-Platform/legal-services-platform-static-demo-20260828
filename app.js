@@ -433,6 +433,17 @@ function pathCard(iconName, title, text, route) {
   `;
 }
 
+const serviceCategoryLabels = {
+  en: { advisory: "Advisory support", documents: "Document review", "international-law": "International Law", research: "Legal Research", "expert-witness": "Expert Witness Services", representation: "Legal Representation", consultancy: "Legal Consultancy", "environmental-law": "Environmental Law", "esg-advisory": "ESG Advisory" },
+  fr: { advisory: "Soutien consultatif", documents: "Revue de documents", "international-law": "Droit international", research: "Recherche juridique", "expert-witness": "Services d’expertise juridique", representation: "Représentation juridique", consultancy: "Conseil juridique", "environmental-law": "Droit de l’environnement", "esg-advisory": "Conseil ESG" },
+  zh: { advisory: "咨询支持", documents: "文件审查", "international-law": "国际法", research: "法律研究", "expert-witness": "专家证人服务", representation: "法律代理", consultancy: "法律咨询", "environmental-law": "环境法", "esg-advisory": "ESG 咨询" },
+  "zh-Hant": { advisory: "諮詢支援", documents: "文件審查", "international-law": "國際法", research: "法律研究", "expert-witness": "專家證人服務", representation: "法律代理", consultancy: "法律諮詢", "environmental-law": "環境法", "esg-advisory": "ESG 諮詢" }
+};
+
+function serviceCategoryLabel(category) {
+  return (serviceCategoryLabels[state.locale] || serviceCategoryLabels.en)[category] || category;
+}
+
 function servicesView() {
   const c = t();
   const filtered = filterCatalog(
@@ -446,7 +457,7 @@ function servicesView() {
     c.services.intro,
     `
       <section class="section compact-top">
-        ${catalogControls("service", state.serviceSearch, state.serviceCategory, ["advisory", "documents", "international-law", "research"])}
+        ${catalogControls("service", state.serviceSearch, state.serviceCategory, ["advisory", "documents", "international-law", "research", "expert-witness", "representation", "consultancy", "environmental-law", "esg-advisory"])}
         <div class="catalog-grid" id="service-results" aria-live="polite">
           ${
             filtered.length
@@ -462,7 +473,7 @@ function servicesView() {
 function serviceCard(service) {
   return `
     <article class="catalog-card">
-      <div class="catalog-meta">${fixtureBadge()}<span>${escapeHtml(service.category)}</span></div>
+      <div class="catalog-meta">${fixtureBadge()}<span>${escapeHtml(serviceCategoryLabel(service.category))}</span></div>
       <h2>${escapeHtml(localized(service, state.locale))}</h2>
       <p>${escapeHtml(localized(service, state.locale, "summary"))}</p>
       <a class="button button-secondary button-small" href="${routeHref("service", service.id)}">
@@ -480,7 +491,7 @@ function serviceDetailView(id) {
   return `
     <section class="detail-header">
       <a class="text-link back-link" href="#/services">${icon("arrow")}${escapeHtml(c.common.back)}</a>
-      <div class="catalog-meta">${fixtureBadge()}<span>${escapeHtml(service.category)}</span></div>
+      <div class="catalog-meta">${fixtureBadge()}<span>${escapeHtml(serviceCategoryLabel(service.category))}</span></div>
       <h1>${escapeHtml(tr.title)}</h1>
       <p>${escapeHtml(tr.summary)}</p>
     </section>
@@ -581,12 +592,6 @@ function productDetailView(id) {
 
 function catalogControls(prefix, search, category, categories) {
   const c = t();
-  const serviceCategoryLabels = {
-    en: { advisory: "Advisory support", documents: "Document review", "international-law": "International Law", research: "Legal Research" },
-    fr: { advisory: "Soutien consultatif", documents: "Revue de documents", "international-law": "Droit international", research: "Recherche juridique" },
-    zh: { advisory: "咨询支持", documents: "文件审查", "international-law": "国际法", research: "法律研究" },
-    "zh-Hant": { advisory: "諮詢支援", documents: "文件審查", "international-law": "國際法", research: "法律研究" }
-  };
   return `
     <form class="catalog-controls" id="${prefix}-filters">
       <label class="search-field">
@@ -598,7 +603,7 @@ function catalogControls(prefix, search, category, categories) {
         <span class="sr-only">${escapeHtml(c.common.all)}</span>
         <select name="category">
           <option value="all">${escapeHtml(c.common.all)}</option>
-          ${categories.map((item) => `<option value="${item}" ${item === category ? "selected" : ""}>${escapeHtml(prefix === "service" ? (serviceCategoryLabels[state.locale] || serviceCategoryLabels.en)[item] || item : item)}</option>`).join("")}
+          ${categories.map((item) => `<option value="${item}" ${item === category ? "selected" : ""}>${escapeHtml(prefix === "service" ? serviceCategoryLabel(item) : item)}</option>`).join("")}
         </select>
       </label>
     </form>
