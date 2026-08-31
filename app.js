@@ -165,6 +165,28 @@ function navLink(route, label) {
 
 function layout(content) {
   const c = t();
+  const accessibilityCopy = {
+    en: {
+      menu: "Open or close primary navigation",
+      navigation: "Primary navigation",
+      language: "Language"
+    },
+    fr: {
+      menu: "Ouvrir ou fermer la navigation principale",
+      navigation: "Navigation principale",
+      language: "Langue"
+    },
+    zh: {
+      menu: "\u6253\u5f00\u6216\u5173\u95ed\u4e3b\u5bfc\u822a",
+      navigation: "\u4e3b\u5bfc\u822a",
+      language: "\u8bed\u8a00"
+    },
+    "zh-Hant": {
+      menu: "\u958b\u555f\u6216\u95dc\u9589\u4e3b\u8981\u5c0e\u89bd",
+      navigation: "\u4e3b\u8981\u5c0e\u89bd",
+      language: "\u8a9e\u8a00"
+    }
+  }[state.locale];
   document.documentElement.lang =
     state.locale === "zh" ? "zh-Hans" : state.locale === "zh-Hant" ? "zh-Hant" : state.locale;
   document.title = `${routeTitle()} | Legal Services Platform`;
@@ -179,10 +201,10 @@ function layout(content) {
             <small>${escapeHtml(c.common.placeholder)}</small>
           </span>
         </a>
-        <button class="icon-button mobile-menu" type="button" aria-expanded="false" aria-controls="primary-nav" title="Menu">
+        <button class="icon-button mobile-menu" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="${escapeHtml(accessibilityCopy.menu)}" title="${escapeHtml(accessibilityCopy.menu)}">
           ${icon("menu")}
         </button>
-        <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+        <nav id="primary-nav" class="primary-nav" aria-label="${escapeHtml(accessibilityCopy.navigation)}">
           ${navLink("home", c.nav.home)}
           ${navLink("services", c.nav.services)}
           ${navLink("library", c.nav.library)}
@@ -192,9 +214,9 @@ function layout(content) {
           ${navLink("admin", c.nav.admin)}
         </nav>
         <label class="locale-picker">
-          <span class="sr-only">Language</span>
+          <span class="sr-only">${escapeHtml(accessibilityCopy.language)}</span>
           ${icon("globe")}
-          <select id="locale-select" aria-label="Language">
+          <select id="locale-select" aria-label="${escapeHtml(accessibilityCopy.language)}">
             ${SUPPORTED_LOCALES.map(
               (locale) =>
                 `<option value="${locale}" ${locale === state.locale ? "selected" : ""}>${escapeHtml(copy[locale].localeName)}</option>`
@@ -244,6 +266,72 @@ function homeView() {
     zh: ["初步法律评估", "结构化问卷可整理事实、识别司法管辖区和紧迫性，并准备审查摘要。它不替代律师，也不会建立专业关系。", "开始初步评估"],
     "zh-Hant": ["初步法律評估", "結構化問卷可整理事實、識別司法管轄區及緊迫性，並準備審查摘要。它不取代律師，也不會建立專業關係。", "開始初步評估"]
   }[state.locale] || [];
+  const demoScopeCopy = {
+    en: {
+      eyebrow: "Browser-only preview",
+      title: "What this temporary demo includes",
+      intro: "Explore the public experience while production infrastructure and approvals remain intentionally disconnected.",
+      availableTitle: "Available in this demo",
+      available: [
+        "Four-language navigation, service discovery, and Legal Library browsing",
+        "Controlled preliminary legal information and assessment examples",
+        "Responsive public pages with publication and evidence gates preserved"
+      ],
+      unavailableTitle: "Not connected in this demo",
+      unavailable: [
+        "Account sign-in, server-side administration, or database persistence",
+        "Live consultation booking, payments, provider integrations, or confidential submissions"
+      ]
+    },
+    fr: {
+      eyebrow: "Aper\u00e7u uniquement dans le navigateur",
+      title: "Contenu de cette d\u00e9monstration temporaire",
+      intro: "Explorez l\u2019exp\u00e9rience publique pendant que l\u2019infrastructure de production et les approbations restent volontairement d\u00e9connect\u00e9es.",
+      availableTitle: "Disponible dans cette d\u00e9monstration",
+      available: [
+        "Navigation en quatre langues, d\u00e9couverte des services et consultation de la Biblioth\u00e8que juridique",
+        "Exemples encadr\u00e9s d\u2019information juridique pr\u00e9liminaire et d\u2019\u00e9valuation",
+        "Pages publiques adaptatives avec maintien des contr\u00f4les de publication et de preuve"
+      ],
+      unavailableTitle: "Non connect\u00e9 dans cette d\u00e9monstration",
+      unavailable: [
+        "Connexion au compte, administration c\u00f4t\u00e9 serveur ou persistance en base de donn\u00e9es",
+        "R\u00e9servation de consultation, paiements, int\u00e9grations de prestataires ou transmissions confidentielles en direct"
+      ]
+    },
+    zh: {
+      eyebrow: "\u4ec5\u6d4f\u89c8\u5668\u9884\u89c8",
+      title: "\u6b64\u4e34\u65f6\u6f14\u793a\u5305\u542b\u7684\u5185\u5bb9",
+      intro: "\u60a8\u53ef\u4ee5\u6d4f\u89c8\u516c\u5f00\u529f\u80fd\uff1b\u751f\u4ea7\u73af\u5883\u57fa\u7840\u8bbe\u65bd\u548c\u5ba1\u6279\u6d41\u7a0b\u4ecd\u7279\u610f\u4fdd\u6301\u65ad\u5f00\u3002",
+      availableTitle: "\u6b64\u6f14\u793a\u4e2d\u53ef\u7528",
+      available: [
+        "\u56db\u79cd\u8bed\u8a00\u5bfc\u822a\u3001\u670d\u52a1\u68c0\u7d22\u548c\u6cd5\u5f8b\u8d44\u6e90\u5e93\u6d4f\u89c8",
+        "\u53d7\u63a7\u7684\u521d\u6b65\u6cd5\u5f8b\u4fe1\u606f\u548c\u8bc4\u4f30\u793a\u4f8b",
+        "\u4fdd\u7559\u53d1\u5e03\u548c\u8bc1\u636e\u95e8\u7981\u7684\u54cd\u5e94\u5f0f\u516c\u5f00\u9875\u9762"
+      ],
+      unavailableTitle: "\u6b64\u6f14\u793a\u4e2d\u672a\u8fde\u63a5",
+      unavailable: [
+        "\u8d26\u6237\u767b\u5f55\u3001\u670d\u52a1\u5668\u7aef\u7ba1\u7406\u6216\u6570\u636e\u5e93\u6301\u4e45\u5316",
+        "\u5b9e\u65f6\u54a8\u8be2\u9884\u7ea6\u3001\u652f\u4ed8\u3001\u670d\u52a1\u5546\u96c6\u6210\u6216\u673a\u5bc6\u4fe1\u606f\u63d0\u4ea4"
+      ]
+    },
+    "zh-Hant": {
+      eyebrow: "\u50c5\u700f\u89bd\u5668\u9810\u89bd",
+      title: "\u6b64\u81e8\u6642\u793a\u7bc4\u5305\u542b\u7684\u5167\u5bb9",
+      intro: "\u60a8\u53ef\u4ee5\u700f\u89bd\u516c\u958b\u529f\u80fd\uff1b\u751f\u7522\u74b0\u5883\u57fa\u790e\u8a2d\u65bd\u8207\u5be9\u6279\u6d41\u7a0b\u4ecd\u7279\u610f\u4fdd\u6301\u65b7\u958b\u3002",
+      availableTitle: "\u6b64\u793a\u7bc4\u4e2d\u53ef\u7528",
+      available: [
+        "\u56db\u7a2e\u8a9e\u8a00\u5c0e\u89bd\u3001\u670d\u52d9\u641c\u5c0b\u8207\u6cd5\u5f8b\u8cc7\u6e90\u5eab\u700f\u89bd",
+        "\u53d7\u63a7\u7684\u521d\u6b65\u6cd5\u5f8b\u8cc7\u8a0a\u8207\u8a55\u4f30\u7bc4\u4f8b",
+        "\u4fdd\u7559\u767c\u5e03\u8207\u8b49\u64da\u9580\u7981\u7684\u97ff\u61c9\u5f0f\u516c\u958b\u9801\u9762"
+      ],
+      unavailableTitle: "\u6b64\u793a\u7bc4\u4e2d\u672a\u9023\u63a5",
+      unavailable: [
+        "\u5e33\u6236\u767b\u5165\u3001\u4f3a\u670d\u5668\u7aef\u7ba1\u7406\u6216\u8cc7\u6599\u5eab\u6301\u4e45\u5316",
+        "\u5373\u6642\u8aee\u8a62\u9810\u7d04\u3001\u4ed8\u6b3e\u3001\u670d\u52d9\u5546\u6574\u5408\u6216\u6a5f\u5bc6\u8cc7\u8a0a\u63d0\u4ea4"
+      ]
+    }
+  }[state.locale];
   return `
     <section class="hero">
       <div class="hero-content">
@@ -300,6 +388,27 @@ function homeView() {
       </div>
       <p class="profile-copy">${escapeHtml(aiCopy[1])}</p>
       <a class="button button-secondary" href="#/assessment">${escapeHtml(aiCopy[2])}${icon("arrow")}</a>
+    </section>
+    <section class="section demo-scope-band" aria-labelledby="demo-scope-title">
+      <div class="demo-scope-intro">
+        <p class="eyebrow">${escapeHtml(demoScopeCopy.eyebrow)}</p>
+        <h2 id="demo-scope-title">${escapeHtml(demoScopeCopy.title)}</h2>
+        <p>${escapeHtml(demoScopeCopy.intro)}</p>
+      </div>
+      <div class="demo-scope-columns">
+        <div>
+          <h3>${escapeHtml(demoScopeCopy.availableTitle)}</h3>
+          <ul class="scope-list scope-list-available">
+            ${demoScopeCopy.available.map((item) => `<li>${icon("check")}<span>${escapeHtml(item)}</span></li>`).join("")}
+          </ul>
+        </div>
+        <div>
+          <h3>${escapeHtml(demoScopeCopy.unavailableTitle)}</h3>
+          <ul class="scope-list scope-list-unavailable">
+            ${demoScopeCopy.unavailable.map((item) => `<li>${icon("lock")}<span>${escapeHtml(item)}</span></li>`).join("")}
+          </ul>
+        </div>
+      </div>
     </section>
     <section class="process-band">
       <div class="section-heading">
@@ -682,7 +791,7 @@ function aboutView() {
                 <h3>${escapeHtml(item.title)}</h3>
                 <p>${escapeHtml(item.detail)}</p>
               </div>
-              <span class="badge badge-warning">${escapeHtml(c.barStatus)}</span>
+              <span class="badge badge-success">${escapeHtml(c.barStatus)}</span>
             </article>
           `).join("")}
         </div>

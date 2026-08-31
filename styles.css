@@ -140,6 +140,59 @@ svg {
   line-height: 1.7;
 }
 
+.demo-scope-band {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  border-block: 1px solid var(--line);
+}
+
+.demo-scope-intro {
+  max-width: 34rem;
+}
+
+.demo-scope-intro p:last-child {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.demo-scope-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.demo-scope-columns h3 {
+  margin-top: 0;
+  font-size: 1.05rem;
+}
+
+.scope-list {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.scope-list li {
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, 1fr);
+  gap: 0.65rem;
+  align-items: start;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.scope-list svg {
+  margin-top: 0.2rem;
+  color: var(--teal-dark);
+}
+
+.scope-list-unavailable svg {
+  color: #7d5a20;
+}
+
 .profile-highlight {
   margin-bottom: 2.5rem;
   max-width: 52rem;
@@ -998,6 +1051,11 @@ h3 {
   background: #f5e6c9;
 }
 
+.badge-success {
+  color: #075158;
+  background: #d9eeeb;
+}
+
 .price-line {
   margin: 0.5rem 0 1rem;
   color: var(--coral);
@@ -1554,6 +1612,8 @@ h3 {
 
   .path-grid,
   .catalog-grid,
+  .demo-scope-band,
+  .demo-scope-columns,
   .process-band,
   .detail-layout,
   .guidance-layout,
