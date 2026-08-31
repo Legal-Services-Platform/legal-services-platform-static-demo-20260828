@@ -280,6 +280,41 @@ svg {
   margin: 0;
 }
 
+.profile-disclosure,
+.about-publication-controls {
+  margin-top: 1.25rem;
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+
+.profile-disclosure > summary,
+.about-publication-controls > summary {
+  padding: 1rem 1.15rem;
+  color: var(--teal-dark);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.profile-disclosure[open] > summary,
+.about-publication-controls[open] > summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.profile-disclosure .credential-timeline,
+.profile-disclosure .experience-list {
+  margin: 0;
+  padding: 0 1.15rem 0.3rem;
+}
+
+.about-publication-controls {
+  margin-top: 3rem;
+}
+
+.about-publication-controls .about-source-notice {
+  max-width: none;
+  border-left: 0;
+}
+
 .about-content {
   padding-top: 4rem;
 }

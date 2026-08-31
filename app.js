@@ -746,7 +746,6 @@ function aboutView() {
           <h1>${escapeHtml(c.displayName)}</h1>
           <p class="about-professional-title">${escapeHtml(c.professionalTitle)}</p>
           <p class="about-hero-summary">${escapeHtml(c.heroSummary)}</p>
-          <div class="about-source-notice">${icon("alert")}<p>${escapeHtml(c.sourceNotice)}</p></div>
         </div>
       </section>
       <section class="section about-content">
@@ -767,7 +766,7 @@ function aboutView() {
             <p class="eyebrow">${escapeHtml(c.educationTitle)}</p>
             <h2>${escapeHtml(c.educationTitle)}</h2>
           </div>
-          <div class="credential-timeline">
+          <details class="profile-disclosure"><summary>${escapeHtml(c.educationDisclosure)}</summary><div class="credential-timeline">
             ${c.education.map((item) => `
               <article>
                 <time>${escapeHtml(item.period)}</time>
@@ -778,7 +777,7 @@ function aboutView() {
                 </div>
               </article>
             `).join("")}
-          </div>
+          </div></details>
         </div>
         <div class="about-section bar-section">
           <div class="section-heading">
@@ -800,7 +799,7 @@ function aboutView() {
             <p class="eyebrow">${escapeHtml(c.experienceTitle)}</p>
             <h2>${escapeHtml(c.experienceTitle)}</h2>
           </div>
-          <div class="experience-list">
+          <details class="profile-disclosure"><summary>${escapeHtml(c.experienceDisclosure)}</summary><div class="experience-list">
             ${c.experience.map((item) => `
               <article>
                 <div class="experience-period">${escapeHtml(item.period)}</div>
@@ -811,7 +810,7 @@ function aboutView() {
                 </div>
               </article>
             `).join("")}
-          </div>
+          </div></details>
         </div>
         <div class="about-section approach-section">
           <div>
@@ -828,6 +827,7 @@ function aboutView() {
           <h2>${escapeHtml(c.languagesTitle)}</h2>
           <div class="language-list">${c.languages.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}</div>
         </div>
+        <details class="about-publication-controls"><summary>${escapeHtml(c.publicationControlsTitle)}</summary><div class="about-source-notice">${icon("alert")}<p>${escapeHtml(c.sourceNotice)}</p></div></details>
         <div class="credentials-section">
           <div>
             <p class="eyebrow">${escapeHtml(c.credentialsTitle)}</p>
@@ -906,8 +906,8 @@ function aboutView() {
             <p>${escapeHtml(c.ctaText)}</p>
           </div>
           <div class="hero-actions">
-            <a class="button button-primary" href="#/book/service-orientation">${escapeHtml(c.ctaPrimary)}${icon("arrow")}</a>
-            <a class="button button-secondary" href="#/services">${escapeHtml(c.ctaSecondary)}${icon("arrow")}</a>
+            <a class="button button-primary" href="#/contact">${escapeHtml(c.ctaPrimary)}${icon("arrow")}</a>
+            <a class="button button-secondary" href="#/book/service-orientation">${escapeHtml(c.ctaSecondary)}${icon("arrow")}</a>
           </div>
         </div>
       </section>
