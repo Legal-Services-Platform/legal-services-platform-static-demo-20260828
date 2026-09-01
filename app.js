@@ -19,6 +19,32 @@ import {
 import { copy } from "./i18n.js";
 
 const PUBLIC_DEMO_URL = "https://lyshabo.github.io/legal-services-platform-backend/";
+const serviceEvidenceLabels = {
+  en: {
+    basis: "Evidence and scope basis",
+    jurisdiction: "Jurisdiction-specific review",
+    references: "References",
+    status: "Publication and professional review status"
+  },
+  fr: {
+    basis: "Fondement des sources et du périmètre",
+    jurisdiction: "Examen propre à la juridiction",
+    references: "Références",
+    status: "Statut de publication et de revue professionnelle"
+  },
+  zh: {
+    basis: "证据与服务范围依据",
+    jurisdiction: "司法管辖区专项审查",
+    references: "参考资料",
+    status: "发布与专业审查状态"
+  },
+  "zh-Hant": {
+    basis: "證據與服務範圍依據",
+    jurisdiction: "司法管轄區專項審查",
+    references: "參考資料",
+    status: "發布與專業審查狀態"
+  }
+};
 
 const app = document.querySelector("#app");
 const staticDemo = document.documentElement.dataset.staticDemo === "true";
@@ -500,6 +526,7 @@ function serviceDetailView(id) {
         ${detailBlock(c.services.audience, tr.audience)}
         ${detailBlock(c.services.included, tr.included)}
         ${detailBlock(c.services.excluded, tr.excluded)}
+        ${serviceEvidenceView(service)}
       </div>
       <aside class="action-panel">
         <h2>${escapeHtml(c.nav.services)}</h2>
@@ -515,6 +542,37 @@ function serviceDetailView(id) {
 
 function detailBlock(title, text) {
   return `<article class="detail-block"><h2>${escapeHtml(title)}</h2><p>${escapeHtml(text)}</p></article>`;
+}
+
+function serviceEvidenceView(service) {
+  if (!service.evidence) return "";
+  const labels = serviceEvidenceLabels[state.locale] ?? serviceEvidenceLabels.en;
+  const jurisdiction =
+    service.evidence.jurisdiction[state.locale] ?? service.evidence.jurisdiction.en;
+  const reviewStatus =
+    service.evidence.reviewStatus[state.locale] ?? service.evidence.reviewStatus.en;
+  const references = service.evidence.references
+    .map(
+      (reference) => `
+        <li>
+          <a href="${escapeHtml(reference.url)}" target="_blank" rel="noopener noreferrer">
+            ${escapeHtml(reference.citation)}
+          </a>
+        </li>
+      `
+    )
+    .join("");
+  return `
+    <article class="detail-block service-evidence" data-evidence-status="${escapeHtml(service.evidenceStatus)}">
+      <h2>${escapeHtml(labels.basis)}</h2>
+      <h3>${escapeHtml(labels.jurisdiction)}</h3>
+      <p>${escapeHtml(jurisdiction)}</p>
+      <h3>${escapeHtml(labels.status)}</h3>
+      <p>${escapeHtml(reviewStatus)}</p>
+      <h3>${escapeHtml(labels.references)}</h3>
+      <ol class="reference-list">${references}</ol>
+    </article>
+  `;
 }
 
 function libraryView() {

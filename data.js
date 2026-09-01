@@ -1,3 +1,5 @@
+import { applyServiceEvidence } from "./service-evidence.js";
+
 export const platformConfig = {
   environment: "development",
   fixtureMode: true,
@@ -490,6 +492,8 @@ for (const service of requestedServiceCategories) {
   service.evidenceStatus = "pending";
   services.push(service);
 }
+
+applyServiceEvidence(services);
 
 export const products = [
   {
