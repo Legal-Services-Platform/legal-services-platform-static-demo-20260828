@@ -41,6 +41,7 @@ jobs:
             i18n.js \
             index.html \
             platform-core.js \
+            service-evidence.js \
             styles.css \
             _site/
 
@@ -53,6 +54,7 @@ jobs:
               i18n.js \
               index.html \
               platform-core.js \
+              service-evidence.js \
               styles.css |
               LC_ALL=C sort
           )"
@@ -69,6 +71,7 @@ jobs:
               i18n.js \
               index.html \
               platform-core.js \
+              service-evidence.js \
               styles.css |
               tee SHA256SUMS
           )
