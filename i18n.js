@@ -790,8 +790,8 @@ copy["zh-Hant"] = {
 };
 
 Object.assign(copy.en.about, {
-  displayName: "Tezzeta Mbuya N'Gungwa",
-  photoAlt: "Professional portrait of Tezzeta Mbuya N'Gungwa",
+  displayName: "Tezzeta N’gungwa Mbuya",
+  photoAlt: "Professional portrait of Tezzeta N’gungwa Mbuya",
   professionalTitle: "Dispute Resolution Specialist | PhD Candidate in Investment Arbitration",
   sourceNotice: "Development profile based on available materials. Identity alignment, current bar status, regulated titles, and publication permission require responsible-reviewer approval before production.",
   heroSummary: "A legal researcher and dispute-resolution specialist working across international investment law, arbitration, development, natural-resource governance, and Africa-focused legal questions.",
@@ -838,8 +838,8 @@ Object.assign(copy.en.about, {
 });
 
 Object.assign(copy.fr.about, {
-  displayName: "Tezzeta Mbuya N'Gungwa",
-  photoAlt: "Portrait professionnel de Tezzeta Mbuya N'Gungwa",
+  displayName: "Tezzeta N’gungwa Mbuya",
+  photoAlt: "Portrait professionnel de Tezzeta N’gungwa Mbuya",
   professionalTitle: "Spécialiste du règlement des différends | Doctorante en arbitrage d’investissement",
   sourceNotice: "Profil de développement fondé sur les éléments de CV fournis. La concordance d’identité, le statut actuel au barreau, les titres réglementés et l’autorisation de publication doivent être approuvés avant toute mise en production.",
   heroSummary: "Chercheuse juridique et spécialiste du règlement des différends travaillant sur le droit international des investissements, l’arbitrage, le droit international public, les litiges commerciaux et l’évolution du droit en Afrique.",
@@ -885,8 +885,8 @@ Object.assign(copy.fr.about, {
 });
 
 Object.assign(copy.zh.about, {
-  displayName: "Tezzeta Mbuya N'Gungwa",
-  photoAlt: "Tezzeta Mbuya N'Gungwa 的专业肖像",
+  displayName: "Tezzeta N’gungwa Mbuya",
+  photoAlt: "Tezzeta N’gungwa Mbuya 的专业肖像",
   professionalTitle: "争议解决专业人士 | 投资仲裁博士研究生",
   sourceNotice: "本开发版简介依据所提供的简历材料编写。姓名一致性、当前律师协会状态、受监管职称及发布许可，均须在正式上线前由责任审核人批准。",
   heroSummary: "从事国际投资法、仲裁、国际公法、商事争议及非洲法律发展研究的法律研究人员和争议解决专业人士。",
@@ -932,8 +932,8 @@ Object.assign(copy.zh.about, {
 });
 
 Object.assign(copy["zh-Hant"].about, {
-  displayName: "Tezzeta Mbuya N'Gungwa",
-  photoAlt: "Tezzeta Mbuya N'Gungwa 的專業肖像",
+  displayName: "Tezzeta N’gungwa Mbuya",
+  photoAlt: "Tezzeta N’gungwa Mbuya 的專業肖像",
   professionalTitle: "爭議解決專業人士 | 投資仲裁博士研究生",
   sourceNotice: "本開發版簡介依據所提供的履歷資料編寫。姓名一致性、現行律師公會狀態、受規管職稱及發布許可，均須在正式上線前由責任審核人批准。",
   heroSummary: "從事國際投資法、仲裁、國際公法、商事爭議及非洲法律發展研究的法律研究人員和爭議解決專業人士。",
@@ -1016,6 +1016,30 @@ for (const [locale, about] of Object.entries({
     approachText: "Mbuya 以研究為基礎處理複雜國際及跨境問題，重視法律來源、司法管轄區、商業背景及初步評估的界限。網站將其表述為資訊與諮詢支援，不承諾任何法律結果。"
   }
 })) Object.assign(copy[locale].about, about);
+
+// Keep the browser-only mirror aligned with the main app's date-optional themes.
+const selectedExperienceByLocale = {
+  en: [["Production-sharing agreement","Selected matter theme","Research and drafting support described for a production-sharing agreement involving a Congolese government entity and a Chinese enterprise.","Supports review of allocation, fiscal, regulatory, and cross-border risk in DRC resource projects.",true],["BOOT hydropower agreement","Selected matter theme","Research and drafting support described for a build-own-operate-transfer hydropower agreement serving a mining project in the DRC.","Helps operators assess infrastructure interfaces, concessions, performance obligations, and public-sector approvals.",true],["Mining licences and title revocation","Selected matter theme","Advisory support described on mining licensing and challenges connected with revocation of mining titles.","Relevant to permitting continuity, administrative process, project finance, and dispute preparation in the DRC.",true],["Mining and oil compliance","Selected matter theme","Compliance research and advisory support described for Chinese and US mining and oil companies operating in the DRC.","Helps organizations identify regulatory interfaces and escalation points before local review.",true],["Tax and customs matters","Selected matter theme","Support described for tax and customs questions before public institutions and courts.","Relevant to import, export, valuation, assessment, and administrative-dispute planning for DRC operations.",true],["Asset securitization analysis","Selected matter theme","Merits analysis described for asset securitization in a contentious mining matter.","Supports structured review of security, receivables, enforcement, and investment-risk questions.",true],["Joint venture","Selected matter theme","Drafting support described for a joint venture between a Congolese operator and a Chinese investor.","Relevant to governance, contributions, control, dispute clauses, and cross-border investment structuring.",true],["Public-private partnership","Selected matter theme","Analysis described for a public-private infrastructure contract with a Chinese company.","Supports review of allocation of public obligations, approvals, procurement interfaces, and project risk.",true],["Collective bargaining agreement","Selected matter theme","Advisory and drafting support described for collective bargaining arrangements in mining and oil operations.","Relevant to workforce governance, labour obligations, and operational continuity in the DRC.",true],["Environmental impact and pollution","Selected matter theme","Review and discussion described for environmental-impact studies and pollution-related matters.","Supports issue spotting around permits, environmental duties, remediation, and community impacts.",true],["Mineral transport authorizations","Selected matter theme","Support described for applications concerning transport authorizations for mineral resources.","Relevant to logistics, chain-of-custody, licensing, and regulatory coordination.",true],["Investment-treaty negotiations","Selected matter theme","Participation in negotiations preceding an investment-treaty claim is described.","Supports early issue framing around treaty protections, State measures, and dispute pathways.",true],["Company registrations","Selected matter theme","Company-registration work is described.","Relevant to market entry, entity structuring, and initial regulatory steps in the DRC.",true],["Commercial, land, and human-rights disputes","Selected matter theme","The source describes research and support involving commercial contracts, insurance, shareholder disputes, land questions, community rights, and human-rights mechanisms.","Helps organizations identify cross-cutting dispute, stakeholder, and remedy questions affecting DRC operations.",true]]
+};
+copy.en.about.experience = selectedExperienceByLocale.en.map(([role, organization, detail, jurisdictionalRelevance, evidenceStatus]) => ({period:"", role, organization, detail, jurisdictionalRelevance, evidenceStatus}));
+copy.en.about.sourceNotice = `${copy.en.about.sourceNotice} The displayed identity is Tezzeta N’gungwa Mbuya; prose uses Mbuya.`;
+const localizedThemeLabels = {
+  fr: ["Contrat de partage de production","Accord BOOT hydroélectrique","Permis miniers et retrait de titres","Conformité minière et pétrolière","Fiscalité et douanes","Analyse de titrisation d’actifs","Coentreprise","Partenariat public-privé","Convention collective","Études d’impact et pollution","Autorisations de transport des minerais","Négociations relatives aux traités d’investissement","Immatriculation de sociétés","Différends commerciaux, fonciers et relatifs aux droits humains"],
+  zh: ["产品分成协议","BOOT 水电协议","采矿许可与矿权撤销","矿业与石油合规","税务与海关事项","资产证券化分析","合资企业","公私合作","集体谈判协议","环境影响与污染","矿产运输授权","投资条约谈判","公司注册","商业、土地与人权争议"],
+  "zh-Hant": ["產品分成協議","BOOT 水力發電協議","採礦許可與礦權撤銷","礦業與石油合規","稅務與海關事項","資產證券化分析","合資企業","公私合作","集體談判協議","環境影響與污染","礦產運輸授權","投資條約談判","公司註冊","商業、土地與人權爭議"]
+};
+for (const locale of ["fr", "zh", "zh-Hant"]) {
+  const labels = localizedThemeLabels[locale];
+  copy[locale].about.experience = labels.map((role, index) => ({
+    period: "",
+    role,
+    organization: locale === "fr" ? "Thème de dossier sélectionné" : locale === "zh" ? "精选事项主题" : "精選事項主題",
+    detail: locale === "fr" ? "Le document fourni décrit un travail de recherche ou d’appui sur ce thème; le périmètre public reste soumis à l’examen des preuves." : locale === "zh" ? "所提供材料描述了与该主题相关的研究或支持工作；公开范围仍须经过证据审查。" : "所提供材料描述了與該主題相關的研究或支援工作；公開範圍仍須經過證據審查。",
+    jurisdictionalRelevance: locale === "fr" ? "Peut aider à repérer les risques opérationnels et réglementaires liés aux activités en RDC; ne remplace pas un avis local actuel." : locale === "zh" ? "可帮助识别与刚果民主共和国业务相关的运营和监管风险；不能替代现行当地法律意见。" : "可協助識別與剛果民主共和國業務相關的營運及監管風險；不能取代現行當地法律意見。",
+    evidenceStatus: true
+  }));
+  copy[locale].about.sourceNotice = `${copy[locale].about.sourceNotice} The displayed identity is Tezzeta N’gungwa Mbuya; prose uses Mbuya.`;
+}
 
 const selectedExperienceThemes = {
   en: [
@@ -1278,5 +1302,22 @@ for (const [locale, themes] of Object.entries(selectedExperienceThemes)) {
       jurisdictionalRelevance,
       evidenceStatus: "pending"
     })));
+  }
+}
+
+// Ensure the mirror exposes the complete date-optional set without replacing
+// its existing static-demo-specific entries.
+for (const [locale, themes] of Object.entries(selectedExperienceThemes)) {
+  const existing = copy[locale].about.experience || [];
+  if (existing.length < 14) {
+    const additions = themes.slice(0, 14 - existing.length).map(([role, detail, jurisdictionalRelevance]) => ({
+      period: "",
+      role,
+      organization: locale === "en" ? "Selected matter theme" : locale === "fr" ? "Thème d’expérience sélectionné" : locale === "zh" ? "精选事项主题" : "精選事項主題",
+      detail,
+      jurisdictionalRelevance,
+      evidenceStatus: "pending"
+    }));
+    copy[locale].about.experience = existing.concat(additions);
   }
 }
