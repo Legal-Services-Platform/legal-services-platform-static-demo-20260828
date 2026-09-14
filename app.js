@@ -615,11 +615,26 @@ function productCard(product) {
       <h2>${escapeHtml(tr.title)}</h2>
       <p>${escapeHtml(tr.summary)}</p>
       <div class="price-line">${escapeHtml(product.topic ?? product.category)}</div>
+      ${product.sourceMetadata?.length ? `<p class="source-meta"><strong>${escapeHtml(resourceEvidenceLabels(state.locale).sources)}:</strong> ${escapeHtml(product.sourceMetadata[0].title)} · ${escapeHtml(tr.sourceStatus || product.sourceMetadata[0].status)}</p>` : ""}
       <a class="button button-secondary button-small" href="${routeHref("product", product.id)}">
         ${escapeHtml(t().library.readResource)}${icon("arrow")}
       </a>
+      <button class="button button-primary button-small" type="button" disabled>${icon("lock")}${escapeHtml(catalogPurchaseLabel(state.locale))}</button>
     </article>
   `;
+}
+
+function resourceEvidenceLabels(locale) {
+  return ({
+    en: { sources: "Source metadata", relevance: "DRC operational relevance" },
+    fr: { sources: "Métadonnées de source", relevance: "Pertinence opérationnelle pour la RDC" },
+    zh: { sources: "来源元数据", relevance: "对刚果民主共和国业务的相关性" },
+    "zh-Hant": { sources: "來源中繼資料", relevance: "對剛果民主共和國業務的相關性" }
+  }[locale] || { sources: "Source metadata", relevance: "DRC operational relevance" });
+}
+
+function catalogPurchaseLabel(locale) {
+  return ({ en: "Purchase unavailable", fr: "Achat indisponible", zh: "购买不可用", "zh-Hant": "購買不可用" }[locale] || "Purchase unavailable");
 }
 
 function productDetailView(id) {
@@ -638,6 +653,8 @@ function productDetailView(id) {
       <div class="detail-content">
         ${detailBlock(c.library.format, tr.format)}
         ${detailBlock(c.library.limitation, tr.limitation)}
+        ${tr.operationalRelevance ? detailBlock(resourceEvidenceLabels(state.locale).relevance, tr.operationalRelevance) : ""}
+        ${product.sourceMetadata?.length ? detailBlock(resourceEvidenceLabels(state.locale).sources, product.sourceMetadata.map((source) => `${source.title} · ${source.sourceType} · ${tr.sourceStatus || source.status} · ${source.url}`).join("; ")) : ""}
       </div>
       <aside class="action-panel">
         <h2>${escapeHtml(c.common.unavailable)}</h2>
@@ -670,13 +687,17 @@ function catalogControls(prefix, search, category, categories) {
 
 function libraryControls() {
   const c = t();
-  const values = ["international-arbitration", "investment-law", "african-trade", "business-human-rights", "extractive-industries", "international-economic-law", "legal-research"];
+  const values = ["international-arbitration", "investment-law", "african-trade", "business-human-rights", "extractive-industries", "international-economic-law", "legal-research", "drc-laws", "drc-regulations", "drc-bylaws", "ohada", "rec-regulations", "bilateral-investment-treaties", "regional-economic-agreements"];
   const labelsByLocale = {
     en: ["International Arbitration", "Investment Law", "African Trade & AfCFTA", "Business & Human Rights", "Extractive Industries", "International Economic Law", "Legal Research"],
     fr: ["Arbitrage international", "Droit des investissements", "Commerce africain et ZLECAf", "Entreprises et droits humains", "Industries extractives", "Droit économique international", "Recherche juridique"],
     zh: ["国际仲裁", "投资法", "非洲贸易与非洲大陆自贸区", "企业与人权", "采掘业", "国际经济法", "法律研究"],
     "zh-Hant": ["國際仲裁", "投資法", "非洲貿易與非洲大陸自由貿易區", "企業與人權", "採掘業", "國際經濟法", "法律研究"]
   };
+  labelsByLocale.en.push("DRC laws", "DRC regulations", "DRC bylaws and implementing measures", "OHADA instruments", "REC regulations", "Bilateral investment treaties", "Regional economic agreements");
+  labelsByLocale.fr.push("Lois de la RDC", "Règlements de la RDC", "Textes d’application de la RDC", "Instruments OHADA", "Réglementations des CER", "Traités bilatéraux d’investissement", "Accords économiques régionaux");
+  labelsByLocale.zh.push("刚果民主共和国法律", "刚果民主共和国法规", "刚果民主共和国附属规则与实施措施", "OHADA 文书", "区域经济共同体法规", "双边投资协定", "区域经济协定");
+  labelsByLocale["zh-Hant"].push("剛果民主共和國法律", "剛果民主共和國法規", "剛果民主共和國附屬規則與實施措施", "OHADA 文書", "區域經濟共同體法規", "雙邊投資協定", "區域經濟協定");
   const topics = values.map((value, index) => [value, (labelsByLocale[state.locale] || labelsByLocale.en)[index]]);
   return `
     <form class="catalog-controls library-controls" id="product-filters">
@@ -865,11 +886,13 @@ function aboutView() {
           <details class="profile-disclosure"><summary>${escapeHtml(c.experienceDisclosure)}</summary><div class="experience-list">
             ${c.experience.map((item) => `
               <article>
-                <div class="experience-period">${escapeHtml(item.period)}</div>
+                <div class="experience-period">${escapeHtml(item.period || c.dateNotStated || "Date not stated")}</div>
                 <div>
                   <h3>${escapeHtml(item.role)}</h3>
                   <p class="about-organization">${escapeHtml(item.organization)}</p>
                   <p>${escapeHtml(item.detail)}</p>
+                  ${item.jurisdictionalRelevance ? `<p><strong>${escapeHtml(c.drcRelevance || "DRC operational relevance")}:</strong> ${escapeHtml(item.jurisdictionalRelevance)}</p>` : ""}
+                  ${item.evidenceStatus ? `<span class="badge">${escapeHtml(c.evidencePending || "Evidence pending")}</span>` : ""}
                 </div>
               </article>
             `).join("")}

@@ -618,6 +618,130 @@ for (const [id, category, topic, title, summary] of additionalLibraryResources) 
   });
 }
 
+const drcLibraryResources = [
+  ["resource-drc-constitution", "drc-laws", "DRC Laws", "Constitution of the Democratic Republic of the Congo", "Development resource for reviewing constitutional provisions relevant to public authority, investment, and dispute-resolution analysis.", "https://www.journalofficiel.cd/"],
+  ["resource-drc-mining-code", "drc-laws", "DRC Laws", "Democratic Republic of the Congo Mining Code", "Development resource for mining-project diligence, natural-resource governance, and investor-state issue spotting.", "https://www.journalofficiel.cd/"],
+  ["resource-drc-hydrocarbons", "drc-laws", "DRC Laws", "DRC Hydrocarbons Framework", "Development resource for reviewing upstream and downstream hydrocarbons obligations and project interfaces.", "https://www.journalofficiel.cd/"],
+  ["resource-drc-digital-code", "drc-laws", "DRC Laws", "DRC Digital Code", "Development resource for digital transactions, data governance, and technology-related legal research in the DRC.", "https://www.journalofficiel.cd/"],
+  ["resource-drc-banking-credit", "drc-laws", "DRC Laws", "DRC Banking and Credit Regulation", "Development resource for banking, credit-institution oversight, and investment-structuring research.", "https://www.journalofficiel.cd/"],
+  ["resource-drc-regulations", "drc-regulations", "DRC Regulations", "DRC Regulations and Administrative Measures", "Development index for regulations, decrees, ordinances, and administrative measures affecting operations in the DRC.", "https://www.journalofficiel.cd/"],
+  ["resource-drc-bylaws", "drc-bylaws", "DRC Bylaws and Implementing Measures", "DRC Bylaws and Implementing Measures", "Development index for implementing texts, ministerial measures, and subordinate rules connected with DRC legislation.", "https://www.journalofficiel.cd/"],
+  ["resource-ohada-companies", "ohada", "OHADA / Regional Instruments", "OHADA Uniform Act on Commercial Companies and Economic Interest Groups", "Official OHADA company-law resource relevant to incorporation, governance, restructuring, and commercial operations in the DRC.", "https://www.ohada.org/droit-des-societes-commerciales-et-du-gie/"],
+  ["resource-ohada-commercial-law", "ohada", "OHADA / Regional Instruments", "OHADA Uniform Act on General Commercial Law", "Official OHADA resource for commercial status, registration, and cross-border business-law analysis.", "https://www.ohada.org/droit-commercial-general/"],
+  ["resource-ohada-mediation", "ohada", "OHADA / Regional Instruments", "OHADA Uniform Act on Mediation", "Official OHADA resource for mediation frameworks that may inform cross-border dispute-resolution planning.", "https://www.ohada.org/acte-uniforme-relatif-a-la-mediation/"],
+  ["resource-afcfta-agreement", "rec-regulations", "REC / Regional Instruments", "Agreement Establishing the African Continental Free Trade Area", "African Union treaty resource for trade, investment, services, and regional economic integration research.", "https://static.au.int/sw/node/34270"],
+  ["resource-drc-bits", "bilateral-investment-treaties", "Bilateral Investment Treaties", "DRC Bilateral Investment Treaty Materials", "Development index for locating and comparing DRC bilateral investment treaties and related instruments.", "https://investmentpolicy.unctad.org/international-investment-agreements/countries/52/democratic-republic-of-the-congo"],
+  ["resource-rec-agreements", "regional-economic-agreements", "REC / Regional Instruments", "Regional Economic Community Regulations and Agreements", "Development index for REC instruments relevant to DRC operations, including African regional trade and economic agreements.", "https://static.au.int/sw/node/34270"]
+];
+
+const drcResourceLabels = {
+  fr: {
+    titles: {
+      "Constitution of the Democratic Republic of the Congo": "Constitution de la République démocratique du Congo",
+      "Democratic Republic of the Congo Mining Code": "Code minier de la République démocratique du Congo",
+      "DRC Hydrocarbons Framework": "Cadre des hydrocarbures de la RDC",
+      "DRC Digital Code": "Code du numérique de la RDC",
+      "DRC Banking and Credit Regulation": "Réglementation bancaire et du crédit en RDC",
+      "DRC Regulations and Administrative Measures": "Règlements et mesures administratives de la RDC",
+      "DRC Bylaws and Implementing Measures": "Textes d’application et mesures d’exécution de la RDC",
+      "OHADA Uniform Act on Commercial Companies and Economic Interest Groups": "Acte uniforme OHADA relatif au droit des sociétés commerciales et du GIE",
+      "OHADA Uniform Act on General Commercial Law": "Acte uniforme OHADA portant droit commercial général",
+      "OHADA Uniform Act on Mediation": "Acte uniforme OHADA relatif à la médiation",
+      "Agreement Establishing the African Continental Free Trade Area": "Accord établissant la Zone de libre-échange continentale africaine",
+      "DRC Bilateral Investment Treaty Materials": "Documents sur les traités bilatéraux d’investissement de la RDC",
+      "Regional Economic Community Regulations and Agreements": "Réglementations et accords des communautés économiques régionales"
+    },
+    summaryPrefix: "Ressource de développement pour la recherche juridique en RDC : "
+  },
+  zh: {
+    titles: {
+      "Constitution of the Democratic Republic of the Congo": "刚果民主共和国宪法",
+      "Democratic Republic of the Congo Mining Code": "刚果民主共和国矿业法典",
+      "DRC Hydrocarbons Framework": "刚果民主共和国碳氢化合物框架",
+      "DRC Digital Code": "刚果民主共和国数字法典",
+      "DRC Banking and Credit Regulation": "刚果民主共和国银行与信贷监管",
+      "DRC Regulations and Administrative Measures": "刚果民主共和国法规与行政措施",
+      "DRC Bylaws and Implementing Measures": "刚果民主共和国附属规则与实施措施",
+      "OHADA Uniform Act on Commercial Companies and Economic Interest Groups": "OHADA 商业公司与经济利益集团统一法",
+      "OHADA Uniform Act on General Commercial Law": "OHADA 一般商法统一法",
+      "OHADA Uniform Act on Mediation": "OHADA 调解统一法",
+      "Agreement Establishing the African Continental Free Trade Area": "建立非洲大陆自由贸易区协定",
+      "DRC Bilateral Investment Treaty Materials": "刚果民主共和国双边投资协定资料",
+      "Regional Economic Community Regulations and Agreements": "区域经济共同体法规与协定"
+    },
+    summaryPrefix: "用于刚果民主共和国法律研究的开发资源："
+  },
+  "zh-Hant": {
+    titles: {
+      "Constitution of the Democratic Republic of the Congo": "剛果民主共和國憲法",
+      "Democratic Republic of the Congo Mining Code": "剛果民主共和國礦業法典",
+      "DRC Hydrocarbons Framework": "剛果民主共和國碳氫化合物框架",
+      "DRC Digital Code": "剛果民主共和國數碼法典",
+      "DRC Banking and Credit Regulation": "剛果民主共和國銀行與信貸監管",
+      "DRC Regulations and Administrative Measures": "剛果民主共和國法規與行政措施",
+      "DRC Bylaws and Implementing Measures": "剛果民主共和國附屬規則與實施措施",
+      "OHADA Uniform Act on Commercial Companies and Economic Interest Groups": "OHADA 商業公司與經濟利益集團統一法",
+      "OHADA Uniform Act on General Commercial Law": "OHADA 一般商法統一法",
+      "OHADA Uniform Act on Mediation": "OHADA 調解統一法",
+      "Agreement Establishing the African Continental Free Trade Area": "建立非洲大陸自由貿易區協定",
+      "DRC Bilateral Investment Treaty Materials": "剛果民主共和國雙邊投資協定資料",
+      "Regional Economic Community Regulations and Agreements": "區域經濟共同體法規與協定"
+    },
+    summaryPrefix: "用於剛果民主共和國法律研究的開發資源："
+  }
+};
+
+for (const [id, category, topic, title, summary, url] of drcLibraryResources) {
+  const translations = {
+    en: {
+      title,
+      summary,
+      format: "Digital legal research resource",
+      limitation: "Source text, edition/effective date, currency, license, and publication permission remain pending approval.",
+      operationalRelevance: "May help clients assess DRC market entry, licensing, investment structuring, regulatory interfaces, or dispute-resolution pathways; not a substitute for current jurisdiction-specific advice.",
+      sourceStatus: "Reference identified; source text and publication permission pending."
+    },
+    fr: {
+      title: drcResourceLabels.fr.titles[title] ?? title,
+      summary: `${drcResourceLabels.fr.summaryPrefix}${summary}`,
+      format: "Ressource numérique de recherche juridique",
+      limitation: "Le texte source, l’édition ou la date d’entrée en vigueur, l’actualité, la licence et l’autorisation de publication restent à approuver.",
+      operationalRelevance: "Peut aider à examiner l’entrée sur le marché de la RDC, les licences, la structuration des investissements, les interfaces réglementaires ou les voies de règlement des différends; ne remplace pas un avis actuel propre à la juridiction.",
+      sourceStatus: "Référence identifiée; texte source et autorisation de publication en attente."
+    },
+    zh: {
+      title: drcResourceLabels.zh.titles[title] ?? title,
+      summary: `${drcResourceLabels.zh.summaryPrefix}${summary}`,
+      format: "数字法律研究资源",
+      limitation: "来源文本、版本或生效日期、时效性、许可和发布许可尚待批准。",
+      operationalRelevance: "可用于评估刚果民主共和国市场准入、许可、投资架构、监管接口或争议解决路径；不能替代基于现行法律的当地法律意见。",
+      sourceStatus: "已识别参考来源；来源文本及发布许可待审。"
+    },
+    "zh-Hant": {
+      title: drcResourceLabels["zh-Hant"].titles[title] ?? title,
+      summary: `${drcResourceLabels["zh-Hant"].summaryPrefix}${summary}`,
+      format: "數碼法律研究資源",
+      limitation: "來源文本、版本或生效日期、時效性、授權及發布許可尚待批准。",
+      operationalRelevance: "可用於評估剛果民主共和國市場准入、許可、投資架構、監管介面或爭議解決路徑；不能取代基於現行法律的當地法律意見。",
+      sourceStatus: "已識別參考來源；來源文本及發布許可待審。"
+    }
+  };
+  products.push({
+    id,
+    category,
+    topic,
+    resourceType: "Legal Research Resource",
+    language: "English",
+    jurisdiction: "Democratic Republic of the Congo / regional instruments",
+    edition: null,
+    price: null,
+    fixture: true,
+    sourceStatus: "pending",
+    sourceMetadata: [{ title, sourceType: "Official public source index", url, status: "reference identified; text and permission pending" }],
+    translations
+  });
+}
+
 for (const product of products) {
   if (!product.translations["zh-Hant"]) {
     product.translations["zh-Hant"] = product.translations.zh

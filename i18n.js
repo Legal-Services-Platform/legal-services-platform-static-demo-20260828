@@ -1017,6 +1017,45 @@ for (const [locale, about] of Object.entries({
   }
 })) Object.assign(copy[locale].about, about);
 
+const selectedExperienceThemes = {
+  en: [
+    ["Investment and infrastructure agreements", "Research and drafting support concerning production-sharing, BOOT, public-private partnership, and joint-venture arrangements.", "These structures can affect project allocation, State obligations, financing risk, and investor protection in DRC operations."],
+    ["Mining licensing and title issues", "Research and support concerning mining licences, title revocation, mineral-transport authorisations, and regulatory interfaces.", "Mining rights and administrative authorisations can be central to project continuity and investment risk in the DRC."],
+    ["Tax, customs, and secured-asset disputes", "Research and support concerning tax and customs questions, public-institution proceedings, and asset-security analysis.", "Tax, customs, and security interests can affect project economics, enforcement, and cross-border investment planning."],
+    ["Environmental and social impacts", "Review support involving environmental-impact studies, pollution allegations, remediation questions, and community compensation processes.", "Environmental approvals, community impacts, and remediation obligations are recurring risks for DRC projects."],
+    ["Commercial and shareholder disputes", "Research and support concerning commercial contracts, insurance, shareholder disputes, and business litigation.", "Commercial dispute planning can affect continuity, enforceability, and investment protection in the DRC."],
+    ["Investment-treaty and State-measure analysis", "Research concerning treaty issues, negotiations preceding potential claims, and State measures affecting investments.", "Treaty coverage, nationality, consent, and domestic remedies may shape DRC investment-risk assessment."],
+    ["Business and human-rights mechanisms", "Research concerning community rights, environmental harm, corporate responsibility, and non-judicial complaint mechanisms.", "Human-rights and community-impact questions can affect governance, financing, reputation, and dispute exposure."]
+  ],
+  fr: [
+    ["Accords d’investissement et d’infrastructure", "Appui à la recherche et à la rédaction concernant les accords de partage de production, BOOT, partenariats public-privé et coentreprises.", "Ces structures peuvent affecter la répartition du projet, les obligations de l’État, le financement et la protection de l’investissement en RDC."],
+    ["Licences et titres miniers", "Recherche et appui concernant les licences minières, la révocation de titres, le transport des minerais et les interfaces réglementaires.", "Les droits miniers et autorisations administratives peuvent être essentiels à la continuité et au risque d’investissement en RDC."],
+    ["Fiscalité, douanes et sûretés", "Recherche et appui concernant les questions fiscales et douanières, les procédures publiques et l’analyse des sûretés.", "La fiscalité, les douanes et les sûretés peuvent affecter l’économie du projet, l’exécution et la planification transfrontalière."],
+    ["Impacts environnementaux et sociaux", "Appui à l’examen d’études d’impact, d’allégations de pollution, de questions de remise en état et d’indemnisation communautaire.", "Les autorisations, impacts communautaires et obligations de remise en état constituent des risques récurrents en RDC."],
+    ["Différends commerciaux et entre actionnaires", "Recherche et appui concernant les contrats, l’assurance, les différends entre actionnaires et le contentieux des affaires.", "La planification des différends peut affecter la continuité, l’exécution et la protection des investissements en RDC."],
+    ["Traités d’investissement et mesures étatiques", "Recherche concernant les traités, les négociations précédant d’éventuelles demandes et les mesures affectant les investissements.", "La couverture conventionnelle, la nationalité, le consentement et les recours internes peuvent structurer l’évaluation des risques en RDC."],
+    ["Entreprises, droits humains et mécanismes de plainte", "Recherche concernant les droits des communautés, les atteintes environnementales, la responsabilité des entreprises et les mécanismes non judiciaires.", "Ces questions peuvent affecter la gouvernance, le financement, la réputation et l’exposition aux différends en RDC."]
+  ],
+  zh: [
+    ["投资与基础设施协议", "涉及产品分成、BOOT、公私合作和合资安排的研究与起草支持。", "这些结构可能影响刚果民主共和国项目的风险分配、国家义务、融资风险与投资保护。"],
+    ["矿业许可与矿权问题", "涉及矿业许可、矿权撤销、矿产运输授权和监管接口的研究与支持。", "矿业权利和行政许可可能影响刚果民主共和国项目的持续运营与投资风险。"],
+    ["税务、海关与资产担保争议", "涉及税务、海关、公共机构程序及资产担保分析的研究与支持。", "税务、海关和担保权益可能影响项目经济性、执行和跨境投资规划。"],
+    ["环境与社会影响", "涉及环境影响研究、污染指控、修复问题和社区补偿程序的审阅支持。", "环境许可、社区影响和修复义务是刚果民主共和国项目常见风险。"],
+    ["商业与股东争议", "涉及商业合同、保险、股东争议和商事诉讼的研究与支持。", "争议规划可能影响在刚果民主共和国经营企业的连续性、执行与投资保护。"],
+    ["投资协定与国家措施分析", "涉及投资协定、潜在争议前谈判及影响投资的国家措施的研究。", "协定覆盖、国籍、同意和国内救济可能影响刚果民主共和国投资风险评估。"],
+    ["企业与人权机制", "涉及社区权利、环境损害、企业责任及非司法申诉机制的研究。", "人权和社区影响问题可能影响治理、融资、声誉与争议风险。"]
+  ],
+  "zh-Hant": [
+    ["投資與基礎設施協議", "涉及產品分成、BOOT、公私合作及合資安排的研究與起草支援。", "這些結構可能影響剛果民主共和國項目的風險分配、國家義務、融資風險及投資保障。"],
+    ["礦業許可與礦權問題", "涉及礦業許可、礦權撤銷、礦產運輸授權及監管介面的研究與支援。", "礦業權利及行政許可可能影響剛果民主共和國項目的持續營運及投資風險。"],
+    ["稅務、海關與資產擔保爭議", "涉及稅務、海關、公共機構程序及資產擔保分析的研究與支援。", "稅務、海關及擔保權益可能影響項目經濟性、執行及跨境投資規劃。"],
+    ["環境與社會影響", "涉及環境影響研究、污染指控、修復問題及社群補償程序的審閱支援。", "環境許可、社群影響及修復義務是剛果民主共和國項目常見風險。"],
+    ["商業與股東爭議", "涉及商業合約、保險、股東爭議及商事訴訟的研究與支援。", "爭議規劃可能影響在剛果民主共和國營運企業的連續性、執行及投資保障。"],
+    ["投資協定與國家措施分析", "涉及投資協定、潛在爭議前談判及影響投資的國家措施的研究。", "協定涵蓋、國籍、同意及國內救濟可能影響剛果民主共和國投資風險評估。"],
+    ["企業與人權機制", "涉及社群權利、環境損害、企業責任及非司法申訴機制的研究。", "人權及社群影響問題可能影響管治、融資、聲譽及爭議風險。"]
+  ]
+};
+
 // Approved bar-membership resolution: remove bar-status verification language.
 for (const [locale, about] of Object.entries({
   en: {
@@ -1218,3 +1257,26 @@ for (const [locale, about] of Object.entries({
     }]
   }
 })) Object.assign(copy[locale].about, about);
+
+for (const [locale, themes] of Object.entries(selectedExperienceThemes)) {
+  const labels = {
+    en: ["Date not stated", "Selected matter theme", "Evidence pending", "DRC operational relevance"],
+    fr: ["Date non indiquée", "Thème d’expérience sélectionné", "Preuves en attente", "Pertinence opérationnelle pour la RDC"],
+    zh: ["日期未注明", "精选事项主题", "证据待审", "对刚果民主共和国业务的相关性"],
+    "zh-Hant": ["日期未註明", "精選事項主題", "證據待審", "對剛果民主共和國業務的相關性"]
+  }[locale];
+  copy[locale].about.dateNotStated = labels[0];
+  copy[locale].about.evidencePending = labels[2];
+  copy[locale].about.drcRelevance = labels[3];
+  const existing = copy[locale].about.experience || [];
+  if (existing.length < 11) {
+    copy[locale].about.experience = existing.concat(themes.map(([role, detail, jurisdictionalRelevance]) => ({
+      period: "",
+      role,
+      organization: labels[1],
+      detail,
+      jurisdictionalRelevance,
+      evidenceStatus: "pending"
+    })));
+  }
+}
