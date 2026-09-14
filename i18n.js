@@ -102,9 +102,9 @@ export const copy = {
     about: {
       title: "About Tezzeta Mbuya N'Gungwa",
       text: "International law research. African perspective.",
-      profileTitle: "Meet Tezzeta Mbuya N'Gungwa",
+      profileTitle: "Meet Tezzeta N’gungwa Mbuya",
       profileText: "Legal researcher, international law specialist, and dispute-resolution specialist focused on international investment, commercial arbitration, international economic law, business and human rights, and Africa’s evolving legal landscape.",
-      profileCta: "Learn More About Tezzeta",
+      profileCta: "Learn More About Mbuya",
       profileTagline: "Research-Driven. Internationally Focused. Africa-Centered.",
       profileParagraphs: [
         "Tezzeta Mbuya N'Gungwa is a legal researcher, international law specialist, and dispute-resolution specialist whose work focuses on the intersection of international investment, commercial arbitration, international economic law, business and human rights, and Africa’s evolving legal landscape.",
@@ -312,9 +312,9 @@ export const copy = {
     about: {
       title: "À propos de Tezzeta Mbuya N'Gungwa",
       text: "Recherche en droit international. Perspective africaine.",
-      profileTitle: "Découvrez Tezzeta Mbuya N'Gungwa",
+      profileTitle: "Découvrez Tezzeta N’gungwa Mbuya",
       profileText: "Chercheuse juridique, spécialiste du droit international et du règlement des différends, axée sur l’investissement international, l’arbitrage commercial, le droit économique international, les entreprises et les droits humains, ainsi que l’évolution du paysage juridique africain.",
-      profileCta: "En savoir plus sur Tezzeta",
+      profileCta: "En savoir plus sur Mbuya",
       profileTagline: "Fondée sur la recherche. Tournée vers l’international. Centrée sur l’Afrique.",
       profileParagraphs: [
         "Tezzeta Mbuya N'Gungwa est chercheuse juridique et spécialiste du droit international et du règlement des différends. Ses travaux portent sur les liens entre l’investissement international, l’arbitrage commercial, le droit économique international, les entreprises et les droits humains, et l’évolution du paysage juridique africain.",
@@ -519,9 +519,9 @@ export const copy = {
     about: {
       title: "关于 Tezzeta Mbuya N'Gungwa",
       text: "国际法研究。非洲视角。",
-      profileTitle: "认识 Tezzeta Mbuya N'Gungwa",
+      profileTitle: "认识 Tezzeta N’gungwa Mbuya",
       profileText: "法律研究员、国际法及争议解决专业人士，重点关注国际投资、商事仲裁、国际经济法、企业与人权，以及不断发展的非洲法律环境。",
-      profileCta: "进一步了解 Tezzeta",
+      profileCta: "进一步了解 Mbuya",
       profileTagline: "以研究为基础。立足国际。聚焦非洲。",
       profileParagraphs: [
         "Tezzeta Mbuya N'Gungwa 是一名法律研究员、国际法及争议解决专业人士。她的工作重点关注国际投资、商事仲裁、国际经济法、企业与人权，以及不断发展的非洲法律环境之间的交叉领域。",
@@ -702,9 +702,9 @@ copy["zh-Hant"] = {
   about: {
     title: "關於 Tezzeta Mbuya N'Gungwa",
     text: "國際法研究。非洲視角。",
-    profileTitle: "認識 Tezzeta Mbuya N'Gungwa",
+    profileTitle: "認識 Tezzeta N’gungwa Mbuya",
     profileText: "法律研究員、國際法及爭議解決專業人士，重點關注國際投資、商事仲裁、國際經濟法、企業與人權，以及持續發展的非洲法律環境。",
-    profileCta: "進一步了解 Tezzeta",
+    profileCta: "進一步了解 Mbuya",
     profileTagline: "以研究為本。立足國際。聚焦非洲。",
     profileParagraphs: [
       "Tezzeta Mbuya N'Gungwa 是一名法律研究員、國際法及爭議解決專業人士。她的工作重點關注國際投資、商事仲裁、國際經濟法、企業與人權，以及持續發展的非洲法律環境之間的交會領域。",
