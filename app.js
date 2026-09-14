@@ -884,7 +884,13 @@ function aboutView() {
             <h2>${escapeHtml(c.experienceTitle)}</h2>
           </div>
           <details class="profile-disclosure"><summary>${escapeHtml(c.experienceDisclosure)}</summary><div class="experience-list">
-            ${c.experience.map((item) => `
+            ${c.experience.map((item) => c.experienceStatementsOnly ? `
+              <article class="experience-statement">
+                <p>${escapeHtml(item.detail)}</p>
+                ${item.jurisdictionalRelevance ? `<p><strong>${escapeHtml(c.drcRelevance || "DRC operational relevance")}:</strong> ${escapeHtml(item.jurisdictionalRelevance)}</p>` : ""}
+                ${item.evidenceStatus ? `<span class="badge">${escapeHtml(c.evidencePending || "Evidence pending")}</span>` : ""}
+              </article>
+            ` : `
               <article>
                 <div class="experience-period">${escapeHtml(item.period || c.dateNotStated || "Date not stated")}</div>
                 <div>
