@@ -1017,6 +1017,65 @@ for (const [locale, about] of Object.entries({
   }
 })) Object.assign(copy[locale].about, about);
 
+// Final synchronized identity and About narrative update.
+for (const [locale, about] of Object.entries({
+  en: {
+    title: "About Tezzeta N’gungwa Mbuya",
+    profileTitle: "Meet Tezzeta N’gungwa Mbuya",
+    professionalTitle: "International Law and Dispute Resolution",
+    heroSummary: "Mbuya works across international investment law, arbitration, natural-resource governance, and Africa-focused legal and economic questions.",
+    profileParagraphs: [
+      "Mbuya founded this legal technology firm in 2026. Before founding the firm, she was a PhD Candidate at the University of Essex, where she pursued doctoral research in investment arbitration in the African context. Her work brings African perspectives and experiences to international law and considers how investor-State dispute settlement is lived in Africa, including how Eurocentrism and universalism can obscure mutual understanding among States.",
+      "Mbuya has more than 15 years of experience in extractive industries and dispute resolution across the Democratic Republic of the Congo, England and Wales, and Austria. These are experience jurisdictions; the nature, scope, and availability of any service remain subject to jurisdiction and engagement review.",
+      "Throughout her career, Mbuya has advised government entities, local communities, and businesses on disputes linked to the extractive industries sector. Her experience includes contractual, advisory, and contentious matters relating to business activities, with the specific mandate and client relationship assessed through the engagement process.",
+      "Mbuya also advises investors on structuring investments to address domestic, transnational, and international risks associated with investment in the Democratic Republic of the Congo. Any proposed work is subject to an appropriate conflict, jurisdiction, scope, and acceptance review.",
+      "Her wider research and professional interests include international investment law, commercial arbitration, international economic law, business and human rights, natural-resource governance, and the fair resolution of disputes. Publication and conference records remain subject to their separate evidence and permission controls."
+    ]
+  },
+  fr: {
+    title: "À propos de Tezzeta N’gungwa Mbuya",
+    profileTitle: "Découvrez Tezzeta N’gungwa Mbuya",
+    professionalTitle: "Droit international et règlement des différends",
+    heroSummary: "Mbuya travaille sur le droit international des investissements, l’arbitrage, la gouvernance des ressources naturelles et les questions juridiques et économiques liées à l’Afrique.",
+    profileParagraphs: [
+      "Mbuya a fondé cette entreprise de technologie juridique en 2026. Avant sa création, elle était doctorante à l’University of Essex, où elle menait des recherches doctorales sur l’arbitrage d’investissement dans le contexte africain. Ses travaux apportent des perspectives et des expériences africaines au droit international et examinent la manière dont le règlement des différends investisseur-État est vécu en Afrique, notamment lorsque l’eurocentrisme et l’universalisme peuvent faire obstacle à la compréhension mutuelle entre les États.",
+      "Mbuya compte plus de 15 ans d’expérience dans les industries extractives et le règlement des différends en République démocratique du Congo, en Angleterre et au pays de Galles, ainsi qu’en Autriche. Il s’agit de territoires d’expérience ; la nature, la portée et la disponibilité de tout service restent soumises à un examen de la juridiction et de l’engagement.",
+      "Tout au long de son parcours, Mbuya a conseillé des entités publiques, des communautés locales et des entreprises sur des différends liés au secteur extractif. Son expérience couvre des questions contractuelles, consultatives et contentieuses relatives aux activités commerciales, le mandat précis et la relation avec le client étant examinés dans le cadre de l’engagement.",
+      "Mbuya conseille également les investisseurs sur la structuration de leurs investissements afin de traiter les risques nationaux, transnationaux et internationaux liés à l’investissement en République démocratique du Congo. Toute mission proposée reste soumise à un examen des conflits, de la juridiction, du périmètre et de l’acceptation.",
+      "Ses autres travaux de recherche et domaines d’intérêt comprennent le droit international des investissements, l’arbitrage commercial, le droit économique international, les entreprises et les droits humains, la gouvernance des ressources naturelles et le règlement équitable des différends. Les publications et conférences restent soumises à leurs contrôles distincts de preuve et d’autorisation."
+    ]
+  },
+  zh: {
+    title: "关于 Tezzeta N’gungwa Mbuya",
+    profileTitle: "认识 Tezzeta N’gungwa Mbuya",
+    professionalTitle: "国际法与争议解决",
+    heroSummary: "Mbuya 专注于国际投资法、仲裁、自然资源治理，以及与非洲相关的法律和经济议题。",
+    profileParagraphs: [
+      "Mbuya 于 2026 年创办了这家法律科技公司。在创办公司之前，她是埃塞克斯大学的博士候选人，开展以非洲语境下投资仲裁为主题的博士研究。她的工作将非洲的视角与经验带入国际法，并考察投资者与国家争端解决机制在非洲语境中的实际影响，包括欧洲中心主义和普遍主义如何可能遮蔽国家之间的相互理解。",
+      "Mbuya 在刚果民主共和国、英格兰和威尔士以及奥地利的采掘业和争议解决领域拥有超过 15 年经验。这些属于经验所在司法辖区；任何服务的性质、范围和可提供性仍须经过司法辖区及委托审查。",
+      "在职业生涯中，Mbuya 曾就采掘业争议为政府实体、当地社区和企业提供建议。她的经验包括与商业活动有关的合同、咨询和争议事项，具体授权范围及客户关系须在委托流程中审查。",
+      "Mbuya 还为投资者提供投资结构建议，以应对在刚果民主共和国投资所涉及的国内、跨国和国际风险。任何拟议工作均须经过利益冲突、司法辖区、工作范围和接受程序审查。",
+      "她的其他研究和专业兴趣包括国际投资法、商事仲裁、国际经济法、企业与人权、自然资源治理以及公平解决争议。出版物和会议记录仍分别受证据及发布许可控制。"
+    ]
+  },
+  "zh-Hant": {
+    title: "關於 Tezzeta N’gungwa Mbuya",
+    profileTitle: "認識 Tezzeta N’gungwa Mbuya",
+    professionalTitle: "國際法與爭議解決",
+    heroSummary: "Mbuya 專注於國際投資法、仲裁、自然資源治理，以及與非洲相關的法律與經濟議題。",
+    profileParagraphs: [
+      "Mbuya 於 2026 年創辦這家法律科技公司。在創辦公司之前，她是埃塞克斯大學的博士候選人，進行以非洲語境下投資仲裁為主題的博士研究。她的工作把非洲的觀點與經驗帶入國際法，並探討投資者與國家爭端解決機制在非洲語境中的實際影響，包括歐洲中心主義與普遍主義如何可能遮蔽國家之間的相互理解。",
+      "Mbuya 在剛果民主共和國、英格蘭及威爾斯以及奧地利的採掘業與爭議解決領域擁有超過 15 年經驗。這些屬於經驗所在司法管轄區；任何服務的性質、範圍及可提供性仍須經過司法管轄區與委託審查。",
+      "在職業生涯中，Mbuya 曾就採掘業爭議為政府實體、地方社區及企業提供建議。她的經驗包括與商業活動有關的合約、諮詢及爭議事項，具體授權範圍及客戶關係須於委託流程中審查。",
+      "Mbuya 亦為投資者提供投資架構建議，以應對在剛果民主共和國投資所涉及的國內、跨國及國際風險。任何擬議工作均須經過利益衝突、司法管轄區、工作範圍及接受程序審查。",
+      "她的其他研究及專業興趣包括國際投資法、商事仲裁、國際經濟法、企業與人權、自然資源治理，以及公平解決爭議。出版物及會議記錄仍分別受證據及發佈許可控制。"
+    ]
+  }
+})) {
+  Object.assign(copy[locale].about, about);
+  copy[locale].displayName = "Tezzeta N’gungwa Mbuya";
+}
+
 // Keep the browser-only mirror aligned with the main app's date-optional themes.
 const selectedExperienceByLocale = {
   en: [["Production-sharing agreement","Selected matter theme","Research and drafting support described for a production-sharing agreement involving a Congolese government entity and a Chinese enterprise.","Supports review of allocation, fiscal, regulatory, and cross-border risk in DRC resource projects.",true],["BOOT hydropower agreement","Selected matter theme","Research and drafting support described for a build-own-operate-transfer hydropower agreement serving a mining project in the DRC.","Helps operators assess infrastructure interfaces, concessions, performance obligations, and public-sector approvals.",true],["Mining licences and title revocation","Selected matter theme","Advisory support described on mining licensing and challenges connected with revocation of mining titles.","Relevant to permitting continuity, administrative process, project finance, and dispute preparation in the DRC.",true],["Mining and oil compliance","Selected matter theme","Compliance research and advisory support described for Chinese and US mining and oil companies operating in the DRC.","Helps organizations identify regulatory interfaces and escalation points before local review.",true],["Tax and customs matters","Selected matter theme","Support described for tax and customs questions before public institutions and courts.","Relevant to import, export, valuation, assessment, and administrative-dispute planning for DRC operations.",true],["Asset securitization analysis","Selected matter theme","Merits analysis described for asset securitization in a contentious mining matter.","Supports structured review of security, receivables, enforcement, and investment-risk questions.",true],["Joint venture","Selected matter theme","Drafting support described for a joint venture between a Congolese operator and a Chinese investor.","Relevant to governance, contributions, control, dispute clauses, and cross-border investment structuring.",true],["Public-private partnership","Selected matter theme","Analysis described for a public-private infrastructure contract with a Chinese company.","Supports review of allocation of public obligations, approvals, procurement interfaces, and project risk.",true],["Collective bargaining agreement","Selected matter theme","Advisory and drafting support described for collective bargaining arrangements in mining and oil operations.","Relevant to workforce governance, labour obligations, and operational continuity in the DRC.",true],["Environmental impact and pollution","Selected matter theme","Review and discussion described for environmental-impact studies and pollution-related matters.","Supports issue spotting around permits, environmental duties, remediation, and community impacts.",true],["Mineral transport authorizations","Selected matter theme","Support described for applications concerning transport authorizations for mineral resources.","Relevant to logistics, chain-of-custody, licensing, and regulatory coordination.",true],["Investment-treaty negotiations","Selected matter theme","Participation in negotiations preceding an investment-treaty claim is described.","Supports early issue framing around treaty protections, State measures, and dispute pathways.",true],["Company registrations","Selected matter theme","Company-registration work is described.","Relevant to market entry, entity structuring, and initial regulatory steps in the DRC.",true],["Commercial, land, and human-rights disputes","Selected matter theme","The source describes research and support involving commercial contracts, insurance, shareholder disputes, land questions, community rights, and human-rights mechanisms.","Helps organizations identify cross-cutting dispute, stakeholder, and remedy questions affecting DRC operations.",true]]
