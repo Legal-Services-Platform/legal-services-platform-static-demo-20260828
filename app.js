@@ -175,7 +175,8 @@ function icon(name) {
     check: '<path d="m5 12 4 4L19 6"/>',
     alert: '<path d="M10.3 2.9 1.8 17a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 2.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/>',
     lock: '<rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>',
-    users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/>'
+    users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/>',
+    "arrow-up": '<path d="m5 12 7-7 7 7M12 5v14"/>'
   };
   return `<svg aria-hidden="true" viewBox="0 0 24 24">${icons[name] || icons.arrow}</svg>`;
 }
@@ -262,6 +263,9 @@ function layout(content) {
         </div>
       </div>
     </footer>
+    <button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top" title="Back to top" hidden>
+      ${icon("arrow-up")}<span class="sr-only">Back to top</span>
+    </button>
   `;
 }
 
@@ -1356,6 +1360,19 @@ function bookingView(serviceId = "service-orientation") {
 }
 
 function bindEvents() {
+  const backToTop = document.querySelector("#back-to-top");
+  const updateBackToTop = () => {
+    if (backToTop) backToTop.hidden = window.scrollY < 480;
+  };
+  backToTop?.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+    });
+  });
+  window.addEventListener("scroll", updateBackToTop, { passive: true });
+  updateBackToTop();
+
   document.querySelector("#locale-select")?.addEventListener("change", (event) => {
     state.locale = normalizeLocale(event.target.value);
     localStorage.setItem(STORAGE.locale, state.locale);

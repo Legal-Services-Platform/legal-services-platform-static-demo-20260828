@@ -98,6 +98,46 @@ svg {
   transform: translateY(0);
 }
 
+.back-to-top {
+  position: fixed;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  z-index: 900;
+  display: inline-grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border: 1px solid var(--navy);
+  border-radius: 999px;
+  color: var(--white);
+  background: var(--navy);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+.back-to-top[hidden] {
+  display: none;
+}
+
+.back-to-top:hover {
+  background: var(--teal-dark);
+}
+
+.back-to-top:focus-visible {
+  outline: 3px solid #f0a83d;
+  outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  .back-to-top {
+    right: 0.9rem;
+    bottom: 0.9rem;
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
+
 .preview-banner {
   padding: 0.55rem 1rem;
   background: var(--soft-coral);
