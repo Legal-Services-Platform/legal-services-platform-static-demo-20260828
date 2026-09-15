@@ -48,6 +48,14 @@ const serviceEvidenceLabels = {
 
 const app = document.querySelector("#app");
 const staticDemo = document.documentElement.dataset.staticDemo === "true";
+
+function updateBackToTopVisibility() {
+  const button = document.querySelector("#back-to-top");
+  if (button) button.hidden = window.scrollY < 480;
+}
+
+window.addEventListener("scroll", updateBackToTopVisibility, { passive: true });
+
 const thoughtLeadershipEvidence = {
   credentials: [
     null,
@@ -263,8 +271,8 @@ function layout(content) {
         </div>
       </div>
     </footer>
-    <button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top" title="Back to top" hidden>
-      ${icon("arrow-up")}<span class="sr-only">Back to top</span>
+    <button id="back-to-top" class="back-to-top" type="button" aria-label="${escapeHtml(c.common.backToTop)}" title="${escapeHtml(c.common.backToTop)}" hidden>
+      ${icon("arrow-up")}<span class="sr-only">${escapeHtml(c.common.backToTop)}</span>
     </button>
   `;
 }
@@ -1361,17 +1369,13 @@ function bookingView(serviceId = "service-orientation") {
 
 function bindEvents() {
   const backToTop = document.querySelector("#back-to-top");
-  const updateBackToTop = () => {
-    if (backToTop) backToTop.hidden = window.scrollY < 480;
-  };
   backToTop?.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
       behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
     });
   });
-  window.addEventListener("scroll", updateBackToTop, { passive: true });
-  updateBackToTop();
+  updateBackToTopVisibility();
 
   document.querySelector("#locale-select")?.addEventListener("change", (event) => {
     state.locale = normalizeLocale(event.target.value);
