@@ -230,10 +230,10 @@ function layout(content) {
     <header class="site-header">
       <div class="header-inner">
         <a class="brand" href="#/home" aria-label="${escapeHtml(c.nav.home)}">
-          <span class="brand-mark">${icon("shield")}</span>
-          <span>
-            <strong>Legal Services Platform</strong>
-            <small>${escapeHtml(c.common.placeholder)}</small>
+          <span class="brand-monogram" aria-hidden="true">TM</span>
+          <span class="brand-copy">
+            <strong>Tezzeta N’gungwa Mbuya</strong>
+            <small>${escapeHtml(c.about.professionalTitle)}</small>
           </span>
         </a>
         <button class="icon-button mobile-menu" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="${escapeHtml(accessibilityCopy.menu)}" title="${escapeHtml(accessibilityCopy.menu)}">
@@ -248,6 +248,7 @@ function layout(content) {
           ${navLink("contact", c.nav.contact)}
           ${navLink("admin", c.nav.admin)}
         </nav>
+        <a class="header-cta" href="#/book/service-orientation">${escapeHtml(c.home.book)}${icon("arrow")}</a>
         <label class="locale-picker">
           <span class="sr-only">${escapeHtml(accessibilityCopy.language)}</span>
           ${icon("globe")}
@@ -387,18 +388,19 @@ function homeView() {
           <span>${icon("lock")} Privacy by design</span>
         </div>
       </div>
-      <div class="hero-panel" aria-label="Platform status">
-        <div class="status-header">
-          <span>${escapeHtml(c.admin.readiness)}</span>
-          <strong class="status-red">${escapeHtml(c.admin.blocked)}</strong>
+      <div class="hero-media">
+        <img src="about-tezzeta.jpg" alt="${escapeHtml(c.about.photoAlt)}" />
+        <div class="hero-media-caption">
+          <span>${escapeHtml(c.about.professionalTitle)}</span>
+          <a href="#/about">${escapeHtml(c.about.profileCta)}${icon("arrow")}</a>
         </div>
-        <ol>
-          <li><span>01</span>${escapeHtml(c.home.servicesTitle)}</li>
-          <li><span>02</span>${escapeHtml(c.home.libraryTitle)}</li>
-          <li><span>03</span>${escapeHtml(c.home.guidanceTitle)}</li>
-        </ol>
-        <a href="#/admin">${escapeHtml(c.nav.admin)}${icon("arrow")}</a>
       </div>
+    </section>
+    <section class="readiness-strip" aria-label="Platform status">
+      <span class="readiness-label">${escapeHtml(c.admin.readiness)}</span>
+      <strong class="status-red">${escapeHtml(c.admin.blocked)}</strong>
+      <span>${escapeHtml(c.banner)}</span>
+      <a href="#/admin">${escapeHtml(c.nav.admin)}${icon("arrow")}</a>
     </section>
     <section class="section">
       <div class="section-heading">
