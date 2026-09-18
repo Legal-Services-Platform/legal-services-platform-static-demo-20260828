@@ -46,6 +46,53 @@ const serviceEvidenceLabels = {
   }
 };
 
+const serviceDetailNavigationLabels = {
+  en: {
+    nav: "Service detail sections",
+    overview: "Overview",
+    scope: "Scope",
+    evidence: "Evidence",
+    drc: "DRC relevance",
+    limitations: "Limitations and availability",
+    disclosure: "Show evidence details and references",
+    pending: "Evidence and professional review remain pending.",
+    unavailable: "This action remains unavailable until the applicable evidence, professional, jurisdiction, and publication gates are approved."
+  },
+  fr: {
+    nav: "Sections du detail du service",
+    overview: "Vue d'ensemble",
+    scope: "Perimetre",
+    evidence: "Elements probants",
+    drc: "Pertinence pour la RDC",
+    limitations: "Limites et disponibilite",
+    disclosure: "Afficher les details des elements probants et les references",
+    pending: "Les elements probants et la revue professionnelle restent en attente.",
+    unavailable: "Cette action reste indisponible jusqu'a l'approbation des elements probants et des controles professionnels, juridictionnels et de publication applicables."
+  },
+  zh: {
+    nav: "\u670d\u52a1\u8be6\u60c5\u90e8\u5206",
+    overview: "\u6982\u89c8",
+    scope: "\u8303\u56f4",
+    evidence: "\u8bc1\u636e",
+    drc: "\u521a\u679c\u6c11\u4e3b\u5171\u548c\u56fd\u76f8\u5173\u6027",
+    limitations: "\u9650\u5236\u4e0e\u53ef\u7528\u6027",
+    disclosure: "\u663e\u793a\u8bc1\u636e\u8be6\u60c5\u548c\u53c2\u8003\u8d44\u6599",
+    pending: "\u8bc1\u636e\u548c\u4e13\u4e1a\u5ba1\u67e5\u4ecd\u5f85\u5b8c\u6210\u3002",
+    unavailable: "\u5728\u9002\u7528\u7684\u8bc1\u636e\u3001\u4e13\u4e1a\u3001\u53f8\u6cd5\u7ba1\u8f96\u533a\u548c\u53d1\u5e03\u5ba1\u6279\u5b8c\u6210\u4e4b\u524d\uff0c\u6b64\u64cd\u4f5c\u4fdd\u6301\u4e0d\u53ef\u7528\u3002"
+  },
+  "zh-Hant": {
+    nav: "\u670d\u52d9\u8a73\u60c5\u90e8\u5206",
+    overview: "\u6982\u89bd",
+    scope: "\u7bc4\u570d",
+    evidence: "\u8b49\u64da",
+    drc: "\u525b\u679c\u6c11\u4e3b\u5171\u548c\u570b\u76f8\u95dc\u6027",
+    limitations: "\u9650\u5236\u8207\u53ef\u7528\u6027",
+    disclosure: "\u986f\u793a\u8b49\u64da\u8a73\u60c5\u53ca\u53c3\u8003\u8cc7\u6599",
+    pending: "\u8b49\u64da\u53ca\u5c08\u696d\u5be9\u67e5\u4ecd\u5f85\u5b8c\u6210\u3002",
+    unavailable: "\u5728\u9069\u7528\u7684\u8b49\u64da\u3001\u5c08\u696d\u3001\u53f8\u6cd5\u7ba1\u8f44\u5340\u53ca\u767c\u5e03\u5be9\u6279\u5b8c\u6210\u524d\uff0c\u6b64\u64cd\u4f5c\u4fdd\u6301\u4e0d\u53ef\u7528\u3002"
+  }
+};
+
 const app = document.querySelector("#app");
 const staticDemo = document.documentElement.dataset.staticDemo === "true";
 
@@ -528,23 +575,34 @@ function serviceDetailView(id) {
   if (!service) return notFoundView();
   const c = t();
   const tr = service.translations[state.locale] ?? service.translations.en;
+  const nav = serviceDetailNavigationLabels[state.locale] ?? serviceDetailNavigationLabels.en;
   return `
-    <section class="detail-header">
+    <section class="detail-header" id="service-overview" tabindex="-1">
       <a class="text-link back-link" href="#/services">${icon("arrow")}${escapeHtml(c.common.back)}</a>
       <div class="catalog-meta">${fixtureBadge()}<span>${escapeHtml(serviceCategoryLabel(service.category))}</span></div>
       <h1>${escapeHtml(tr.title)}</h1>
       <p>${escapeHtml(tr.summary)}</p>
     </section>
+    <nav class="service-section-nav" aria-label="${escapeHtml(nav.nav)}">
+      <button type="button" data-service-anchor="service-overview">${escapeHtml(nav.overview)}</button>
+      <button type="button" data-service-anchor="service-scope">${escapeHtml(nav.scope)}</button>
+      <button type="button" data-service-anchor="service-evidence">${escapeHtml(nav.evidence)}</button>
+      <button type="button" data-service-anchor="service-drc-relevance">${escapeHtml(nav.drc)}</button>
+      <button type="button" data-service-anchor="service-limitations">${escapeHtml(nav.limitations)}</button>
+    </nav>
     <section class="detail-layout">
       <div class="detail-content">
-        ${detailBlock(c.services.audience, tr.audience)}
-        ${detailBlock(c.services.included, tr.included)}
-        ${detailBlock(c.services.excluded, tr.excluded)}
+        <section class="service-scope-group" id="service-scope" tabindex="-1" aria-label="${escapeHtml(nav.scope)}">
+          ${detailBlock(c.services.audience, tr.audience)}
+          ${detailBlock(c.services.included, tr.included)}
+          ${detailBlock(c.services.excluded, tr.excluded)}
+        </section>
         ${serviceEvidenceView(service)}
       </div>
-      <aside class="action-panel">
+      <aside class="action-panel" id="service-limitations" tabindex="-1">
         <h2>${escapeHtml(c.nav.services)}</h2>
         <p>${escapeHtml(c.contact.notice)}</p>
+        ${service.bookingEnabled ? "" : `<p class="gate-explanation">${escapeHtml(nav.unavailable)}</p>`}
         <button class="button button-primary" type="button" data-booking="${service.id}" ${service.bookingEnabled ? "" : "disabled"}>
           ${icon("calendar")}${escapeHtml(service.bookingEnabled ? c.services.booking : c.services.disabled)}
         </button>
@@ -561,6 +619,7 @@ function detailBlock(title, text) {
 function serviceEvidenceView(service) {
   if (!service.evidence) return "";
   const labels = serviceEvidenceLabels[state.locale] ?? serviceEvidenceLabels.en;
+  const nav = serviceDetailNavigationLabels[state.locale] ?? serviceDetailNavigationLabels.en;
   const jurisdiction =
     service.evidence.jurisdiction[state.locale] ?? service.evidence.jurisdiction.en;
   const reviewStatus =
@@ -579,14 +638,22 @@ function serviceEvidenceView(service) {
     )
     .join("");
   return `
-    <article class="detail-block service-evidence" data-evidence-status="${escapeHtml(service.evidenceStatus)}">
+    <article class="detail-block service-evidence" id="service-evidence" tabindex="-1" data-evidence-status="${escapeHtml(service.evidenceStatus)}">
       <h2>${escapeHtml(labels.basis)}</h2>
-      <h3>${escapeHtml(labels.jurisdiction)}</h3>
-      <p>${escapeHtml(jurisdiction)}</p>
-      <h3>${escapeHtml(labels.status)}</h3>
-      <p>${escapeHtml(reviewStatus)}</p>
-      <h3>${escapeHtml(labels.references)}</h3>
-      <ol class="reference-list">${references}</ol>
+      <div class="evidence-jurisdiction" id="service-drc-relevance" tabindex="-1">
+        <h3>${escapeHtml(labels.jurisdiction)}</h3>
+        <p>${escapeHtml(jurisdiction)}</p>
+      </div>
+      <p class="evidence-status-notice" data-evidence-gate="pending">${escapeHtml(nav.pending)}</p>
+      <details class="evidence-disclosure">
+        <summary>${escapeHtml(nav.disclosure)}</summary>
+        <div class="evidence-disclosure-content">
+          <h3>${escapeHtml(labels.status)}</h3>
+          <p>${escapeHtml(reviewStatus)}</p>
+          <h3>${escapeHtml(labels.references)}</h3>
+          <ol class="reference-list">${references}</ol>
+        </div>
+      </details>
     </article>
   `;
 }
@@ -1416,6 +1483,18 @@ function bindEvents() {
     menuButton.setAttribute("aria-expanded", String(!expanded));
     menuButton.innerHTML = icon(expanded ? "menu" : "close");
     nav.classList.toggle("open", !expanded);
+  });
+
+  document.querySelectorAll("[data-service-anchor]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = document.getElementById(button.dataset.serviceAnchor);
+      if (!target) return;
+      target.focus({ preventScroll: true });
+      target.scrollIntoView({
+        block: "start",
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+      });
+    });
   });
 
   bindCatalogForm("service", (query, category) => {
