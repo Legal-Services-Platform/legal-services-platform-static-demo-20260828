@@ -741,8 +741,9 @@ textarea {
 .icon-button {
   display: inline-grid;
   place-items: center;
-  width: 42px;
-  height: 42px;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
   border: 1px solid var(--line);
   border-radius: 4px;
   background: var(--white);
@@ -1621,6 +1622,10 @@ h3 {
 
   .locale-picker {
     order: 2;
+  }
+
+  .locale-picker select {
+    min-height: 44px;
   }
 
   .hero {
