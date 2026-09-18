@@ -33,7 +33,7 @@ export const serviceAuthorityLibrary = {
     citation:
       "International Centre for Settlement of Investment Disputes. (2022). ICSID Convention, Regulations and Rules.",
     url:
-      "https://icsid.worldbank.org/rules-regulations/convention/arbitration-rules"
+      "https://icsid.worldbank.org/rules-regulations/convention"
   },
   "hcch-choice-law": {
     citation:
@@ -63,7 +63,7 @@ export const serviceAuthorityLibrary = {
     citation:
       "Organisation for Economic Co-operation and Development. (2023). OECD Guidelines for Multinational Enterprises on Responsible Business Conduct.",
     url:
-      "https://doi.org/10.1787/81f92357-en"
+      "https://www.oecd.org/en/publications/oecd-guidelines-for-multinational-enterprises-on-responsible-business-conduct_81f92357-en.html"
   },
   "ifc-performance-standards": {
     citation:

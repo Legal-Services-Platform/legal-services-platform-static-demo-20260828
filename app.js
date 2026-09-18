@@ -59,14 +59,14 @@ window.addEventListener("scroll", updateBackToTopVisibility, { passive: true });
 const thoughtLeadershipEvidence = {
   credentials: [
     null,
-    "https://iccwbo.org/news-publications/news/2022/icc-hold-the-door-open-scholarship-programme/"
+    "https://iccwbo.org/news-publications/news/meet-the-2022-icc-hold-the-door-open-scholars/"
   ],
   publications: [
-    "https://www.omicsonline.org/open-access/when-confidentiality-in-international-commercial-arbitration-ica-is-not-salutary-african-perspectives-on-transparency-2169-0170-1000313.php",
-    "https://www.omicsonline.org/open-access/reinforcing-the-definition-of-ecocide-proposed-by-the-independent-expert-panel-iep-in-light-of-the-niger-delta-case-opportunities-and-challenges-2169-0170-1000312.php"
+    "https://www.omicsonline.org/archive/jcls-volume-11-issue-11-year-2022.html",
+    "https://www.omicsonline.org/archive/jcls-volume-11-issue-11-year-2022.html"
   ],
   engagements: [
-    "https://viennaarbitrationdays.com/2022/"
+    "https://www.arbitration-austria.at/index.php?Itemid=646&id=181%3Avienna-arbitration-days-2022&option=com_icagenda&view=event"
   ]
 };
 const thoughtLeadershipFieldLabels = {
@@ -569,9 +569,11 @@ function serviceEvidenceView(service) {
     .map(
       (reference) => `
         <li>
-          <a href="${escapeHtml(reference.url)}" target="_blank" rel="noopener noreferrer">
-            ${escapeHtml(reference.citation)}
-          </a>
+          ${
+            reference.url
+              ? `<a href="${escapeHtml(reference.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(reference.citation)}</a>`
+              : `<span>${escapeHtml(reference.citation)}</span>`
+          }
         </li>
       `
     )
