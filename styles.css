@@ -2625,13 +2625,19 @@ textarea:focus {
   box-shadow: var(--shadow-small);
 }
 
+@media (max-width: 1500px) {
+  .header-cta {
+    display: none;
+  }
+
+  .brand {
+    min-width: 220px;
+  }
+}
+
 @media (max-width: 1180px) {
   .header-inner {
     width: min(100% - 2rem, 1320px);
-  }
-
-  .header-cta {
-    display: none;
   }
 
   .brand {
