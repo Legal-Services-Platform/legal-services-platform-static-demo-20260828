@@ -2763,6 +2763,26 @@ textarea:focus {
     padding: 4rem 1.25rem;
   }
 
+  .detail-header {
+    padding-block: 2.75rem 1.75rem;
+  }
+
+  .detail-header .back-link {
+    margin-bottom: 1.25rem;
+  }
+
+  .detail-header h1 {
+    max-width: none;
+    font-size: clamp(2rem, 9vw, 3.25rem);
+    line-height: 1.12;
+  }
+
+  .detail-header > p:last-child {
+    max-width: none;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
   .catalog-controls {
     padding: 0.75rem;
   }
@@ -2773,6 +2793,7 @@ textarea:focus {
 
   .action-panel {
     position: static;
+    width: 100%;
   }
 
   .service-section-nav-shell {
@@ -2782,6 +2803,10 @@ textarea:focus {
 
   .service-section-nav {
     padding-bottom: 0.75rem;
+  }
+
+  .service-section-nav button {
+    flex: 0 0 auto;
   }
 
   .service-section-nav-shell.service-detail-density {
@@ -2805,7 +2830,13 @@ textarea:focus {
   }
 
   .detail-layout {
-    padding-block: 2rem 4rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-block: 1.5rem 3.5rem;
+  }
+
+  .detail-content {
+    min-width: 0;
   }
 
   .detail-block {
@@ -2830,6 +2861,7 @@ textarea:focus {
 
   .service-detail-density .action-panel {
     border-top-color: var(--teal);
+    margin-top: 0.25rem;
   }
 
   .service-detail-density .service-section-return {
