@@ -109,6 +109,76 @@ const denseServiceDetailIds = new Set([
   "service-legal-representation",
   "service-esg-advisory"
 ]);
+const riskPlatformCopy = {
+  en: {
+    nav: "Investment risk",
+    founderTitle: "A clearer legal information layer for DRC investment decisions",
+    founderText: "The platform was created in response to fragmented legal information facing investors in the Democratic Republic of the Congo. It is intended to make laws, regulations, and by-laws easier to find, compare, and discuss in languages investors understand.",
+    founderCta: "Explore the risk-management architecture",
+    title: "DRC Investment Risk & Due-Diligence",
+    intro: "A structured, evidence-led workflow for investors evaluating actual or proposed investments in the Democratic Republic of the Congo.",
+    status: "Development architecture — not yet available for live investment assessments",
+    disclaimer: "No investment advice, legal advice, risk score, monitoring alert, Claude analysis, or external-data result is generated in this static demo.",
+    phasesTitle: "Assessment workflow",
+    phases: ["Investment profile and supporting documents.", "Claim → Evidence → Source → Analysis → Uncertainty.", "Server-side Claude access remains unconfigured and gated.", "Political, legal, tax, integrity, counterparty, security, financial, infrastructure, environmental, human-rights, reputational, and sector risk.", "Mitigation and monitoring indicators.", "Auditable report and professional-review escalation."],
+    evidenceTitle: "Evidence controls",
+    evidence: ["Sources require URL or controlled-document metadata, dates, jurisdiction, limits, and affected risk category.", "Unsupported allegations remain reported, alleged, disputed, or not independently verified.", "Live feeds, sanctions screening, company records, government information, and Claude output require approved providers and audit trails."],
+    reviewTitle: "Professional review and availability",
+    reviewText: "The complete workflow remains disabled until dependencies, authentication, authorization, persistence, and publication gates are approved.",
+    cta: "Return to controlled guidance"
+  },
+  fr: {
+    nav: "Risque d’investissement",
+    founderTitle: "Une information juridique plus claire pour les décisions d’investissement en RDC",
+    founderText: "La plateforme répond à la fragmentation des informations juridiques auxquelles les investisseurs font face en République démocratique du Congo. Elle vise à rendre les lois, règlements et textes d’application plus faciles à trouver, comparer et discuter dans les langues comprises par les investisseurs.",
+    founderCta: "Découvrir l’architecture de gestion des risques",
+    title: "Risque d’investissement et diligence raisonnable en RDC",
+    intro: "Un parcours structuré et fondé sur les preuves pour les investissements réels ou envisagés en RDC.",
+    status: "Architecture de développement — évaluations en direct non disponibles",
+    disclaimer: "Cette démo statique ne génère ni conseil, ni score de risque, ni alerte, ni analyse Claude ou résultat externe.",
+    phasesTitle: "Parcours d’évaluation",
+    phases: ["Profil de l’investissement et pièces justificatives.", "Affirmation → Preuve → Source → Analyse → Incertitude.", "L’accès serveur à Claude reste non configuré et soumis à des contrôles.", "Risques politiques, juridiques, fiscaux, d’intégrité, de contrepartie, de sécurité, financiers, d’infrastructure, environnementaux, sociaux, de droits humains, de réputation et sectoriels.", "Atténuation et indicateurs de suivi.", "Rapport auditable et escalade professionnelle."],
+    evidenceTitle: "Contrôles des preuves",
+    evidence: ["Les sources exigent des métadonnées, dates, juridiction, limites et catégorie de risque.", "Les allégations restent rapportées, alléguées, contestées ou non vérifiées indépendamment.", "Les flux, contrôles de sanctions, données d’entreprises et résultats Claude exigent des fournisseurs approuvés et des pistes d’audit."],
+    reviewTitle: "Revue professionnelle et disponibilité",
+    reviewText: "Le parcours complet reste désactivé jusqu’à l’approbation des dépendances, de l’authentification, de l’autorisation, de la persistance et des gates de publication.",
+    cta: "Retour à l’orientation contrôlée"
+  },
+  zh: {
+    nav: "投资风险",
+    founderTitle: "为刚果民主共和国投资决策提供更清晰的法律信息",
+    founderText: "本平台回应投资者在刚果民主共和国面临的零散法律信息问题，旨在让法律、法规和附属规则更易查找、比较和讨论，并使用投资者理解的语言。",
+    founderCta: "查看风险管理架构",
+    title: "刚果民主共和国投资风险与尽职调查",
+    intro: "为评估刚果民主共和国实际或拟议投资提供结构化、以证据为基础的流程。",
+    status: "开发架构——暂不提供实时投资评估",
+    disclaimer: "此静态演示不生成投资或法律建议、风险评分、监测警报、Claude 分析或外部数据结果。",
+    phasesTitle: "评估流程",
+    phases: ["投资概况和支持文件。", "主张 → 证据 → 来源 → 分析 → 不确定性。", "服务器端 Claude 访问尚未配置并受控。", "政治、法律、税务、诚信、交易对手、安全、金融、基础设施、环境、社会、人权、声誉及行业风险。", "缓释措施和监测指标。", "可审计报告和专业审查升级。"],
+    evidenceTitle: "证据控制",
+    evidence: ["来源必须包含元数据、日期、司法管辖区、限制及风险类别。", "未经支持的指控继续标记为据报告、被指称、有争议或未独立核实。", "实时数据、制裁筛查、企业记录和 Claude 输出需要获批提供方和审计轨迹。"],
+    reviewTitle: "专业审查与可用性",
+    reviewText: "完整流程在依赖项、身份验证、授权、持久化和发布门槛获批前保持禁用。",
+    cta: "返回受控初步信息"
+  },
+  "zh-Hant": {
+    nav: "投資風險",
+    founderTitle: "為剛果民主共和國投資決策提供更清晰的法律資訊",
+    founderText: "本平台回應投資者在剛果民主共和國面對的零散法律資訊問題，旨在讓法律、法規及附屬規則更易查找、比較及討論，並使用投資者理解的語言。",
+    founderCta: "查看風險管理架構",
+    title: "剛果民主共和國投資風險與盡職調查",
+    intro: "為評估剛果民主共和國實際或擬議投資提供結構化、以證據為基礎的流程。",
+    status: "開發架構——暫不提供即時投資評估",
+    disclaimer: "此靜態示範不產生投資或法律建議、風險評分、監測警報、Claude 分析或外部資料結果。",
+    phasesTitle: "評估流程",
+    phases: ["投資概況及支援文件。", "主張 → 證據 → 來源 → 分析 → 不確定性。", "伺服器端 Claude 存取尚未配置並受控。", "政治、法律、稅務、誠信、交易對手、安全、金融、基礎設施、環境、社會、人權、聲譽及行業風險。", "緩解措施及監測指標。", "可審計報告及專業審查升級。"],
+    evidenceTitle: "證據控制",
+    evidence: ["來源必須包含中繼資料、日期、司法管轄區、限制及風險類別。", "未經支持的指控繼續標記為據報告、被指稱、有爭議或未獨立核實。", "即時資料、制裁篩查、企業記錄及 Claude 輸出需要獲批提供方及審計軌跡。"],
+    reviewTitle: "專業審查與可用性",
+    reviewText: "完整流程在依賴項、身份驗證、授權、持久化及發布門檻獲批前保持停用。",
+    cta: "返回受控初步資訊"
+  }
+};
 
 const app = document.querySelector("#app");
 const staticDemo = document.documentElement.dataset.staticDemo === "true";
@@ -523,7 +593,34 @@ function homeView() {
         ${c.home.process.map((item, index) => `<li><span>${String(index + 1).padStart(2, "0")}</span><p>${escapeHtml(item)}</p></li>`).join("")}
       </ol>
     </section>
+    <section class="section founder-note">
+      <div class="section-heading">
+        <p class="eyebrow">${escapeHtml(riskPlatformCopy[state.locale].founderTitle)}</p>
+        <h2>${escapeHtml(riskPlatformCopy[state.locale].founderTitle)}</h2>
+      </div>
+      <p class="profile-copy">${escapeHtml(riskPlatformCopy[state.locale].founderText)}</p>
+      <a class="text-link" href="#/risk">${escapeHtml(riskPlatformCopy[state.locale].founderCta)}${icon("arrow")}</a>
+    </section>
   `;
+}
+
+function riskView() {
+  const c = riskPlatformCopy[state.locale];
+  return pageIntro(c.title, c.intro, `
+    <section class="section compact-top risk-architecture">
+      <div class="readiness-strip" aria-label="${escapeHtml(c.status)}">
+        <strong class="status-red">${escapeHtml(c.status)}</strong>
+        <span>${escapeHtml(c.disclaimer)}</span>
+      </div>
+      <div class="section-heading"><p class="eyebrow">${escapeHtml(c.phasesTitle)}</p><h2>${escapeHtml(c.phasesTitle)}</h2></div>
+      <ol class="process-list risk-phase-list">${c.phases.map((item, index) => `<li><span>${String(index + 1).padStart(2, "0")}</span><p>${escapeHtml(item)}</p></li>`).join("")}</ol>
+      <div class="detail-layout risk-detail-grid">
+        <article class="detail-content"><h2>${escapeHtml(c.evidenceTitle)}</h2><ul class="guidance-structure">${c.evidence.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></article>
+        <aside class="action-panel"><h2>${escapeHtml(c.reviewTitle)}</h2><p>${escapeHtml(c.reviewText)}</p><button class="button button-primary" type="button" disabled>${icon("lock")}${escapeHtml(c.status)}</button></aside>
+      </div>
+      <a class="text-link" href="#/guidance">${escapeHtml(c.cta)}${icon("arrow")}</a>
+    </section>
+  `);
 }
 
 function pathCard(iconName, title, text, route) {
@@ -1403,6 +1500,7 @@ function render() {
     library: libraryView,
     product: () => productDetailView(state.route.id),
     guidance: guidanceView,
+    risk: riskView,
     assessment: assessmentView,
     about: aboutView,
     contact: contactView,
