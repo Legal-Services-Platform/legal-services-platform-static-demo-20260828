@@ -378,6 +378,7 @@ function layout(content) {
           ${navLink("services", c.nav.services)}
           ${navLink("library", c.nav.library)}
           ${navLink("guidance", c.nav.guidance)}
+          ${navLink("risk", riskPlatformCopy[state.locale].nav)}
           ${navLink("about", c.nav.about)}
           ${navLink("contact", c.nav.contact)}
           ${navLink("admin", c.nav.admin)}
@@ -421,6 +422,7 @@ function routeTitle() {
     library: c.nav.library,
     product: c.nav.library,
     guidance: c.nav.guidance,
+    risk: riskPlatformCopy[state.locale].nav,
     about: c.nav.about,
     contact: c.nav.contact,
     admin: c.nav.admin
