@@ -113,7 +113,7 @@ const riskPlatformCopy = {
   en: {
     nav: "Investment risk",
     founderTitle: "A clearer legal information layer for DRC investment decisions",
-    founderText: "The platform was created in response to fragmented legal information facing investors in the Democratic Republic of the Congo. It is intended to make laws, regulations, and by-laws easier to find, compare, and discuss in languages investors understand.",
+    founderText: "The platform was created in response to the fragmented legal information investors often face when preparing financial projections and compliance decisions in the Democratic Republic of the Congo. It is intended to make relevant laws, regulations, and by-laws easier to find, compare, and discuss in the languages investors understand, while supporting more informed conversations among investors, public authorities, and local communities.",
     founderCta: "Explore the risk-management architecture",
     title: "DRC Investment Risk & Due-Diligence",
     intro: "A structured, evidence-led workflow for investors evaluating actual or proposed investments in the Democratic Republic of the Congo.",
@@ -129,8 +129,8 @@ const riskPlatformCopy = {
   },
   fr: {
     nav: "Risque d’investissement",
-    founderTitle: "Une information juridique plus claire pour les décisions d’investissement en RDC",
-    founderText: "La plateforme répond à la fragmentation des informations juridiques auxquelles les investisseurs font face en République démocratique du Congo. Elle vise à rendre les lois, règlements et textes d’application plus faciles à trouver, comparer et discuter dans les langues comprises par les investisseurs.",
+    founderTitle: "Une couche d’information juridique plus claire pour les décisions d’investissement en RDC",
+    founderText: "La plateforme est née de l’observation selon laquelle les investisseurs disposent souvent d’informations juridiques fragmentées pour leurs projections financières et leurs décisions de conformité en République démocratique du Congo. Elle vise à faciliter la recherche, la comparaison et la discussion des lois, règlements et textes d’application, dans les langues comprises par les investisseurs, tout en favorisant un dialogue plus éclairé avec les autorités publiques et les communautés locales.",
     founderCta: "Découvrir l’architecture de gestion des risques",
     title: "Risque d’investissement et diligence raisonnable en RDC",
     intro: "Un parcours structuré et fondé sur les preuves pour les investissements réels ou envisagés en RDC.",
@@ -146,8 +146,8 @@ const riskPlatformCopy = {
   },
   zh: {
     nav: "投资风险",
-    founderTitle: "为刚果民主共和国投资决策提供更清晰的法律信息",
-    founderText: "本平台回应投资者在刚果民主共和国面临的零散法律信息问题，旨在让法律、法规和附属规则更易查找、比较和讨论，并使用投资者理解的语言。",
+    founderTitle: "为刚果民主共和国投资决策提供更清晰的法律信息层",
+    founderText: "本平台源于一个观察：投资者在刚果民主共和国准备财务预测和合规决策时，常常面对分散且零碎的法律信息。平台旨在让相关法律、法规和附属规则更易于查找、比较和讨论，并以投资者理解的语言促进投资者、公共机构和当地社区之间更充分的沟通。",
     founderCta: "查看风险管理架构",
     title: "刚果民主共和国投资风险与尽职调查",
     intro: "为评估刚果民主共和国实际或拟议投资提供结构化、以证据为基础的流程。",
@@ -163,8 +163,8 @@ const riskPlatformCopy = {
   },
   "zh-Hant": {
     nav: "投資風險",
-    founderTitle: "為剛果民主共和國投資決策提供更清晰的法律資訊",
-    founderText: "本平台回應投資者在剛果民主共和國面對的零散法律資訊問題，旨在讓法律、法規及附屬規則更易查找、比較及討論，並使用投資者理解的語言。",
+    founderTitle: "為剛果民主共和國投資決策提供更清晰的法律資訊層",
+    founderText: "本平台源於一項觀察：投資者在剛果民主共和國準備財務預測及合規決策時，往往面對分散而零碎的法律資訊。平台旨在讓相關法律、法規及附屬規則更易於查找、比較及討論，並以投資者理解的語言促進投資者、公共機構及地方社群之間更充分的溝通。",
     founderCta: "查看風險管理架構",
     title: "剛果民主共和國投資風險與盡職調查",
     intro: "為評估剛果民主共和國實際或擬議投資提供結構化、以證據為基礎的流程。",
