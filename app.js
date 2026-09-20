@@ -120,11 +120,22 @@ const riskPlatformCopy = {
     status: "Development architecture — not yet available for live investment assessments",
     disclaimer: "No investment advice, legal advice, risk score, monitoring alert, Claude analysis, or external-data result is generated in this static demo.",
     phasesTitle: "Assessment workflow",
-    phases: ["Investment profile and supporting documents.", "Claim → Evidence → Source → Analysis → Uncertainty.", "Server-side Claude access remains unconfigured and gated.", "Political, legal, tax, integrity, counterparty, security, financial, infrastructure, environmental, human-rights, reputational, and sector risk.", "Mitigation and monitoring indicators.", "Auditable report and professional-review escalation."],
+    phases: [
+      "Investment profile: project, sector, location, amount, structure, stage, counterparties, ownership, contracts, licences, permits, concessions, and supporting documents.",
+      "Evidence and research: every material finding follows Claim → Evidence → Source → Analysis → Uncertainty.",
+      "Claude analysis boundary: server-side model access may summarize supplied evidence only after source, scope, retention, and professional-review controls are approved.",
+      "Risk assessment: political and sovereign; legal and regulatory; tax and customs; integrity and AML/CFT; counterparty; security; financial and currency; infrastructure; environmental and social; human rights; reputational; and sector-specific risk.",
+      "Mitigation and monitoring: distinguish elimination, reduction, transfer, and acceptance, then define indicators for legislation, sanctions, litigation, ownership, security, permits, environmental incidents, communities, and infrastructure.",
+      "Report and escalation: produce an auditable source register, evidence gaps, residual-risk narrative, monitoring framework, and issues requiring review by appropriately qualified professionals."
+    ],
     evidenceTitle: "Evidence controls",
-    evidence: ["Sources require URL or controlled-document metadata, dates, jurisdiction, limits, and affected risk category.", "Unsupported allegations remain reported, alleged, disputed, or not independently verified.", "Live feeds, sanctions screening, company records, government information, and Claude output require approved providers and audit trails."],
+    evidence: [
+      "Sources must identify a URL or controlled document, source type, publication or event date, jurisdiction, excerpt or summary, reliability limits, affected category, and finding.",
+      "Unsupported allegations remain classified as reported, alleged, disputed, or not independently verified; they are not presented as facts.",
+      "Live feeds, sanctions screening, company records, government information, and Claude output require their own approved providers, credentials, retention rules, and audit trail."
+    ],
     reviewTitle: "Professional review and availability",
-    reviewText: "The complete workflow remains disabled until dependencies, authentication, authorization, persistence, and publication gates are approved.",
+    reviewText: "The architecture supports escalation to DRC-qualified counsel, international counsel, tax advisers, sanctions and compliance specialists, financial advisers, security professionals, environmental specialists, technical experts, and independent investigators. The full assessment workflow remains disabled until those dependencies, authentication, authorization, database persistence, and publication gates are approved.",
     cta: "Return to controlled guidance"
   },
   fr: {
@@ -137,11 +148,22 @@ const riskPlatformCopy = {
     status: "Architecture de développement — évaluations en direct non disponibles",
     disclaimer: "Cette démo statique ne génère ni conseil, ni score de risque, ni alerte, ni analyse Claude ou résultat externe.",
     phasesTitle: "Parcours d’évaluation",
-    phases: ["Profil de l’investissement et pièces justificatives.", "Affirmation → Preuve → Source → Analyse → Incertitude.", "L’accès serveur à Claude reste non configuré et soumis à des contrôles.", "Risques politiques, juridiques, fiscaux, d’intégrité, de contrepartie, de sécurité, financiers, d’infrastructure, environnementaux, sociaux, de droits humains, de réputation et sectoriels.", "Atténuation et indicateurs de suivi.", "Rapport auditable et escalade professionnelle."],
+    phases: [
+      "Profil de l’investissement : projet, secteur, lieu, montant, structure, stade, contreparties, propriété, contrats, licences, permis, concessions et pièces justificatives.",
+      "Preuves et recherche : chaque constat important suit la séquence Affirmation → Preuve → Source → Analyse → Incertitude.",
+      "Limite de l’analyse Claude : un accès serveur au modèle pourra résumer les éléments fournis uniquement après approbation des contrôles de source, de périmètre, de conservation et de revue professionnelle.",
+      "Évaluation des risques : risques politiques et souverains, juridiques et réglementaires, fiscaux et douaniers, d’intégrité et de LBC/FT, de contrepartie, de sécurité, financiers et monétaires, d’infrastructure, environnementaux et sociaux, de droits humains, de réputation et sectoriels.",
+      "Atténuation et suivi : distinguer élimination, réduction, transfert et acceptation, puis définir les indicateurs relatifs aux lois, sanctions, contentieux, propriété, sécurité, permis, incidents environnementaux, communautés et infrastructures.",
+      "Rapport et escalade : produire un registre des sources, les lacunes probatoires, le risque résiduel, le cadre de suivi et les questions à soumettre à des professionnels qualifiés."
+    ],
     evidenceTitle: "Contrôles des preuves",
-    evidence: ["Les sources exigent des métadonnées, dates, juridiction, limites et catégorie de risque.", "Les allégations restent rapportées, alléguées, contestées ou non vérifiées indépendamment.", "Les flux, contrôles de sanctions, données d’entreprises et résultats Claude exigent des fournisseurs approuvés et des pistes d’audit."],
+    evidence: [
+      "Les sources doivent indiquer une URL ou un document contrôlé, le type de source, la date de publication ou d’événement, la juridiction, un extrait ou résumé, les limites de fiabilité, la catégorie concernée et le constat.",
+      "Les allégations non étayées restent classées comme rapportées, alléguées, contestées ou non vérifiées indépendamment ; elles ne sont pas présentées comme des faits.",
+      "Les flux en direct, contrôles de sanctions, données d’entreprises, informations publiques et résultats Claude exigent chacun des fournisseurs, identifiants, règles de conservation et pistes d’audit approuvés."
+    ],
     reviewTitle: "Revue professionnelle et disponibilité",
-    reviewText: "Le parcours complet reste désactivé jusqu’à l’approbation des dépendances, de l’authentification, de l’autorisation, de la persistance et des gates de publication.",
+    reviewText: "L’architecture prévoit une escalade vers des avocats qualifiés en RDC ou à l’international, des conseillers fiscaux, des spécialistes des sanctions et de la conformité, des conseillers financiers, des professionnels de la sécurité, de l’environnement et de la technique, ainsi que des enquêteurs indépendants. Le parcours complet reste désactivé jusqu’à l’approbation des dépendances, de l’authentification, de l’autorisation, de la persistance et des gates de publication.",
     cta: "Retour à l’orientation contrôlée"
   },
   zh: {
@@ -154,11 +176,22 @@ const riskPlatformCopy = {
     status: "开发架构——暂不提供实时投资评估",
     disclaimer: "此静态演示不生成投资或法律建议、风险评分、监测警报、Claude 分析或外部数据结果。",
     phasesTitle: "评估流程",
-    phases: ["投资概况和支持文件。", "主张 → 证据 → 来源 → 分析 → 不确定性。", "服务器端 Claude 访问尚未配置并受控。", "政治、法律、税务、诚信、交易对手、安全、金融、基础设施、环境、社会、人权、声誉及行业风险。", "缓释措施和监测指标。", "可审计报告和专业审查升级。"],
+    phases: [
+      "投资概况：项目、行业、地点、金额、结构、阶段、交易对手、所有权、合同、许可证、许可、特许权及支持文件。",
+      "证据与研究：每项重要发现均按“主张 → 证据 → 来源 → 分析 → 不确定性”组织。",
+      "Claude 分析边界：只有在来源、范围、保留和专业审查控制获批后，服务器端模型才可对所提供证据进行摘要。",
+      "风险评估：政治与主权、法律与监管、税务与海关、诚信与反洗钱/反恐融资、交易对手、安全、金融与货币、基础设施、环境与社会、人权、声誉及行业风险。",
+      "缓释与监测：区分消除、降低、转移和接受，并为立法、制裁、诉讼、所有权、安全、许可、环境事件、社区事项和基础设施定义指标。",
+      "报告与升级：生成可审计的来源登记、证据缺口、剩余风险说明、监测框架及需要合格专业人士审查的问题。"
+    ],
     evidenceTitle: "证据控制",
-    evidence: ["来源必须包含元数据、日期、司法管辖区、限制及风险类别。", "未经支持的指控继续标记为据报告、被指称、有争议或未独立核实。", "实时数据、制裁筛查、企业记录和 Claude 输出需要获批提供方和审计轨迹。"],
+    evidence: [
+      "来源必须标明 URL 或受控文件、来源类型、发布日期或事件日期、司法管辖区、摘录或摘要、可靠性限制、影响的风险类别及相关发现。",
+      "未经支持的指控应继续标记为“据报告”“被指称”“有争议”或“未独立核实”，不得作为事实呈现。",
+      "实时数据、制裁筛查、企业记录、政府信息和 Claude 输出均须分别配置获批提供方、凭据、保留规则和审计轨迹。"
+    ],
     reviewTitle: "专业审查与可用性",
-    reviewText: "完整流程在依赖项、身份验证、授权、持久化和发布门槛获批前保持禁用。",
+    reviewText: "该架构支持升级至刚果民主共和国或国际律师、税务顾问、制裁与合规专家、金融顾问、安全专家、环境专家、技术专家及独立调查人员。完整评估流程在依赖项、身份验证、授权、数据库持久化和发布门槛获批前保持禁用。",
     cta: "返回受控初步信息"
   },
   "zh-Hant": {
@@ -171,11 +204,22 @@ const riskPlatformCopy = {
     status: "開發架構——暫不提供即時投資評估",
     disclaimer: "此靜態示範不產生投資或法律建議、風險評分、監測警報、Claude 分析或外部資料結果。",
     phasesTitle: "評估流程",
-    phases: ["投資概況及支援文件。", "主張 → 證據 → 來源 → 分析 → 不確定性。", "伺服器端 Claude 存取尚未配置並受控。", "政治、法律、稅務、誠信、交易對手、安全、金融、基礎設施、環境、社會、人權、聲譽及行業風險。", "緩解措施及監測指標。", "可審計報告及專業審查升級。"],
+    phases: [
+      "投資概況：項目、行業、地點、金額、結構、階段、交易對手、所有權、合約、牌照、許可、特許權及支援文件。",
+      "證據與研究：每項重要發現均按「主張 → 證據 → 來源 → 分析 → 不確定性」組織。",
+      "Claude 分析界線：只有在來源、範圍、保留及專業審查控制獲批後，伺服器端模型才可對所提供證據進行摘要。",
+      "風險評估：政治與主權、法律與監管、稅務與海關、誠信與反洗錢／反恐融資、交易對手、安全、金融與貨幣、基礎設施、環境與社會、人權、聲譽及行業風險。",
+      "緩解與監測：區分消除、降低、轉移及接受，並為立法、制裁、訴訟、所有權、安全、許可、環境事件、社群事項及基礎設施定義指標。",
+      "報告與升級：生成可審計的來源登記、證據缺口、剩餘風險說明、監測框架及需要合資格專業人士審查的問題。"
+    ],
     evidenceTitle: "證據控制",
-    evidence: ["來源必須包含中繼資料、日期、司法管轄區、限制及風險類別。", "未經支持的指控繼續標記為據報告、被指稱、有爭議或未獨立核實。", "即時資料、制裁篩查、企業記錄及 Claude 輸出需要獲批提供方及審計軌跡。"],
+    evidence: [
+      "來源必須標明 URL 或受控文件、來源類型、發布日期或事件日期、司法管轄區、摘錄或摘要、可靠性限制、受影響風險類別及相關發現。",
+      "未經支持的指控應繼續標記為「據報告」「被指稱」「有爭議」或「未獨立核實」，不得作為事實呈現。",
+      "即時資料、制裁篩查、企業記錄、政府資訊及 Claude 輸出均須分別配置獲批提供方、憑據、保留規則及審計軌跡。"
+    ],
     reviewTitle: "專業審查與可用性",
-    reviewText: "完整流程在依賴項、身份驗證、授權、持久化及發布門檻獲批前保持停用。",
+    reviewText: "該架構支援升級至剛果民主共和國或國際律師、稅務顧問、制裁與合規專家、金融顧問、安全專家、環境專家、技術專家及獨立調查人員。完整評估流程在依賴項、身份驗證、授權、資料庫持久化及發布門檻獲批前保持停用。",
     cta: "返回受控初步資訊"
   }
 };
