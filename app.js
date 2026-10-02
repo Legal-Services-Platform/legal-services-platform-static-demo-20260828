@@ -109,6 +109,52 @@ const denseServiceDetailIds = new Set([
   "service-legal-representation",
   "service-esg-advisory"
 ]);
+const externalPlatformLinks = {
+  claude: "https://claude.ai/new",
+  googleCloud:
+    "https://console.cloud.google.com/billing/01B3D3-8BFE86-730DB3?facet_url=https:%2F%2Fcloud.google.com%2Ffree&facet_utm_source=google&facet_utm_medium=cpc&facet_utm_campaign=Cloud-SS-DR-GCP-1713658-GCP-DR-NA-US-en-Google-BKWS-MIX-generic-cloud&gclid=CjwKCAjwiL7VBhA-EiwAhZi9EI5qkD8d7Ma1Cm6jvs2QcfySApTdrbHciQsN3GQQdz4PShEUTz5tiRoCo3QQAvD_BwE&gclsrc=aw.ds",
+  googleAuthSuccess: "https://docs.cloud.google.com/sdk/auth_success",
+  github: "https://github.com/lyshabo",
+  vercel: "https://vercel.com/lyshabo-1720"
+};
+const platformConnectionLabels = {
+  en: {
+    title: "Approved platform connections",
+    text: "Open the owner consoles and support documentation used to configure Claude, Google Cloud, GitHub, and Vercel. These links are informational only; they do not establish runtime connectivity, enable live assessments, or expose credentials in the browser.",
+    claude: "Open Claude console",
+    googleCloud: "Open Google Cloud Console",
+    googleAuthSuccess: "Open Google Cloud auth guide",
+    github: "Open GitHub owner page",
+    vercel: "Open Vercel team"
+  },
+  fr: {
+    title: "Connexions de plateforme approuvees",
+    text: "Ouvrez les consoles et la documentation utilisees pour configurer Claude, Google Cloud, GitHub et Vercel. Ces liens sont informatifs uniquement ; ils n'etablissent pas la connectivite d'execution, n'activent pas les evaluations en direct et n'exposent pas d'identifiants dans le navigateur.",
+    claude: "Ouvrir la console Claude",
+    googleCloud: "Ouvrir la console Google Cloud",
+    googleAuthSuccess: "Ouvrir le guide d'authentification Google Cloud",
+    github: "Ouvrir la page proprietaire GitHub",
+    vercel: "Ouvrir l'equipe Vercel"
+  },
+  zh: {
+    title: "\u5df2\u6279\u51c6\u7684\u5e73\u53f0\u8fde\u63a5",
+    text: "\u8fd9\u4e9b\u94fe\u63a5\u4f1a\u6253\u5f00\u7528\u4e8e\u914d\u7f6e Claude\u3001Google Cloud\u3001GitHub \u548c Vercel \u7684\u63a7\u5236\u53f0\u548c\u652f\u6301\u6587\u6863\u3002\u8fd9\u4e9b\u94fe\u63a5\u4ec5\u4f9b\u53c2\u8003\uff1b\u5b83\u4eec\u4e0d\u4f1a\u5efa\u7acb\u8fd0\u884c\u65f6\u8fde\u63a5\uff0c\u4e0d\u4f1a\u542f\u7528\u5b9e\u65f6\u8bc4\u4f30\uff0c\u4e5f\u4e0d\u4f1a\u5728\u6d4f\u89c8\u5668\u4e2d\u66b4\u9732\u51ed\u636e\u3002",
+    claude: "\u6253\u5f00 Claude \u63a7\u5236\u53f0",
+    googleCloud: "\u6253\u5f00 Google Cloud \u63a7\u5236\u53f0",
+    googleAuthSuccess: "\u6253\u5f00 Google Cloud \u8ba4\u8bc1\u6307\u5357",
+    github: "\u6253\u5f00 GitHub \u6240\u6709\u8005\u9875\u9762",
+    vercel: "\u6253\u5f00 Vercel \u56e2\u961f"
+  },
+  "zh-Hant": {
+    title: "\u5df2\u6279\u51c6\u7684\u5e73\u53f0\u9023\u63a5",
+    text: "\u9019\u4e9b\u9023\u7d50\u6703\u958b\u555f\u7528\u65bc\u914d\u7f6e Claude\u3001Google Cloud\u3001GitHub \u8207 Vercel \u7684\u63a7\u5236\u53f0\u548c\u652f\u63f4\u6587\u4ef6\u3002\u9019\u4e9b\u9023\u7d50\u50c5\u4f9b\u53c3\u8003\uff1b\u5b83\u5011\u4e0d\u6703\u5efa\u7acb\u904b\u884c\u6642\u9023\u7d50\uff0c\u4e0d\u6703\u555f\u7528\u5373\u6642\u8a55\u4f30\uff0c\u4e5f\u4e0d\u6703\u5728\u700f\u89bd\u5668\u4e2d\u66b4\u9732\u6191\u8b49\u3002",
+    claude: "\u958b\u555f Claude \u4e3b\u63a7\u53f0",
+    googleCloud: "\u958b\u555f Google Cloud \u4e3b\u63a7\u53f0",
+    googleAuthSuccess: "\u958b\u555f Google Cloud \u9a57\u8b49\u6307\u5357",
+    github: "\u958b\u555f GitHub \u6240\u6709\u8005\u9801\u9762",
+    vercel: "\u958b\u555f Vercel \u5718\u968a"
+  }
+};
 const riskPlatformCopy = {
   en: {
     nav: "Investment risk",
@@ -652,6 +698,7 @@ function homeView() {
 
 function riskView() {
   const c = riskPlatformCopy[state.locale];
+  const platformLinks = platformConnectionLabels[state.locale] || platformConnectionLabels.en;
   return pageIntro(c.title, c.intro, `
     <section class="section compact-top risk-architecture">
       <div class="readiness-strip" aria-label="${escapeHtml(c.status)}">
@@ -664,6 +711,17 @@ function riskView() {
         <article class="detail-content"><h2>${escapeHtml(c.evidenceTitle)}</h2><ul class="guidance-structure">${c.evidence.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></article>
         <aside class="action-panel"><h2>${escapeHtml(c.reviewTitle)}</h2><p>${escapeHtml(c.reviewText)}</p><button class="button button-primary" type="button" disabled>${icon("lock")}${escapeHtml(c.status)}</button></aside>
       </div>
+      <aside class="action-panel platform-connection-panel" aria-labelledby="platform-connections-title">
+        <h2 id="platform-connections-title">${escapeHtml(platformLinks.title)}</h2>
+        <p>${escapeHtml(platformLinks.text)}</p>
+        <div class="button-row">
+          <a class="button button-secondary button-small" href="${externalPlatformLinks.claude}" target="_blank" rel="noopener noreferrer">${escapeHtml(platformLinks.claude)}${icon("arrow")}</a>
+          <a class="button button-secondary button-small" href="${externalPlatformLinks.googleCloud}" target="_blank" rel="noopener noreferrer">${escapeHtml(platformLinks.googleCloud)}${icon("arrow")}</a>
+          <a class="button button-secondary button-small" href="${externalPlatformLinks.googleAuthSuccess}" target="_blank" rel="noopener noreferrer">${escapeHtml(platformLinks.googleAuthSuccess)}${icon("arrow")}</a>
+          <a class="button button-secondary button-small" href="${externalPlatformLinks.github}" target="_blank" rel="noopener noreferrer">${escapeHtml(platformLinks.github)}${icon("arrow")}</a>
+          <a class="button button-secondary button-small" href="${externalPlatformLinks.vercel}" target="_blank" rel="noopener noreferrer">${escapeHtml(platformLinks.vercel)}${icon("arrow")}</a>
+        </div>
+      </aside>
       <a class="text-link" href="#/guidance">${escapeHtml(c.cta)}${icon("arrow")}</a>
     </section>
   `);
