@@ -698,7 +698,6 @@ function homeView() {
 
 function riskView() {
   const c = riskPlatformCopy[state.locale];
-  const platformLinks = platformConnectionLabels[state.locale] || platformConnectionLabels.en;
   return pageIntro(c.title, c.intro, `
     <section class="section compact-top risk-architecture">
       <div class="readiness-strip" aria-label="${escapeHtml(c.status)}">
@@ -711,17 +710,6 @@ function riskView() {
         <article class="detail-content"><h2>${escapeHtml(c.evidenceTitle)}</h2><ul class="guidance-structure">${c.evidence.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></article>
         <aside class="action-panel"><h2>${escapeHtml(c.reviewTitle)}</h2><p>${escapeHtml(c.reviewText)}</p><button class="button button-primary" type="button" disabled>${icon("lock")}${escapeHtml(c.status)}</button></aside>
       </div>
-      <aside class="action-panel platform-connection-panel" aria-labelledby="platform-connections-title">
-        <h2 id="platform-connections-title">${escapeHtml(platformLinks.title)}</h2>
-        <p>${escapeHtml(platformLinks.text)}</p>
-        <div class="button-row">
-          <a class="button button-secondary button-small" href="${externalPlatformLinks.claude}" target="_blank" rel="noopener noreferrer">${escapeHtml(platformLinks.claude)}${icon("arrow")}</a>
-          <a class="button button-secondary button-small" href="${externalPlatformLinks.googleCloud}" target="_blank" rel="noopener noreferrer">${escapeHtml(platformLinks.googleCloud)}${icon("arrow")}</a>
-          <a class="button button-secondary button-small" href="${externalPlatformLinks.googleAuthSuccess}" target="_blank" rel="noopener noreferrer">${escapeHtml(platformLinks.googleAuthSuccess)}${icon("arrow")}</a>
-          <a class="button button-secondary button-small" href="${externalPlatformLinks.github}" target="_blank" rel="noopener noreferrer">${escapeHtml(platformLinks.github)}${icon("arrow")}</a>
-          <a class="button button-secondary button-small" href="${externalPlatformLinks.vercel}" target="_blank" rel="noopener noreferrer">${escapeHtml(platformLinks.vercel)}${icon("arrow")}</a>
-        </div>
-      </aside>
       <a class="text-link" href="#/guidance">${escapeHtml(c.cta)}${icon("arrow")}</a>
     </section>
   `);
