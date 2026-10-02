@@ -109,14 +109,6 @@ const denseServiceDetailIds = new Set([
   "service-legal-representation",
   "service-esg-advisory"
 ]);
-const externalPlatformLinks = {
-  claude: "https://claude.ai/new",
-  googleCloud:
-    "https://console.cloud.google.com/billing/01B3D3-8BFE86-730DB3?facet_url=https:%2F%2Fcloud.google.com%2Ffree&facet_utm_source=google&facet_utm_medium=cpc&facet_utm_campaign=Cloud-SS-DR-GCP-1713658-GCP-DR-NA-US-en-Google-BKWS-MIX-generic-cloud&gclid=CjwKCAjwiL7VBhA-EiwAhZi9EI5qkD8d7Ma1Cm6jvs2QcfySApTdrbHciQsN3GQQdz4PShEUTz5tiRoCo3QQAvD_BwE&gclsrc=aw.ds",
-  googleAuthSuccess: "https://docs.cloud.google.com/sdk/auth_success",
-  github: "https://github.com/lyshabo",
-  vercel: "https://vercel.com/lyshabo-1720"
-};
 const platformConnectionLabels = {
   en: {
     title: "Approved platform connections",
