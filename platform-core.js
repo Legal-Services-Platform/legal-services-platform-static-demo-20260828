@@ -31,7 +31,10 @@ export function filterCatalog(items, locale, query = "", category = "all") {
 
 export function getRoute(hash) {
   const cleaned = (hash || "#/home").replace(/^#\/?/, "");
-  const [route = "home", id = ""] = cleaned.split("/");
+  const segments = cleaned.split("/");
+  const routeLocale = normalizeLocale(segments[0]);
+  const hasLocalePrefix = SUPPORTED_LOCALES.includes(segments[0]);
+  const [route = "home", id = ""] = hasLocalePrefix ? segments.slice(1) : segments;
   const allowed = new Set([
     "home",
     "services",
@@ -46,10 +49,12 @@ export function getRoute(hash) {
     "contact",
     "admin"
   ]);
-  return {
+  const parsed = {
     route: allowed.has(route) ? route : "home",
     id
   };
+  if (hasLocalePrefix) parsed.locale = routeLocale;
+  return parsed;
 }
 
 export function evaluateGuidance(input, sources) {

@@ -345,8 +345,8 @@ const STORAGE = {
 };
 
 const state = {
-  locale: normalizeLocale(localStorage.getItem(STORAGE.locale) || DEFAULT_LOCALE),
   route: getRoute(window.location.hash),
+  locale: normalizeLocale(getRoute(window.location.hash).locale || localStorage.getItem(STORAGE.locale) || DEFAULT_LOCALE),
   serviceSearch: "",
   serviceCategory: "all",
   productSearch: "",
@@ -406,7 +406,7 @@ function icon(name) {
 }
 
 function routeHref(route, id = "") {
-  return `#/${route}${id ? `/${id}` : ""}`;
+  return `#/${state.locale}/${route}${id ? `/${id}` : ""}`;
 }
 
 function navLink(route, label) {
@@ -445,7 +445,7 @@ function layout(content) {
     <div class="preview-banner">${escapeHtml(c.banner)}</div>
     <header class="site-header">
       <div class="header-inner">
-        <a class="brand" href="#/home" aria-label="${escapeHtml(c.nav.home)}">
+        <a class="brand" href="${routeHref("home")}" aria-label="${escapeHtml(c.nav.home)}">
           <span class="brand-monogram" aria-hidden="true">TM</span>
           <span class="brand-copy">
             <strong>Tezzeta N’gungwa Mbuya</strong>
@@ -465,7 +465,7 @@ function layout(content) {
           ${navLink("contact", c.nav.contact)}
           ${navLink("admin", c.nav.admin)}
         </nav>
-        <a class="header-cta" href="#/book/service-orientation">${escapeHtml(c.home.book)}${icon("arrow")}</a>
+        <a class="header-cta" href="${routeHref("book", "service-orientation")}">${escapeHtml(c.home.book)}${icon("arrow")}</a>
         <label class="locale-picker">
           <span class="sr-only">${escapeHtml(accessibilityCopy.language)}</span>
           ${icon("globe")}
@@ -596,9 +596,9 @@ function homeView() {
         <h1>${escapeHtml(c.home.title)}</h1>
         <p class="hero-copy">${escapeHtml(c.home.intro)}</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#/services">${icon("calendar")}${escapeHtml(c.home.book)}</a>
-          <a class="button button-secondary" href="#/services">${icon("book")}${escapeHtml(c.home.explore)}</a>
-          <a class="text-link" href="#/guidance">${escapeHtml(c.home.guide)}${icon("arrow")}</a>
+          <a class="button button-primary" href="${routeHref("services")}">${icon("calendar")}${escapeHtml(c.home.book)}</a>
+          <a class="button button-secondary" href="${routeHref("services")}">${icon("book")}${escapeHtml(c.home.explore)}</a>
+          <a class="text-link" href="${routeHref("guidance")}">${escapeHtml(c.home.guide)}${icon("arrow")}</a>
         </div>
         <div class="trust-row">
           <span>${icon("shield")} Source-governed</span>
@@ -610,7 +610,7 @@ function homeView() {
         <img src="about-tezzeta.jpg" alt="${escapeHtml(c.about.photoAlt)}" />
         <div class="hero-media-caption">
           <span>${escapeHtml(c.about.professionalTitle)}</span>
-          <a href="#/about">${escapeHtml(c.about.profileCta)}${icon("arrow")}</a>
+          <a href="${routeHref("about")}">${escapeHtml(c.about.profileCta)}${icon("arrow")}</a>
         </div>
       </div>
     </section>
@@ -618,7 +618,7 @@ function homeView() {
       <span class="readiness-label">${escapeHtml(c.admin.readiness)}</span>
       <strong class="status-red">${escapeHtml(c.admin.blocked)}</strong>
       <span>${escapeHtml(c.banner)}</span>
-      <a href="#/admin">${escapeHtml(c.nav.admin)}${icon("arrow")}</a>
+      <a href="${routeHref("admin")}">${escapeHtml(c.nav.admin)}${icon("arrow")}</a>
     </section>
     <section class="section">
       <div class="section-heading">
@@ -637,7 +637,7 @@ function homeView() {
         <h2>${escapeHtml(c.about.profileTitle)}</h2>
       </div>
       <p class="profile-copy">${escapeHtml(c.about.profileText)}</p>
-      <a class="text-link" href="#/about">${escapeHtml(c.about.profileCta)}${icon("arrow")}</a>
+      <a class="text-link" href="${routeHref("about")}">${escapeHtml(c.about.profileCta)}${icon("arrow")}</a>
     </section>
     <section class="section ai-assessment-band">
       <div class="section-heading">
@@ -645,7 +645,7 @@ function homeView() {
         <h2>${escapeHtml(aiCopy[0])}</h2>
       </div>
       <p class="profile-copy">${escapeHtml(aiCopy[1])}</p>
-      <a class="button button-secondary" href="#/assessment">${escapeHtml(aiCopy[2])}${icon("arrow")}</a>
+      <a class="button button-secondary" href="${routeHref("assessment")}">${escapeHtml(aiCopy[2])}${icon("arrow")}</a>
     </section>
     <section class="section demo-scope-band" aria-labelledby="demo-scope-title">
       <div class="demo-scope-intro">
@@ -683,7 +683,7 @@ function homeView() {
         <h2>${escapeHtml(riskPlatformCopy[state.locale].founderTitle)}</h2>
       </div>
       <p class="profile-copy">${escapeHtml(riskPlatformCopy[state.locale].founderText)}</p>
-      <a class="text-link" href="#/risk">${escapeHtml(riskPlatformCopy[state.locale].founderCta)}${icon("arrow")}</a>
+      <a class="text-link" href="${routeHref("risk")}">${escapeHtml(riskPlatformCopy[state.locale].founderCta)}${icon("arrow")}</a>
     </section>
   `;
 }
@@ -702,7 +702,7 @@ function riskView() {
         <article class="detail-content"><h2>${escapeHtml(c.evidenceTitle)}</h2><ul class="guidance-structure">${c.evidence.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></article>
         <aside class="action-panel"><h2>${escapeHtml(c.reviewTitle)}</h2><p>${escapeHtml(c.reviewText)}</p><button class="button button-primary" type="button" disabled>${icon("lock")}${escapeHtml(c.status)}</button></aside>
       </div>
-      <a class="text-link" href="#/guidance">${escapeHtml(c.cta)}${icon("arrow")}</a>
+      <a class="text-link" href="${routeHref("guidance")}">${escapeHtml(c.cta)}${icon("arrow")}</a>
     </section>
   `);
 }
@@ -778,7 +778,7 @@ function serviceDetailView(id) {
   const densityClass = isDenseService ? " service-detail-density" : "";
   return `
     <section class="detail-header" id="service-overview" tabindex="-1">
-      <a class="text-link back-link" href="#/services">${icon("arrow")}${escapeHtml(c.common.back)}</a>
+      <a class="text-link back-link" href="${routeHref("services")}">${icon("arrow")}${escapeHtml(c.common.back)}</a>
       <div class="catalog-meta">${fixtureBadge()}<span>${escapeHtml(serviceCategoryLabel(service.category))}</span></div>
       <h1>${escapeHtml(tr.title)}</h1>
       <p>${escapeHtml(tr.summary)}</p>
@@ -937,7 +937,7 @@ function productDetailView(id) {
   const tr = product.translations[state.locale] ?? product.translations.en;
   return `
     <section class="detail-header">
-      <a class="text-link back-link" href="#/library">${icon("arrow")}${escapeHtml(c.common.back)}</a>
+      <a class="text-link back-link" href="${routeHref("library")}">${icon("arrow")}${escapeHtml(c.common.back)}</a>
       <div class="catalog-meta">${fixtureBadge()}<span>${escapeHtml(product.category)}</span></div>
       <h1>${escapeHtml(tr.title)}</h1>
       <p>${escapeHtml(tr.summary)}</p>
@@ -1291,8 +1291,8 @@ function aboutView() {
             <p>${escapeHtml(c.ctaText)}</p>
           </div>
           <div class="hero-actions">
-            <a class="button button-primary" href="#/contact">${escapeHtml(c.ctaPrimary)}${icon("arrow")}</a>
-            <a class="button button-secondary" href="#/book/service-orientation">${escapeHtml(c.ctaSecondary)}${icon("arrow")}</a>
+            <a class="button button-primary" href="${routeHref("contact")}">${escapeHtml(c.ctaPrimary)}${icon("arrow")}</a>
+            <a class="button button-secondary" href="${routeHref("book", "service-orientation")}">${escapeHtml(c.ctaSecondary)}${icon("arrow")}</a>
           </div>
         </div>
       </section>
@@ -1662,7 +1662,8 @@ function bindEvents() {
   document.querySelector("#locale-select")?.addEventListener("change", (event) => {
     state.locale = normalizeLocale(event.target.value);
     localStorage.setItem(STORAGE.locale, state.locale);
-    render();
+    const suffix = state.route.id ? `/${state.route.id}` : "";
+    window.location.hash = `#/${state.locale}/${state.route.route}${suffix}`;
   });
   document.querySelector("#assessment-form")?.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -2087,6 +2088,10 @@ function bindCatalogForm(prefix, update) {
 
 window.addEventListener("hashchange", () => {
   state.route = getRoute(window.location.hash);
+  if (state.route.locale) {
+    state.locale = state.route.locale;
+    localStorage.setItem(STORAGE.locale, state.locale);
+  }
   render();
   document.querySelector("#main")?.focus();
 });
@@ -2128,6 +2133,6 @@ async function refreshServerState() {
   }
 }
 
-if (!window.location.hash) window.location.hash = "#/home";
+if (!window.location.hash) window.location.hash = `#/${state.locale}/home`;
 render();
 refreshServerState().then(render);
