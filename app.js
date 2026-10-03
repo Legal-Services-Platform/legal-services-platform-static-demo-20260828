@@ -6,6 +6,7 @@ import {
   filterCatalog,
   getRoute,
   localized,
+  localizedRouteHash,
   normalizeLocale
 } from "./platform-core.js";
 import {
@@ -406,7 +407,7 @@ function icon(name) {
 }
 
 function routeHref(route, id = "") {
-  return `#/${state.locale}/${route}${id ? `/${id}` : ""}`;
+  return localizedRouteHash(state.locale, route, id);
 }
 
 function navLink(route, label) {
@@ -1663,7 +1664,7 @@ function bindEvents() {
     state.locale = normalizeLocale(event.target.value);
     localStorage.setItem(STORAGE.locale, state.locale);
     const suffix = state.route.id ? `/${state.route.id}` : "";
-    window.location.hash = `#/${state.locale}/${state.route.route}${suffix}`;
+    window.location.hash = localizedRouteHash(state.locale, state.route.route, state.route.id);
   });
   document.querySelector("#assessment-form")?.addEventListener("submit", (event) => {
     event.preventDefault();

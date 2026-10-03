@@ -5,6 +5,13 @@ export function normalizeLocale(locale) {
   return SUPPORTED_LOCALES.includes(locale) ? locale : DEFAULT_LOCALE;
 }
 
+export function localizedRouteHash(locale, route = "home", id = "") {
+  const safeLocale = normalizeLocale(locale);
+  const safeRoute = String(route || "home").replace(/^\/+|\/+$/g, "") || "home";
+  const safeId = id ? `/${encodeURIComponent(String(id).replace(/^\/+/, ""))}` : "";
+  return `#/${safeLocale}/${safeRoute}${safeId}`;
+}
+
 export function localized(record, locale, field = "title") {
   const safeLocale = normalizeLocale(locale);
   return (
